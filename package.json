@@ -8,7 +8,6 @@
 		"build": "npx vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''"
-		
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.1",
@@ -17,6 +16,6 @@
 		"@sveltejs/kit": "^2.57.0",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"svelte": "^5.55.2",
-		"vite": "^8.0.7"
+		"vite": "^8.0.8"
 	}
 }
