@@ -5,10 +5,10 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "npx vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"vercel-build": "vite build"
+		"prepare": "svelte-kit sync || echo ''"
+		
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.1",
