@@ -40,7 +40,7 @@
 		},
 		{
 			id: 4,
-			img: '/assets/img/team/team-7.jpeg',
+			img: '/assets/img/team/team-7.png',
 			name: 'Gustavo A. Chirinos',
 			role: 'Operations Supervisor',
 			icon: 'bi-clipboard-check-fill',
