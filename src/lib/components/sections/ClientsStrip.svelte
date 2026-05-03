@@ -22,33 +22,38 @@
 		'Sunchase Construction'
 	];
 
-	// Dividimos partners en 2 filas. Cada fila se duplica para loop seamless.
 	const half = Math.ceil(partners.length / 2);
+
 	const rows = [
 		{
-			items: [...partners.slice(0, half), ...partners.slice(0, half)],
-			baseSpeed: -0.4 // negativo = scroll a la izquierda
+			items: [...partners.slice(0, half), ...partners.slice(0, half), ...partners.slice(0, half)],
+			baseSpeed: -0.4
 		},
 		{
-			items: [...partners.slice(half), ...partners.slice(half)],
-			baseSpeed: 0.4 // positivo = scroll a la derecha
+			items: [...partners.slice(half), ...partners.slice(half), ...partners.slice(half)],
+			baseSpeed: 0.4
 		}
 	];
 
-	// Solo isDragging es reactivo (controla la clase CSS).
-	// El resto se maneja por DOM directo para máximo performance (60fps sin overhead).
 	let isDragging = $state([false, false]);
 
 	const positions = [0, 0];
 	const velocities = [0, 0];
 	const trackWidths = [0, 0];
 	let trackEls = [null, null];
-	const dragData = [
-		{ startX: 0, startPos: 0, lastX: 0, lastT: 0 },
-		{ startX: 0, startPos: 0, lastX: 0, lastT: 0 }
-	];
+
 	let activeIdx = -1;
 	let rafId;
+
+	const DRAG_THRESHOLD = 7;
+	const MAX_MOMENTUM = 5;
+	const DECAY_RATE = 0.06;
+	const SNAP_EPSILON = 0.004;
+
+	const dragData = [
+		{ startX: 0, startPos: 0, lastX: 0, lastT: 0, cursorVel: 0, hasMoved: false },
+		{ startX: 0, startPos: 0, lastX: 0, lastT: 0, cursorVel: 0, hasMoved: false }
+	];
 
 	function wrap(pos, w) {
 		if (w <= 0) return pos;
@@ -65,56 +70,95 @@
 
 	function tick() {
 		for (let i = 0; i < 2; i++) {
-			if (isDragging[i]) continue;
 			const w = trackWidths[i];
 			if (w <= 0) continue;
 
-			// Decae la velocidad hacia la velocidad base (efecto momentum natural)
-			const target = rows[i].baseSpeed;
-			velocities[i] = velocities[i] * 0.92 + target * 0.08;
+			if (!isDragging[i]) {
+				const target = rows[i].baseSpeed;
+				const diff = target - velocities[i];
 
-			positions[i] = wrap(positions[i] + velocities[i], w);
-			applyTransform(i);
+				if (Math.abs(diff) < SNAP_EPSILON) {
+					velocities[i] = target;
+				} else {
+					velocities[i] += diff * DECAY_RATE;
+				}
+
+				positions[i] = wrap(positions[i] + velocities[i], w);
+				applyTransform(i);
+			}
 		}
+
 		rafId = requestAnimationFrame(tick);
 	}
 
-	function startDrag(idx, x) {
+	function startPointer(idx, x) {
 		activeIdx = idx;
-		isDragging[idx] = true;
-		velocities[idx] = 0;
+
 		dragData[idx] = {
 			startX: x,
 			startPos: positions[idx],
 			lastX: x,
-			lastT: performance.now()
+			lastT: performance.now(),
+			cursorVel: velocities[idx],
+			hasMoved: false
 		};
 	}
 
-	function moveDrag(x) {
+	function movePointer(x) {
 		const idx = activeIdx;
-		if (idx < 0 || !isDragging[idx]) return;
+		if (idx < 0) return;
+
+		const data = dragData[idx];
 		const w = trackWidths[idx];
-		const totalDx = x - dragData[idx].startX;
-		positions[idx] = wrap(dragData[idx].startPos + totalDx, w);
+		const totalDx = x - data.startX;
+
+		if (!data.hasMoved && Math.abs(totalDx) < DRAG_THRESHOLD) {
+			return;
+		}
+
+		if (!data.hasMoved) {
+			data.hasMoved = true;
+			isDragging[idx] = true;
+		}
+
+		positions[idx] = wrap(data.startPos + totalDx, w);
 		applyTransform(idx);
 
-		// Calcula velocidad instantánea para el momentum al soltar
 		const now = performance.now();
-		const dx = x - dragData[idx].lastX;
-		const dt = now - dragData[idx].lastT;
-		if (dt > 0) {
-			const v = (dx / dt) * 16; // px por frame (~16ms)
-			velocities[idx] = velocities[idx] * 0.5 + v * 0.5;
+		const dx = x - data.lastX;
+		const dt = now - data.lastT;
+
+		if (dt > 0 && Math.abs(dx) > 0) {
+			const instantV = (dx / dt) * 16;
+			data.cursorVel = data.cursorVel * 0.65 + instantV * 0.35;
 		}
-		dragData[idx].lastX = x;
-		dragData[idx].lastT = now;
+
+		data.lastX = x;
+		data.lastT = now;
 	}
 
-	function endDrag() {
+	function endPointer() {
 		if (activeIdx >= 0) {
-			isDragging[activeIdx] = false;
+			const idx = activeIdx;
+			const data = dragData[idx];
+
+			if (data.hasMoved) {
+				const age = performance.now() - data.lastT;
+
+				let v = age > 100 ? rows[idx].baseSpeed : (data.cursorVel || rows[idx].baseSpeed);
+
+				v = Math.max(-MAX_MOMENTUM, Math.min(MAX_MOMENTUM, v));
+
+				if (Math.abs(v) < Math.abs(rows[idx].baseSpeed)) {
+					v = rows[idx].baseSpeed;
+				}
+
+				velocities[idx] = v;
+			}
+
+			isDragging[idx] = false;
 		}
+
 		activeIdx = -1;
 	}
 
@@ -122,56 +166,63 @@
 		const measure = () => {
 			for (let i = 0; i < 2; i++) {
 				if (trackEls[i]) {
-					trackWidths[i] = trackEls[i].scrollWidth / 2;
+					trackWidths[i] = trackEls[i].scrollWidth / 3;
 				}
 			}
+
+			positions[0] = wrap(positions[0], trackWidths[0]);
+
+			if (positions[1] === 0 && trackWidths[1] > 0) {
+				positions[1] = -trackWidths[1];
+			} else {
+				positions[1] = wrap(positions[1], trackWidths[1]);
+			}
+
+			applyTransform(0);
+			applyTransform(1);
 		};
+
 		measure();
 
-		// Arrancan a velocidad base
 		velocities[0] = rows[0].baseSpeed;
 		velocities[1] = rows[1].baseSpeed;
 
-		applyTransform(0);
-		applyTransform(1);
-
 		rafId = requestAnimationFrame(tick);
 
-		// Listeners globales — el drag sigue funcionando aunque el cursor salga del marquee
-		const onWinMove = (e) => moveDrag(e.clientX);
-		const onWinTouchMove = (e) => {
+		const onMove = (e) => movePointer(e.clientX);
+		const onUp = () => endPointer();
+
+		const onTouchMove = (e) => {
 			if (activeIdx >= 0) {
-				e.preventDefault();
-				moveDrag(e.touches[0].clientX);
+				movePointer(e.touches[0].clientX);
 			}
 		};
-		const onWinUp = () => endDrag();
 
-		window.addEventListener('mousemove', onWinMove);
-		window.addEventListener('mouseup', onWinUp);
-		window.addEventListener('touchmove', onWinTouchMove, { passive: false });
-		window.addEventListener('touchend', onWinUp);
-		window.addEventListener('touchcancel', onWinUp);
+		window.addEventListener('mousemove', onMove);
+		window.addEventListener('mouseup', onUp);
+		window.addEventListener('touchmove', onTouchMove, { passive: true });
+		window.addEventListener('touchend', onUp);
+		window.addEventListener('touchcancel', onUp);
 		window.addEventListener('resize', measure);
 
 		return () => {
 			cancelAnimationFrame(rafId);
-			window.removeEventListener('mousemove', onWinMove);
-			window.removeEventListener('mouseup', onWinUp);
-			window.removeEventListener('touchmove', onWinTouchMove);
-			window.removeEventListener('touchend', onWinUp);
-			window.removeEventListener('touchcancel', onWinUp);
+			window.removeEventListener('mousemove', onMove);
+			window.removeEventListener('mouseup', onUp);
+			window.removeEventListener('touchmove', onTouchMove);
+			window.removeEventListener('touchend', onUp);
+			window.removeEventListener('touchcancel', onUp);
 			window.removeEventListener('resize', measure);
 		};
 	});
 
 	function onMouseDown(idx, e) {
 		e.preventDefault();
-		startDrag(idx, e.clientX);
+		startPointer(idx, e.clientX);
 	}
 
 	function onTouchStart(idx, e) {
-		startDrag(idx, e.touches[0].clientX);
+		startPointer(idx, e.touches[0].clientX);
 	}
 </script>
 
@@ -189,7 +240,7 @@
 				aria-label="Partner row {idx + 1}"
 			>
 				<div class="track" bind:this={trackEls[idx]}>
-					{#each row.items as p, i}
+					{#each row.items as p}
 						<span class="item">{p}</span>
 						<span class="sep" aria-hidden="true">·</span>
 					{/each}
@@ -260,7 +311,9 @@
 		gap: 22px;
 		white-space: nowrap;
 		will-change: transform;
-		pointer-events: none; /* permite que el drag pase a través al marquee */
+		pointer-events: none;
+		transform: translate3d(0, 0, 0);
+		backface-visibility: hidden;
 	}
 
 	.item {
@@ -311,6 +364,7 @@
 			overflow-x: auto;
 			cursor: auto;
 		}
+
 		.track {
 			transform: none !important;
 		}
