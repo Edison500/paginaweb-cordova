@@ -82,6 +82,7 @@
 </section>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..800&display=swap');
 #hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;}
 
 #hero :global(.hero-bg-wrap){position:absolute;inset:0;z-index:1;will-change:transform;}
@@ -116,8 +117,15 @@
 }
 
 #hero :global(.hero-copy h2){
-	color:#fff;font-size:clamp(2.3rem,5vw,4.2rem);font-weight:800;
-	line-height:1.08;margin-bottom:22px;letter-spacing:-0.02em;
+	color:#fff;
+	font-family: 'Fraunces', 'Times New Roman', Georgia, serif;
+	font-size:clamp(2.3rem,5vw,4.2rem);
+	font-weight:600;
+	font-style:normal;
+	font-variation-settings: "opsz" 144, "SOFT" 30;
+	line-height:1.05;
+	margin-bottom:22px;
+	letter-spacing:-0.015em;
 	text-shadow: 0 4px 25px rgba(0,0,0,0.5);
 }
 
