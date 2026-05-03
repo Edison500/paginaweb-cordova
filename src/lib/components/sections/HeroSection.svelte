@@ -119,14 +119,23 @@
 #hero :global(.hero-copy h2){
 	color:#fff;
 	font-family: 'Fraunces', 'Times New Roman', Georgia, serif;
-	font-size:clamp(2.3rem,5vw,4.2rem);
-	font-weight:600;
-	font-style:normal;
-	font-variation-settings: "opsz" 144, "SOFT" 30;
-	line-height:1.05;
-	margin-bottom:22px;
-	letter-spacing:-0.015em;
-	text-shadow: 0 4px 25px rgba(0,0,0,0.5);
+
+	font-size: clamp(2.6rem, 5.2vw, 4.8rem);
+
+	font-weight: 700;
+	font-variation-settings: "opsz" 144;
+
+	line-height: 0.95;
+	letter-spacing: -0.04em;
+
+	margin-bottom: 22px;
+	max-width: 780px;
+
+	text-wrap: balance;
+
+	text-shadow: 
+		0 10px 40px rgba(0,0,0,0.55),
+		0 2px 8px rgba(0,0,0,0.3);
 }
 
 #hero :global(.hero-copy p){
