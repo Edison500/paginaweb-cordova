@@ -5,7 +5,7 @@
         {
             id: 1,
             img: '/assets/img/team/team-boss.jpg',
-            name: 'Sarah Cordova',
+            name: 'Claudia Cordova',
             role: 'CEO & Founder',
             icon: 'bi-star-fill',
             desc: 'Founded Cordova Property Services with a vision to deliver reliable, high-quality maintenance solutions for multifamily communities across the region.',
