@@ -110,6 +110,7 @@ const services = [
 	<div class="cps-topbar">
 		<div class="cps-topbar-inner">
 			<span>Serving the Greater US &nbsp;·&nbsp; <strong>24h Response Time Guaranteed</strong></span>
+			<a href="tel:+18503238103">&#9990; +1(850) 323-8103</a>
 		</div>
 	</div>
 
