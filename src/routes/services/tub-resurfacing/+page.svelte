@@ -34,7 +34,7 @@
 </script>
 
 <ServicePage
-	title="Tub & Countertop Resurfacing"
+	title="Tub & Countertop Resurface"
 	tagline="Restore Surfaces to Like-New — Without the Cost of Replacement"
 	heroImg="/assets/img/services.jpg"
 	description="At Cordova Property Services, we offer professional tub and countertop resurfacing services designed to restore the appearance of your units quickly and cost-effectively. Our resurfacing solutions are ideal for apartment communities looking to refresh worn, stained, or outdated surfaces — extending the life of existing fixtures while maintaining a clean, updated look."

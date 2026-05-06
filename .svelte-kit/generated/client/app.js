@@ -18,7 +18,10 @@ export const nodes = [
 	() => import('./nodes/14'),
 	() => import('./nodes/15'),
 	() => import('./nodes/16'),
-	() => import('./nodes/17')
+	() => import('./nodes/17'),
+	() => import('./nodes/18'),
+	() => import('./nodes/19'),
+	() => import('./nodes/20')
 ];
 
 export const server_loads = [];
@@ -29,17 +32,20 @@ export const dictionary = {
 		"/contact": [4],
 		"/services": [5],
 		"/services/cabinet-painting": [6],
-		"/services/cleaning": [7],
-		"/services/counter-resurfacing": [8],
-		"/services/installations": [9],
-		"/services/millwork": [10],
-		"/services/painting": [11],
-		"/services/pressure-washing": [12],
-		"/services/repairs": [13],
-		"/services/sheetrock": [14],
-		"/services/tub-resurfacing": [15],
-		"/services/turnkey": [16],
-		"/services/water-remediation": [17]
+		"/services/carpet-cleaning": [7],
+		"/services/cleaning": [8],
+		"/services/concrete-repairs": [9],
+		"/services/counter-resurfacing": [10],
+		"/services/installations": [11],
+		"/services/millwork": [12],
+		"/services/painting": [13],
+		"/services/pressure-washing": [14],
+		"/services/repairs": [15],
+		"/services/sheetrock": [16],
+		"/services/trash-out": [17],
+		"/services/tub-resurfacing": [18],
+		"/services/turnkey": [19],
+		"/services/water-remediation": [20]
 	};
 
 export const hooks = {

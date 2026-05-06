@@ -75,7 +75,7 @@
 							<span class="trust-badge"><i class="bi bi-clock-fill"></i> 24h Response</span>
 						</div>
 						<div class="badge-row">
-							<span class="trust-badge"><i class="bi bi-star-fill"></i> 500+ Properties</span>
+							<span class="trust-badge"><i class="bi bi-star-fill"></i> 500+ Services</span>
 							<span class="trust-badge"><i class="bi bi-receipt"></i> No Hidden Fees</span>
 						</div>
 					</div>

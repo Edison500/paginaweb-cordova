@@ -7,44 +7,46 @@
 	let scrolled = $state(false);
 	let hidden = $state(false);
 
-	const services = [
-		{
-			group: 'Cleaning & Restoration',
-			icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
-			items: [
-				{ href: '/services/cleaning',          label: 'Cleaning' },
-				{ href: '/services/pressure-washing',  label: 'Pressure Washing' },
-				{ href: '/services/water-remediation', label: 'Water Remediation' },
-			]
-		},
-		{
-			group: 'Repairs & Installs',
-			icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-			items: [
-				{ href: '/services/repairs',       label: 'Repairs' },
-				{ href: '/services/sheetrock',     label: 'Sheetrock Repair' },
-				{ href: '/services/millwork',      label: 'Millwork' },
-				{ href: '/services/installations', label: 'Installation Services' },
-			]
-		},
-		{
-			group: 'Painting & Resurfacing',
-			icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
-			items: [
-				{ href: '/services/painting',            label: 'Painting' },
-				{ href: '/services/cabinet-painting',    label: 'Cabinet Painting' },
-				{ href: '/services/tub-resurfacing',     label: 'Tub & Shower Resurfacing' },
-				{ href: '/services/counter-resurfacing', label: 'Counter Resurfacing' },
-			]
-		},
-		{
-			group: 'Full Package',
-			icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`,
-			items: [
-				{ href: '/services/turnkey', label: 'Turnkey Services' },
-			]
-		},
-	];
+const services = [
+    {
+        group: 'Cleaning & Restoration',
+        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+        items: [
+            { href: '/services/cleaning',         label: 'Cleaning' },
+            { href: '/services/carpet-cleaning',  label: 'Carpet Cleaning' },
+            { href: '/services/pressure-washing', label: 'Pressure Washing' },
+            { href: '/services/trash-out',        label: 'Trash Out' },
+        ]
+    },
+    {
+        group: 'Repairs & Installs',
+        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+        items: [
+            { href: '/services/repairs',          label: 'Repairs' },
+            { href: '/services/sheetrock',        label: 'Sheetrock Repair' },
+            { href: '/services/millwork',         label: 'Millwork' },
+            { href: '/services/installations',    label: 'Installation Services' },
+            { href: '/services/concrete-repairs', label: 'Concrete Repairs' },
+        ]
+    },
+    {
+        group: 'Painting & Resurfacing',
+        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
+        items: [
+            { href: '/services/painting',            label: 'Painting' },
+            { href: '/services/cabinet-painting',    label: 'Cabinet Painting' },
+            { href: '/services/tub-resurfacing',     label: 'Tub & Shower Resurface' },
+            { href: '/services/counter-resurfacing', label: 'Countertop Resurface' },
+        ]
+    },
+    {
+        group: 'Full Package',
+        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`,
+        items: [
+            { href: '/services/turnkey', label: 'Turnkey Services' },
+        ]
+    },
+];
 
 	const allServices = services.flatMap(g => g.items);
 

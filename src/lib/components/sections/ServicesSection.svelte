@@ -12,6 +12,7 @@
 		{ img: 'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?w=600&q=80', href: '/services/pressure-washing', title: 'Pressure Washing',          desc: 'Remove grime from exteriors and common areas. Curb appeal.' },
 		{ img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=80', href: '/services/millwork',         title: 'Millwork',                  desc: 'Baseboards, door frames, molding — the finishing details.' },
 		{ img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80', href: '/services/sheetrock',        title: 'Sheetrock Repair',          desc: 'Patch, texture, prime — walls flawless before painting.' },
+		{ img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', href: '/services/carpet-cleaning', title: 'Carpet Cleaning', desc: 'Deep extraction cleaning — removes stains, odors, and allergens from rental carpets.' },
 	];
 </script>
 
