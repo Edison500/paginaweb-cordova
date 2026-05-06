@@ -38,12 +38,11 @@
 					<p class="cps-footer-tagline">Your trusted partner for rental property maintenance across the Gulf Coast. One call, one team, done right.</p>
 					<div class="cps-footer-badges">
 						<span><i class="bi bi-shield-fill-check"></i> Licensed & Insured</span>
-						<span><i class="bi bi-translate"></i> Bilingual Team</span>
 					</div>
 					<div class="cps-footer-social">
-						<a href="/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-						<a href="/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-						<a href="/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+						<a href="https://www.facebook.com/profile.php?id=61575846174811" target="_blank" real="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+						<a href="https://www.instagram.com/cordovapropertyservices/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/cordova-property-services-472b4836b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
 					</div>
 				</div>
 

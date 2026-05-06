@@ -15,18 +15,36 @@
 	const stats = [
 		{ num: '4,008+', label: 'Projects Completed', icon: 'bi-hammer' },
 		{ num: '60+', label: 'Clients Served', icon: 'bi-buildings-fill' },
-		{ num: '15+', label: 'Field Professionals', icon: 'bi-people-fill' },
 		{ num: '11', label: 'Cities Covered', icon: 'bi-geo-alt-fill' },
 		{ num: '12', label: 'Specialized Services', icon: 'bi-tools' },
 		{ num: '24h', label: 'Response Guarantee', icon: 'bi-clock-fill' }
 	];
 
-	const differentiators = [
-		{ num: '01', title: 'One vendor, everything covered', desc: 'Painting, cleaning, repairs, sheetrock, resurfacing, trash-outs — all under one invoice. No juggling multiple contractors.' },
-		{ num: '02', title: 'Bilingual team', desc: 'Our bilingual English/Spanish crew eliminates communication barriers on-site — important when working across diverse communities.' },
-		{ num: '03', title: 'Platform-ready from day one', desc: 'We’re already set up in RealPage, Yardi/VendorCafe, AppFolio and more. Zero onboarding friction for your team.' },
-		{ num: '04', title: 'Photo documentation on every job', desc: 'Before, during, and after photos uploaded with every completed work order — for your records and yours only.' }
-	];
+const differentiators = [
+	{ 
+		num: '01',
+		title: 'One vendor, everything covered',
+		desc: 'Painting, cleaning, repairs, sheetrock, resurfacing, trash-outs — all under one invoice. No juggling multiple contractors.'
+	},
+
+	{ 
+		num: '02',
+		title: 'Fast 5-day turnaround',
+		desc: 'Most standard turns and service requests are completed in under 5 days, helping your team reduce vacancy time and keep units move-in ready without delays.'
+	},
+
+	{ 
+		num: '03',
+		title: 'Certified & qualified technicians',
+		desc: 'Our technicians are trained, experienced, and qualified in their trade, following professional standards across painting, maintenance, repairs, resurfacing, and property services.'
+	},
+
+	{ 
+		num: '04',
+		title: 'Photo documentation on every job',
+		desc: 'Before, during, and after photos uploaded with every completed work order — for your records and operational transparency.'
+	}
+];
 
 	const areas = [
 		'Pensacola', 'Gulf Breeze', 'Navarre', 'Fort Walton',
@@ -155,29 +173,6 @@
 									<h4>{d.title}</h4>
 									<p>{d.desc}</p>
 								</div>
-							</div>
-						</div>
-					{/each}
-				</div>
-			</div>
-		</section>
-
-		<section class="values-section section">
-			<div class="container section-title" data-aos="fade-up">
-				<h2>Our Core Values</h2>
-				<p>The principles that guide every job we take on</p>
-			</div>
-
-			<div class="container">
-				<div class="row gy-4">
-					{#each values as v, i}
-						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={(i % 3 + 1) * 100}>
-							<div class="value-card">
-								<div class="value-icon">
-									<i class="bi {v.icon}"></i>
-								</div>
-								<h4>{v.title}</h4>
-								<p>{v.desc}</p>
 							</div>
 						</div>
 					{/each}

@@ -10,8 +10,6 @@
             icon: 'bi-star-fill',
             desc: 'Founded Cordova Property Services with a vision to deliver reliable, high-quality maintenance solutions for multifamily communities across the region.',
             tags: ['Founder', 'Multifamily', 'Strategic Vision'],
-            linkedin: '#',
-            instagram: '#',
             boss: true
         },
         {
@@ -22,8 +20,6 @@
             icon: 'bi-diagram-3-fill',
             desc: 'Oversees day-to-day field operations, ensuring every unit turn runs on schedule and meets our quality standards.',
             tags: ['10+ Years', 'Operations', 'Field Logistics'],
-            linkedin: '#',
-            instagram: '#',
             boss: false
         },
         {
@@ -34,8 +30,6 @@
             icon: 'bi-tools',
             desc: 'Handles repairs, installations, and sheetrock work — a key part of our turnkey unit turn process.',
             tags: ['HVAC Certified', 'Plumbing', 'Sheetrock'],
-            linkedin: '#',
-            instagram: '#',
             boss: false
         },
         {
@@ -46,8 +40,6 @@
             icon: 'bi-clipboard-check-fill',
             desc: 'Coordinates field crews and quality control across active jobs, making sure every turn meets spec and is delivered on time.',
             tags: ['Quality Control', 'Bilingual', 'Crew Lead'],
-            linkedin: '#',
-            instagram: '#',
             boss: false
         }
     ];
@@ -234,15 +226,6 @@
                                         {#each member.tags as tag}
                                             <span class="tag">{tag}</span>
                                         {/each}
-                                    </div>
-
-                                    <div class="team-socials">
-                                        <a href={member.instagram} aria-label="Instagram" on:click|stopPropagation>
-                                            <i class="bi bi-instagram"></i>
-                                        </a>
-                                        <a href={member.linkedin} aria-label="LinkedIn" on:click|stopPropagation>
-                                            <i class="bi bi-linkedin"></i>
-                                        </a>
                                     </div>
                                 </div>
                             </button>

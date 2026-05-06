@@ -7,11 +7,6 @@
 			</div>
 			<div class="trust-divider"></div>
 			<div class="trust-item">
-				<i class="bi bi-translate"></i>
-				<span>Bilingual Team</span>
-			</div>
-			<div class="trust-divider"></div>
-			<div class="trust-item">
 				<i class="bi bi-clock-fill"></i>
 				<span>24h Response</span>
 			</div>

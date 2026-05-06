@@ -110,7 +110,6 @@ const services = [
 	<div class="cps-topbar">
 		<div class="cps-topbar-inner">
 			<span>Serving the Greater US &nbsp;·&nbsp; <strong>24h Response Time Guaranteed</strong></span>
-			<a href="tel:+18000000000">&#9990; (800) 000-0000</a>
 		</div>
 	</div>
 
