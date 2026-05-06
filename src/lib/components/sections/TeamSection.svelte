@@ -228,7 +228,6 @@
 
                                 <div class="team-info">
                                     <h4>{member.name}</h4>
-                                    <span class="team-role">{member.role}</span>
                                     <p>{member.desc}</p>
 
                                     <div class="tags" class:is-visible={isCenter}>
@@ -507,12 +506,12 @@
         }
     }
     .team-info h4 {
-        font-size: 20px;
-        font-weight: 800;
-        color: #1a1a1a;
-        margin-bottom: 4px;
-        letter-spacing: -0.01em;
-    }
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 10px; /* 👈 antes 4px */
+    letter-spacing: -0.01em;
+}
     .team-card-featured .team-info h4 {
         color: #4a4a1c;
     }
@@ -533,11 +532,12 @@
         background: rgba(184, 146, 58, 0.14);
     }
     .team-info p {
-        font-size: 13.5px;
-        color: #666;
-        line-height: 1.65;
-        margin-bottom: 16px;
-    }
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.7;      /* 👈 antes 1.65 */
+    margin-top: 2px;       /* 👈 nuevo */
+    margin-bottom: 18px;   /* 👈 antes 16px */
+}
     .tags {
         display: flex;
         justify-content: center;
