@@ -117,21 +117,24 @@
 	display:flex;
 	align-items:center;
 	justify-content:center;
-	min-width:210px;
-	height:82px;
-	padding:0 10px;
-	overflow:hidden;
+	min-width:230px;
+	height:95px;
+	padding:0;
+	overflow:visible;
 	transition:transform .28s ease, opacity .28s ease;
 }
 
+
 .platform-logo-v2 img{
-	width:210px;
-	height:64px;
+	width:260px;
+	height:auto;
+	max-height:none;
 	object-fit:contain;
 	display:block;
 	opacity:.98;
 	mix-blend-mode:multiply;
-	transform:scale(1.45);
+	transform:scale(2.1);
+	transform-origin:center;
 }
 
 .platform-logo-v2:hover{
@@ -200,14 +203,15 @@
 	}
 
 	.platform-logo-v2{
-		min-width:180px;
-		height:72px;
-	}
+	min-width:190px;
+	height:82px;
+}
+
 
 	.platform-logo-v2 img{
-		max-width:170px;
-		max-height:42px;
-	}
+	width:230px;
+	transform:scale(1.9);
+}
 }
 
 @media(max-width:576px){
@@ -233,16 +237,17 @@
 	.platform-logo-v2{
 		width:100%;
 		min-width:0;
-		height:74px;
+		height:78px;
+		overflow:hidden;
 		background:rgba(255,255,255,.62);
 		border:1px solid rgba(74,86,55,.08);
 		border-radius:14px;
 	}
 
 	.platform-logo-v2 img{
-	width:210px;
+	width:240px;
 	height:62px;
-	transform:scale(1.35);
+	transform:scale(1.75);
 }
 
 	.billing-trust-v2{
