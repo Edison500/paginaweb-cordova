@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/services/tub-resurfacing/+page.svelte";
+export { default as component } from "../../../../src/routes/services/sheetrock/+page.svelte";
