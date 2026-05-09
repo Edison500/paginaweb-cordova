@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 
+
 	let { children } = $props();
 
 	const loadScript = (src) =>
@@ -68,4 +69,6 @@
 	<link rel="stylesheet" href="/assets/css/main.css" />
 </svelte:head>
 
+
 {@render children()}
+

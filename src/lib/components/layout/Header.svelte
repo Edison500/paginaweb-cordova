@@ -167,6 +167,11 @@ const services = [
 				</div>
 			</nav>
 
+			<a
+				href="/our-work"
+				class="cps-link"
+				class:cps-active={page.url.pathname === '/our-work'}>Our Work</a>
+
 			<a href="/contact" class="cps-cta" onclick={closeMobileMenu}>
 				Contact Us
 				<svg width="12" height="12" viewBox="0 0 24 24" fill="none"
@@ -208,6 +213,12 @@ const services = [
 		</div>
 		{/if}
 	</div>
+
+	<a
+		href="/our-work"
+		onclick={closeMobileMenu}
+		class="cps-mob-link"
+		class:cps-active={page.url.pathname === '/our-work'}>Our Work</a>
 
 	<a href="/contact" class="cps-mob-cta" onclick={closeMobileMenu}>Contact Us →</a>
 </div>
@@ -324,7 +335,7 @@ const services = [
 .cps-nav {
 	display: flex;
 	align-items: center;
-	gap: 2px;
+	gap: 0;
 	margin-left: auto;
 }
 
@@ -333,7 +344,7 @@ const services = [
 	display: inline-flex;
 	align-items: center;
 	gap: 5px;
-	padding: 10px 16px 13px;
+	padding: 10px 14px 13px;
 	font-size: 14.5px;
 	font-weight: 600;
 	color: var(--text);
@@ -346,6 +357,9 @@ const services = [
 	letter-spacing: .01em;
 	white-space: nowrap;
 	transition: color .18s, background .18s;
+}
+.cps-drop-btn{
+	padding-right: 8px;
 }
 
 .cps-link::after {
