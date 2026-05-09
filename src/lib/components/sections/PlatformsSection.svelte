@@ -46,11 +46,7 @@
 .billing-card-v2{
 	width:100%;
 	margin:0 auto 28px;
-	background:
-		radial-gradient(circle at 50% 20%, rgba(95,111,69,.055), transparent 30%),
-		linear-gradient(180deg,#fbfbf8 0%,#f6f7f2 100%);
-	border-top:1px solid rgba(74,86,55,.08);
-	border-bottom:1px solid rgba(74,86,55,.08);
+	background:transparent;
 	position:relative;
 	overflow:hidden;
 }
@@ -124,17 +120,24 @@
 	transition:transform .28s ease, opacity .28s ease;
 }
 
-
 .platform-logo-v2 img{
 	width:260px;
 	height:auto;
 	max-height:none;
 	object-fit:contain;
 	display:block;
-	opacity:.98;
-	mix-blend-mode:multiply;
+
+	/* MONOCHROME DARK — alto contraste con el fondo crema */
+	filter:brightness(0) contrast(1);
+	opacity:.72;
+
 	transform:scale(2.1);
 	transform-origin:center;
+
+	transition:
+		filter .35s ease,
+		opacity .35s ease,
+		transform .35s ease;
 }
 
 .platform-logo-v2:hover{
@@ -142,51 +145,55 @@
 }
 
 .platform-logo-v2:hover img{
+	/* color original al hacer hover */
+	filter:none;
 	opacity:1;
+	transform:scale(2.16);
 }
 
 /* Bottom trust row */
 .billing-trust-v2{
-	background:linear-gradient(180deg,#f2f3ee 0%,#eef0e9 100%);
-	border-top:1px solid rgba(74,86,55,.08);
-	padding:22px 24px;
+	background:transparent;
+	padding:14px 24px;
 	display:flex;
 	align-items:center;
 	justify-content:center;
-	gap:18px;
+	gap:12px;
 }
 
 .trust-icon-v2{
-	width:44px;
-	height:44px;
+	width:32px;
+	height:32px;
 	border-radius:50%;
 	background:#fff;
 	display:flex;
 	align-items:center;
 	justify-content:center;
 	color:#5f7f45;
-	font-size:22px;
-	box-shadow:0 8px 22px rgba(34,45,31,.08);
+	font-size:15px;
+	box-shadow:0 6px 14px rgba(34,45,31,.07);
 	border:1px solid rgba(74,86,55,.08);
 	flex-shrink:0;
 }
 
 .billing-trust-v2 p{
 	margin:0;
-	font-size:14.5px;
-	line-height:1.5;
+	font-size:12.5px;
+	line-height:1.45;
 	color:#5f665d;
 }
 
 .billing-trust-v2 strong{
 	color:#202723;
 	font-weight:900;
-	margin-right:8px;
+	margin-right:6px;
+	font-size:12.5px;
 }
 
 .billing-trust-v2 span{
 	color:#5f665d;
 }
+
 
 /* Responsive */
 @media(max-width:991px){
@@ -203,15 +210,18 @@
 	}
 
 	.platform-logo-v2{
-	min-width:190px;
-	height:82px;
-}
-
+		min-width:190px;
+		height:82px;
+	}
 
 	.platform-logo-v2 img{
-	width:230px;
-	transform:scale(1.9);
-}
+		width:230px;
+		transform:scale(1.9);
+	}
+
+	.platform-logo-v2:hover img{
+		transform:scale(1.96);
+	}
 }
 
 @media(max-width:576px){
@@ -245,19 +255,27 @@
 	}
 
 	.platform-logo-v2 img{
-	width:240px;
-	height:62px;
-	transform:scale(1.75);
-}
+		width:240px;
+		height:62px;
+		transform:scale(1.75);
+	}
+
+	.platform-logo-v2:hover img{
+		transform:scale(1.81);
+	}
 
 	.billing-trust-v2{
 		align-items:flex-start;
 		text-align:left;
-		padding:20px 18px;
+		padding:14px 18px;
 	}
 
 	.billing-trust-v2 p{
-		font-size:13.5px;
+		font-size:12px;
+	}
+
+	.billing-trust-v2 strong{
+		font-size:12px;
 	}
 
 	.billing-trust-v2 strong,

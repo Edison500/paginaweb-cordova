@@ -221,6 +221,7 @@ const services = [
 		class:cps-active={page.url.pathname === '/our-work'}>Our Work</a>
 
 	<a href="/contact" class="cps-mob-cta" onclick={closeMobileMenu}>Contact Us →</a>
+	
 </div>
 {/if}
 
@@ -695,7 +696,16 @@ const services = [
 @media (max-width: 1199px) {
 	.cps-nav  { display: none; }
 	.cps-cta  { display: none; }
-	.cps-ham  { display: flex; margin-left: auto; }
+
+	/* ocultar Our Work suelto en mobile */
+	.cps-inner > .cps-link {
+		display: none;
+	}
+
+	.cps-ham  {
+		display: flex;
+		margin-left: auto;
+	}
 }
 
 @media (max-width: 600px) {

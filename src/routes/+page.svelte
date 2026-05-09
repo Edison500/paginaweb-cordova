@@ -23,8 +23,8 @@
 		<TrustBar />
 		<ClientsStrip />
 		<ServicesSection />
-		<FeaturesSection />
 		<PlatformsSection />
+		<FeaturesSection />
 		<TestimonialsSection />
 		<FaqSection />
 		<CtaSection />
