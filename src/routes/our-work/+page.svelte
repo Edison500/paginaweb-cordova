@@ -77,7 +77,7 @@
 			area: 'Restroom',
 			coverImg: '/assets/img/projects/project-1-after.jpg',
 			video: {
-				src:    '/assets/video/projects/project-1.mp4',
+				src:    '/assets/img/projects/video-1.mp4',
 				poster: '/assets/img/projects/project-1-after.jpg'
 			},
 			gallery: [
@@ -117,7 +117,7 @@
 			area: 'Exterior',
 			coverImg: '/assets/img/projects/project-2-after.jpg',
 			video: {
-				src:    '/assets/video/projects/project-2.mp4',
+				src:    '/assets/img/projects/video-2.mp4',
 				poster: '/assets/img/projects/project-2-after.jpg'
 			},
 			gallery: [
@@ -144,7 +144,7 @@
 			area: 'Exterior',
 			coverImg: '/assets/img/projects/project-3-after.jpg',
 			video: {
-				src:    '/assets/video/projects/project-3.mp4',
+				src:    '/assets/img/projects/video-3.mp4',
 				poster: '/assets/img/projects/project-3-after.jpg'
 			},
 			gallery: [
@@ -170,7 +170,7 @@
 			area: 'Staircase',
 			coverImg: '/assets/img/projects/project-4-after.jpg',
 			video: {
-				src:    '/assets/video/projects/project-4.mp4',
+				src:    '/assets/img/projects/video-5.mp4',
 				poster: '/assets/img/projects/project-4-after.jpg'
 			},
 			gallery: [
@@ -197,7 +197,7 @@
 			area: 'Bathroom',
 			coverImg: '/assets/img/projects/project-5-after.jpg',
 			video: {
-				src:    '/assets/video/projects/project-5.mp4',
+				src:    '/assets/img/projects/video-7.mp4',
 				poster: '/assets/img/projects/project-5-after.jpg'
 			},
 			gallery: [
