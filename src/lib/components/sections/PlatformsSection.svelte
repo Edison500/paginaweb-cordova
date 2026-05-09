@@ -1,9 +1,11 @@
 <div class="billing-card-v2" data-aos="fade-up" data-aos-delay="120">
 	<div class="billing-inner-v2">
 
-		<span class="billing-pill-v2">Invoicing & Payments</span>
+		<h2 class="billing-pill-v2">Invoicing & Payments</h2>
 
-		<h3>Seamless invoicing. Stronger partnerships.</h3>
+<p class="billing-main-copy-v2">
+	Seamless invoicing. Stronger partnerships.
+</p>
 
 		<p class="billing-subtitle-v2">
 			Cordova integrates with leading systems to keep your projects moving.
@@ -59,34 +61,49 @@
 }
 
 .billing-pill-v2{
-	display:inline-block;
-	font-size:12px;
-	font-weight:900;
-	letter-spacing:1.7px;
-	text-transform:uppercase;
-	color:#5f7f45;
-	margin-bottom:14px;
-}
+	font-size: clamp(1.8rem, 3vw, 2.6rem);
+	font-weight:800;
+	letter-spacing:0.01em;
+	color:#1a1a1a;
 
-.billing-card-v2 h3{
-	font-size:clamp(2rem,3vw,3rem);
-	line-height:1.12;
-	font-weight:900;
-	letter-spacing:-.04em;
-	color:#202723;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:18px;
+
 	margin:0 0 18px;
 }
 
-.billing-card-v2 h3::after{
-	content:"";
-	display:block;
-	width:72px;
-	height:3px;
-	background:#5f7f45;
-	border-radius:999px;
-	margin:16px auto 0;
+/* === TITULO con tipografía global (igual que "Our Services") === */
+.billing-card-v2 h3{
+	font-size: clamp(1.8rem, 3vw, 2.6rem);
+	line-height:1.2;
+	font-weight:800;
+
+	letter-spacing:0.01em;
+
+	color:#1a1a1a;
+
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:18px;
+
+	margin:0 0 18px;
+}
+.billing-main-copy-v2{
+	margin:10px auto 18px;
 }
 
+.billing-pill-v2::before,
+.billing-pill-v2::after{
+	content:"";
+	width:50px;
+	height:2px;
+	background:#e84545;
+	display:block;
+	border-radius:999px;
+}
 .billing-subtitle-v2{
 	font-size:15.5px;
 	line-height:1.6;
@@ -120,6 +137,7 @@
 	transition:transform .28s ease, opacity .28s ease;
 }
 
+/* === LOGOS más pequeños (scale reducido) === */
 .platform-logo-v2 img{
 	width:260px;
 	height:auto;
@@ -127,11 +145,11 @@
 	object-fit:contain;
 	display:block;
 
-	/* MONOCHROME DARK — alto contraste con el fondo crema */
+	/* MONOCHROME DARK */
 	filter:brightness(0) contrast(1);
 	opacity:.72;
 
-	transform:scale(2.1);
+	transform:scale(1.45); /* antes 2.1 */
 	transform-origin:center;
 
 	transition:
@@ -145,10 +163,9 @@
 }
 
 .platform-logo-v2:hover img{
-	/* color original al hacer hover */
 	filter:none;
 	opacity:1;
-	transform:scale(2.16);
+	transform:scale(1.5); /* antes 2.16 */
 }
 
 /* Bottom trust row */
@@ -216,11 +233,11 @@
 
 	.platform-logo-v2 img{
 		width:230px;
-		transform:scale(1.9);
+		transform:scale(1.3); /* antes 1.9 */
 	}
 
 	.platform-logo-v2:hover img{
-		transform:scale(1.96);
+		transform:scale(1.35); /* antes 1.96 */
 	}
 }
 
@@ -230,7 +247,7 @@
 	}
 
 	.billing-card-v2 h3{
-		font-size:2rem;
+		font-size:1.8rem;
 	}
 
 	.billing-subtitle-v2{
@@ -257,11 +274,11 @@
 	.platform-logo-v2 img{
 		width:240px;
 		height:62px;
-		transform:scale(1.75);
+		transform:scale(1.2); /* antes 1.75 */
 	}
 
 	.platform-logo-v2:hover img{
-		transform:scale(1.81);
+		transform:scale(1.25); /* antes 1.81 */
 	}
 
 	.billing-trust-v2{
