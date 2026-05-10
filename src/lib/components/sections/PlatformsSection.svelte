@@ -382,7 +382,7 @@
 }
 
 .platform-logo-box-v2 img[alt="OpsMerchant"]{
-	width:225px;
+	width:245px;
 }
 
 .platform-info-v2{
@@ -487,7 +487,7 @@
 	}
 
 	.platform-logo-box-v2 img[alt="OpsMerchant"]{
-		width:210px;
+		width:235px;
 	}
 
 	.platform-info-v2{
@@ -578,7 +578,7 @@
 	}
 
 	.platform-logo-box-v2 img[alt="OpsMerchant"]{
-		width:200px;
+		width:220px;
 	}
 
 	.platform-info-v2{
