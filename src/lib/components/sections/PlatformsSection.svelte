@@ -3,9 +3,9 @@
 
 		<h2 class="billing-pill-v2">Invoicing & Payments</h2>
 
-<p class="billing-main-copy-v2">
-	Seamless invoicing. Stronger partnerships.
-</p>
+		<p class="billing-main-copy-v2">
+			Seamless invoicing. Stronger partnerships.
+		</p>
 
 		<p class="billing-subtitle-v2">
 			Cordova integrates with leading systems to keep your projects moving.
@@ -28,7 +28,18 @@
 			<div class="platform-logo-v2">
 				<img src="/assets/img/invoice-logo/netvendor.png" alt="NetVendor" />
 			</div>
+			
+			<div class="platform-divider-v2"></div>
 
+			<div class="platform-logo-v2">
+				<img src="/assets/img/invoice-logo/vendorcafe.png" alt="VendorCafe" />
+			</div>
+
+			<div class="platform-divider-v2"></div>
+
+			<div class="platform-logo-v2">
+				<img src="/assets/img/invoice-logo/opsmerchant.png" alt="OpsMerchant" />
+			</div>
 		</div>
 	</div>
 
@@ -137,7 +148,7 @@
 	transition:transform .28s ease, opacity .28s ease;
 }
 
-/* === LOGOS más pequeños (scale reducido) === */
+/* === LOGOS (RealPage, Yardi, NetVendor) — sin cambios === */
 .platform-logo-v2 img{
 	width:260px;
 	height:auto;
@@ -149,7 +160,7 @@
 	filter:brightness(0) contrast(1);
 	opacity:.72;
 
-	transform:scale(1.45); /* antes 2.1 */
+	transform:scale(1.45);
 	transform-origin:center;
 
 	transition:
@@ -165,7 +176,25 @@
 .platform-logo-v2:hover img{
 	filter:none;
 	opacity:1;
-	transform:scale(1.5); /* antes 2.16 */
+	transform:scale(1.5);
+}
+
+/* === OVERRIDES SOLO para VendorCafe y OpsMerchant === */
+/* Ajusta estos valores hasta que se vean igual que los otros 3 */
+.platform-logo-v2 img[alt="VendorCafe"]{
+	width:180px;
+	transform:scale(1);
+}
+.platform-logo-v2:hover img[alt="VendorCafe"]{
+	transform:scale(1.04);
+}
+
+.platform-logo-v2 img[alt="OpsMerchant"]{
+	width:260px;
+	transform:scale(1.45);
+}
+.platform-logo-v2:hover img[alt="OpsMerchant"]{
+	transform:scale(1.5);
 }
 
 /* Bottom trust row */
@@ -233,11 +262,21 @@
 
 	.platform-logo-v2 img{
 		width:230px;
-		transform:scale(1.3); /* antes 1.9 */
+		transform:scale(1.3);
 	}
 
 	.platform-logo-v2:hover img{
-		transform:scale(1.35); /* antes 1.96 */
+		transform:scale(1.35);
+	}
+
+	/* Overrides también en tablet */
+	.platform-logo-v2 img[alt="OpsMerchant"]{
+	width:230px;
+	transform:scale(1.3);
+}
+	.platform-logo-v2:hover img[alt="VendorCafe"],
+	.platform-logo-v2:hover img[alt="OpsMerchant"]{
+		transform:scale(0.94);
 	}
 }
 
@@ -274,11 +313,22 @@
 	.platform-logo-v2 img{
 		width:240px;
 		height:62px;
-		transform:scale(1.2); /* antes 1.75 */
+		transform:scale(1.2);
 	}
 
 	.platform-logo-v2:hover img{
-		transform:scale(1.25); /* antes 1.81 */
+		transform:scale(1.25);
+	}
+
+	/* Overrides también en mobile */
+	.platform-logo-v2 img[alt="VendorCafe"],
+	.platform-logo-v2 img[alt="OpsMerchant"]{
+		width:170px;
+		transform:scale(0.85);
+	}
+	.platform-logo-v2:hover img[alt="VendorCafe"],
+	.platform-logo-v2:hover img[alt="OpsMerchant"]{
+		transform:scale(0.88);
 	}
 
 	.billing-trust-v2{
