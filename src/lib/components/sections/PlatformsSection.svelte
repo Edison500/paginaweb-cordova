@@ -352,7 +352,7 @@
 	height:auto;
 	display:flex;
 	align-items:center;
-	justify-content:flex-start;
+	justify-content:center;
 	margin-bottom:0;
 	width:100%;
 }
@@ -366,7 +366,7 @@
 	filter:brightness(0) contrast(1);
 	opacity:.72;
 	transform:scale(1);
-	transform-origin:left center;
+	transform-origin:center;
 	transition:filter .35s ease, opacity .35s ease, transform .35s ease;
 }
 
