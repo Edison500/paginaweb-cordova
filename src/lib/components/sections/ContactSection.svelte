@@ -55,7 +55,7 @@
 							<div class="contact-card-icon"><i class="bi bi-clock-fill"></i></div>
 							<h3>Open Hours</h3>
 							<p>Monday – Friday</p>
-							<p>8:00 AM – 6:00 PM</p>
+							<p>8:00 AM – 5:00 PM</p>
 						</div>
 					</div>
 					<div class="col-md-6">

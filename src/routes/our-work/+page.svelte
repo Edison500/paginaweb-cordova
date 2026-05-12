@@ -12,10 +12,8 @@
 	function showZoom(photo) {
 		clearTimeout(hoverTimer);
 		if (zoomVisible) {
-			// ya está abierto: cambia la foto con crossfade animado vía {#key}
 			hoveredPhoto = photo;
 		} else {
-			// pequeño delay para evitar parpadeo al pasar rápido
 			hoverTimer = setTimeout(() => {
 				hoveredPhoto = photo;
 				zoomVisible  = true;
@@ -26,8 +24,6 @@
 	function hideZoom() {
 		clearTimeout(hoverTimer);
 		zoomVisible = false;
-		// dejamos hoveredPhoto en memoria para que la animación de salida
-		// tenga contenido y no haga "pop"; se reemplaza en el siguiente hover
 	}
 
 	// Galería: drag-to-scroll
@@ -61,6 +57,19 @@
 		galleryEl.scrollBy({ left: dir * step * 2, behavior: 'smooth' });
 	}
 
+	// Project Process: step activo por proyecto
+	let activeStep = $state(1);
+
+	function toggleStep(id) {
+		activeStep = activeStep === id ? 0 : id;
+	}
+
+	// Resetear step al cambiar proyecto
+	function selectProject(id) {
+		selectedId  = id;
+		activeStep  = 1;
+	}
+
 	const filters = [
 		{ id: 'all',          label: 'ALL PROJECTS', icon: 'bi-grid-3x3-gap'      },
 		{ id: 'renovation',   label: 'RENOVATIONS',  icon: 'bi-house-door'         },
@@ -88,19 +97,19 @@
 			],
 			scope: [
 				{
-					title: 'Drywall Installation & Replacement:',
+					title: 'Drywall Installation & Replacement',
 					items: ['Complete full finishing process including taping, mudding, sanding, and smoothing all areas']
 				},
 				{
-					title: 'Fixture & Equipment Installation:',
+					title: 'Fixture & Equipment Installation',
 					items: ['Install toilet', 'Install sink', 'Install exhaust/vent fans', 'Install fire safety device', 'Install light fixtures']
 				},
 				{
-					title: 'Accessories Installation:',
+					title: 'Accessories Installation',
 					items: ['Install mirror', 'Install soap dispenser', 'Install paper dispenser']
 				},
 				{
-					title: 'Painting:',
+					title: 'Painting',
 					items: ['Full restroom paint after drywall completion', 'Clean and uniform final result']
 				}
 			],
@@ -127,9 +136,37 @@
 				{ src: '/assets/img/projects/project-2-vacuum-after.jpg',  tag: 'Completed' }
 			],
 			scope: [
-				{ title: 'Site Preparation:',       items: ['Prepare exterior area for concrete work', 'Level and clean installation zone']                       },
-				{ title: 'Concrete Installation:',  items: ['Install concrete pad', 'Finish surface for durability and clean appearance']                         },
-				{ title: 'Equipment Installation:', items: ['Install vacuum equipment', 'Secure and verify final placement']                                      }
+				{
+					title: 'Concrete Pad Installation',
+					items: [
+						'Layout and preparation of installation area',
+						'Light excavation as needed',
+						'Gravel base preparation and compaction',
+						'Form setting',
+						'Pouring and finishing of concrete pad (broom finish)',
+						'Allow proper curing time'
+					]
+				},
+				{
+					title: 'Vacuum Installation',
+					items: [
+						'Mounting and securing of vacuum equipment'
+					]
+				},
+				{
+					title: 'Electrical Adjustment',
+					items: [
+						'Extension/relocation of existing electrical line approximately 12 feet to reach new equipment location',
+						'Installation of conduit and proper connections',
+						'Mounting and securing electrical box as needed'
+					]
+				},
+				{
+					title: 'Finalization',
+					items: [
+						'Testing of installation (excluding internal equipment functionality)'
+					]
+				}
 			],
 			details: {
 				type: 'Construction', property: 'Exterior Area',
@@ -154,8 +191,35 @@
 				{ src: '/assets/img/projects/project-3-finish-after.jpg',  tag: 'Completed' }
 			],
 			scope: [
-				{ title: 'Preparation:', items: ['Clean and prepare exterior door surfaces', 'Repair visible imperfections'] },
-				{ title: 'Finishing:',   items: ['Apply exterior finish', 'Improve appearance and protection']              }
+				{
+					title: 'Surface Preparation',
+					items: [
+						'Deep cleaning of doors using an exterior-grade cleaner to remove dirt, mildew, and surface contaminants',
+						'Full sanding of all door surfaces, including louvers and frames, to remove worn finish and prepare the wood for refinishing',
+						'Detailed hand sanding in louvered areas to ensure proper adhesion'
+					]
+				},
+				{
+					title: 'Wood Repairs',
+					items: [
+						'Minor wood repairs using exterior-grade wood filler as needed',
+						'Sanding of repaired areas to achieve a smooth, uniform surface'
+					]
+				},
+				{
+					title: 'Finishing & Protection',
+					items: [
+						'Application of two to three (2–3) coats of exterior spar urethane (gloss finish) to restore the natural wood appearance',
+						'Finish provides UV protection, moisture resistance, and a durable glossy "like-new" appearance',
+						'Light sanding between coats for a smooth professional finish'
+					]
+				},
+				{
+					title: 'Final Detailing',
+					items: [
+						'Sealing of door edges and bottom to protect against moisture intrusion'
+					]
+				}
 			],
 			details: {
 				type: 'Finishes', property: 'Exterior Doors',
@@ -180,9 +244,38 @@
 				{ src: '/assets/img/projects/project-4-washing-after.jpg',  tag: 'Completed' }
 			],
 			scope: [
-				{ title: 'Cleaning:',           items: ['Pressure wash staircase area', 'Remove dirt and surface buildup']           },
-				{ title: 'Metal Preparation:',  items: ['Prepare metal surfaces', 'Address worn areas before painting']             },
-				{ title: 'Painting:',           items: ['Apply finish coating', 'Improve durability and appearance']                }
+				{
+					title: 'Pressure Washing',
+					items: [
+						'Full pressure washing of all staircase surfaces'
+					]
+				},
+				{
+					title: 'Metal Surface Preparation',
+					items: [
+						'Mechanical sanding of all metal components affected by rust and surface deterioration, including handrails and guardrails, interior and exterior metal stair edges, and metal sections at the base and start of each staircase',
+						'Removal of loose paint, rust, and oxidation to properly prepare surfaces for coating'
+					]
+				},
+				{
+					title: 'Priming',
+					items: [
+						'Application of primer coat to all prepared metal surfaces'
+					]
+				},
+				{
+					title: 'Painting',
+					items: [
+						'Application of finish coating to all metal components'
+					]
+				},
+				{
+					title: 'Final Result',
+					items: [
+						'Significantly improved overall appearance of the staircases',
+						'Enhanced curb appeal and a refreshed, well-maintained look throughout the property'
+					]
+				}
 			],
 			details: {
 				type: 'Maintenance', property: 'Staircase',
@@ -207,9 +300,30 @@
 				{ src: '/assets/img/projects/project-5-restoration-after.jpg',  tag: 'Completed' }
 			],
 			scope: [
-				{ title: 'Drywall Repair:',  items: ['Repair damaged ceiling drywall', 'Prepare surface for final finish']                         },
-				{ title: 'Restoration:',     items: ['Restore bathroom ceiling area', 'Complete clean final appearance']                           },
-				{ title: 'Painting:',        items: ['Apply finishing paint', 'Blend repaired area with surrounding surface']                     }
+				{
+					title: 'Ceiling Removal & Assessment',
+					items: [
+						'Complete removal of all existing ceiling texture due to moisture damage and mold presence'
+					]
+				},
+				{
+					title: 'Drywall Repair',
+					items: [
+						'Patching, smoothing, and preparing the surface to ensure a uniform and consistent finish'
+					]
+				},
+				{
+					title: 'Priming',
+					items: [
+						'Application of high-quality primer to seal the surface and prevent future moisture issues'
+					]
+				},
+				{
+					title: 'Painting',
+					items: [
+						'Painting of bathroom ceiling and surrounding areas to achieve a clean, even, and professional appearance'
+					]
+				}
 			],
 			details: {
 				type: 'Renovation', property: 'Bathroom',
@@ -225,8 +339,7 @@
 
 	let selectedProject = $derived(projects.find(p => p.id === selectedId) ?? projects[0]);
 
-	function selectFilter(id)  { activeFilter = id; }
-	function selectProject(id) { selectedId   = id; }
+	function selectFilter(id) { activeFilter = id; }
 </script>
 
 <svelte:head>
@@ -296,7 +409,7 @@
 						<h2>{selectedProject.title}</h2>
 					</div>
 
-					<!-- Video del proyecto (uno solo, recorrido completo) -->
+					<!-- Video del proyecto -->
 					<div class="project-video">
 						{#if selectedProject.video}
 							{#key selectedProject.id}
@@ -356,34 +469,65 @@
 						</div>
 					{/if}
 
-					<!-- Scope + Details -->
-					<div class="bottom-detail">
-						<div class="scope">
-							<h3>Scope of Work:</h3>
-							{#each selectedProject.scope as group, index}
-								<div class="scope-item">
-									<div class="scope-icon"><i class="bi bi-tools"></i></div>
-									<div>
-										<h4>{index + 1}. {group.title}</h4>
-										<ul>
-											{#each group.items as item}
-												<li>{item}</li>
-											{/each}
-										</ul>
+					<!-- ═══ PROJECT PROCESS (reemplaza Scope of Work) ═══ -->
+					<div class="process-section">
+						<div class="process-header">
+							<h3>Project Process</h3>
+							<p>A clear breakdown of every stage involved in completing this project</p>
+						</div>
+
+						<div class="process-timeline">
+							{#each selectedProject.scope as group, i}
+								{@const stepId   = i + 1}
+								{@const isActive = activeStep === stepId}
+								{@const isDone   = stepId < activeStep}
+								{@const isLast   = i === selectedProject.scope.length - 1}
+
+								<div class="timeline-row">
+									{#if !isLast}
+										<div class="tl-vline" class:tl-vline-done={isDone}></div>
+									{/if}
+
+									<div class="tl-indicator">
+										<button
+											class="tl-dot"
+											class:tl-dot-active={isActive}
+											class:tl-dot-done={isDone}
+											onclick={() => toggleStep(stepId)}
+											aria-label="Toggle step {stepId}"
+										>
+											{#if isDone}
+												<i class="bi bi-check-lg"></i>
+											{:else}
+												{String(stepId).padStart(2, '0')}
+											{/if}
+										</button>
+									</div>
+
+									<div class="tl-body">
+										<button class="tl-head" onclick={() => toggleStep(stepId)}>
+											<span class="tl-name" class:tl-name-muted={!isActive && !isDone}>
+												{group.title}
+											</span>
+											<i class="bi {isActive ? 'bi-chevron-up' : 'bi-chevron-down'} tl-chevron"></i>
+										</button>
+
+										{#if isActive}
+											<div class="tl-content">
+												<ul class="tl-list">
+													{#each group.items as item}
+														<li>
+															<i class="bi bi-check-circle-fill tl-check"></i>
+															{item}
+														</li>
+													{/each}
+												</ul>
+											</div>
+										{/if}
 									</div>
 								</div>
 							{/each}
 						</div>
-
-						<aside class="details-box">
-							<h3>Project Details</h3>
-							{#each Object.entries(selectedProject.details) as [key, value]}
-								<div class="detail-row">
-									<strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>
-									<span>{value}</span>
-								</div>
-							{/each}
-						</aside>
 					</div>
 
 				</section>
@@ -667,9 +811,7 @@
 	}
 
 	/* ══ VIDEO PRINCIPAL ══ */
-	.project-video {
-		padding: 8px 28px 28px;
-	}
+	.project-video { padding: 8px 28px 28px; }
 
 	.project-video-stage {
 		width: 100%;
@@ -794,47 +936,181 @@
 		backdrop-filter: blur(4px);
 	}
 
-	/* ══ SCOPE + DETAILS ══ */
-	.bottom-detail {
-		display: grid;
-		grid-template-columns: 1.1fr 350px;
-		gap: 28px;
+	/* ══ PROJECT PROCESS ══ */
+	.process-section {
 		padding: 28px;
 		border-top: 1px solid rgba(34, 38, 30, 0.09);
 	}
 
-	.scope h3,
-	.details-box h3 { margin: 0 0 22px; font-size: 18px; font-weight: 900; color: #232820; }
-
-	.scope-item { display: grid; grid-template-columns: 50px 1fr; gap: 16px; margin-bottom: 20px; }
-
-	.scope-icon {
-		width: 42px; height: 42px;
-		border-radius: 50%;
-		background: #ecefdc;
-		color: #7a8539;
-		display: grid; place-items: center;
-		font-size: 20px;
+	.process-header {
+		margin-bottom: 24px;
 	}
 
-	.scope-item h4 { margin: 0 0 4px; font-size: 14px; font-weight: 900; color: #111; }
+	.process-header h3 {
+		margin: 0 0 4px;
+		font-size: 18px;
+		font-weight: 900;
+		color: #232820;
+	}
 
-	.scope-item ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.45; color: #2e342d; }
-
-	.details-box { background: #f8f7f3; border-radius: 12px; padding: 28px; height: fit-content; }
-
-	.detail-row {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 18px;
-		padding: 17px 0;
-		border-bottom: 1px solid rgba(37, 41, 33, 0.08);
+	.process-header p {
+		margin: 0;
 		font-size: 13px;
+		color: #5d6457;
 	}
 
-	.detail-row:last-child { border-bottom: 0; }
-	.detail-row strong     { color: #343a31; }
-	.detail-row span       { color: #555d4d; }
+	.process-timeline {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* cada fila */
+	.timeline-row {
+		display: grid;
+		grid-template-columns: 44px 1fr;
+		gap: 0 14px;
+		position: relative;
+	}
+
+	/* línea vertical entre dots */
+	.tl-vline {
+		position: absolute;
+		left: 21px;
+		top: 40px;
+		bottom: 0;
+		width: 1.5px;
+		background: #e5e5e5;
+		transition: background .3s;
+		z-index: 0;
+	}
+
+	.tl-vline-done { background: rgba(107, 107, 40, 0.3); }
+
+	/* dot */
+	.tl-indicator {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		padding-top: 8px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.tl-dot {
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all .25s ease;
+		border: 1.5px solid #e5e5e5;
+		background: #fff;
+		color: #999;
+		font-family: inherit;
+		flex-shrink: 0;
+	}
+
+	.tl-dot:hover {
+		border-color: rgba(107, 107, 40, 0.4);
+		color: #6b6b28;
+		box-shadow: 0 0 0 4px rgba(107, 107, 40, 0.08);
+	}
+
+	.tl-dot-active {
+		background: linear-gradient(135deg, #6b6b28 0%, #4a4a1c 100%);
+		border-color: #6b6b28;
+		color: #fff;
+		box-shadow: 0 6px 18px rgba(107, 107, 40, 0.35);
+	}
+
+	.tl-dot-done {
+		background: linear-gradient(135deg, #fffcd9 0%, #f5f0c0 100%);
+		border-color: rgba(107, 107, 40, 0.3);
+		color: #6b6b28;
+	}
+
+	/* body del step */
+	.tl-body { padding: 0 0 18px; }
+
+	.tl-head {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 8px 0;
+		cursor: pointer;
+		background: none;
+		border: none;
+		width: 100%;
+		text-align: left;
+		font-family: inherit;
+	}
+
+	.tl-head:hover .tl-name { color: #6b6b28; }
+
+	.tl-name {
+		font-size: 14px;
+		font-weight: 700;
+		color: #1a1a1a;
+		transition: color .2s;
+	}
+
+	.tl-name-muted {
+		font-weight: 500;
+		color: #888;
+	}
+
+	.tl-chevron {
+		margin-left: auto;
+		font-size: 13px;
+		color: #aaa;
+		transition: color .2s;
+	}
+
+	.tl-head:hover .tl-chevron { color: #6b6b28; }
+
+	/* contenido expandido */
+	.tl-content {
+		background: #fafaf2;
+		border: 1.5px solid rgba(107, 107, 40, 0.1);
+		border-radius: 10px;
+		padding: 16px 18px;
+		margin-bottom: 4px;
+		animation: slideDown .25s ease;
+	}
+
+	@keyframes slideDown {
+		from { opacity: 0; transform: translateY(-6px); }
+		to   { opacity: 1; transform: translateY(0);    }
+	}
+
+	.tl-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.tl-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 9px;
+		font-size: 13.5px;
+		color: #2e342d;
+		line-height: 1.45;
+	}
+
+	.tl-check {
+		color: #6b6b28;
+		font-size: 13px;
+		flex-shrink: 0;
+		margin-top: 2px;
+	}
 
 	/* ══ CTA ══ */
 	.cta-box {
@@ -968,13 +1244,12 @@
 		.work-wrap             { padding: 20px 18px 36px; }
 		.project-list          { grid-template-columns: 1fr; }
 		.project-card          { flex-direction: row; }
-		.bottom-detail         { grid-template-columns: 1fr; }
 		.gallery-item          { width: 170px; height: 310px; }
 		.detail-title          { padding: 24px 22px 16px; }
 		.detail-title h2       { font-size: 22px; }
 		.project-video         { padding: 8px 22px 22px; }
 		.gallery-section       { padding: 0 22px 22px; }
-		.bottom-detail         { padding: 24px 22px; }
+		.process-section       { padding: 24px 22px; }
 		.cta-box               { grid-template-columns: 1fr; text-align: center; justify-items: center; }
 	}
 </style>
