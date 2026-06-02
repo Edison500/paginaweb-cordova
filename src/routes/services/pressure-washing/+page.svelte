@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import ServicePage from '$lib/components/pages/ServicePage.svelte';
 
 	const includes = [
@@ -43,4 +43,4 @@
 	{process}
 	{related}
 	{faqs}
-/>
+/> -->

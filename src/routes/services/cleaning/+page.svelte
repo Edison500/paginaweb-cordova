@@ -27,7 +27,7 @@
 
 	const faqs = [
 		{ q: "What's included in a move-out clean?", a: "Our move-out clean covers all surfaces — kitchens, bathrooms, floors, baseboards, appliances, cabinets inside and out, windows, and fixtures. Every corner, every time." },
-		{ q: "How long does a full unit clean take?", a: "A standard apartment unit typically takes 4-6 hours. Larger or heavily soiled units may require more time — we assess and confirm before starting." },
+		{ q: "How long does a full unit clean take?", a: "A standard apartment unit typically takes 3-4 hours. Larger or heavily soiled units may require more time — we assess and confirm before starting." },
 		{ q: "Do you offer recurring cleaning services?", a: "Yes. We offer scheduled recurring cleaning for common areas, occupied units, and ongoing maintenance programs for property management companies." },
 		{ q: "Can you clean while painting or repairs are being done?", a: "We coordinate all services in the right sequence. Cleaning is scheduled to not conflict with active work — typically first and last in the process." },
 	];

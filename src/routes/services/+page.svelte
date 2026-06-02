@@ -16,8 +16,8 @@
 			label: 'Cleaning & Remediation',
 			services: [
 				{ href: '/services/cleaning',          icon: 'bi-droplet-fill',          title: 'Cleaning',              desc: 'Deep move-in/move-out cleans and recurring service. Every surface, every corner, done right.' },
-				{ href: '/services/water-remediation', icon: 'bi-droplet-fill',       title: 'Water Remediation',     desc: 'Emergency water damage response. We dry, treat, and restore before mold becomes a problem.' },
-				{ href: '/services/pressure-washing',  icon: 'bi-water',              title: 'Pressure Washing',      desc: 'Exterior surfaces, walkways, driveways, and parking areas. Restore curb appeal and safety.' },
+				/* { href: '/services/water-remediation', icon: 'bi-droplet-fill',       title: 'Water Remediation',     desc: 'Emergency water damage response. We dry, treat, and restore before mold becomes a problem.' }, */
+				/* { href: '/services/pressure-washing',  icon: 'bi-water',              title: 'Pressure Washing',      desc: 'Exterior surfaces, walkways, driveways, and parking areas. Restore curb appeal and safety.' }, */
 			]
 		},
 		{
@@ -54,7 +54,7 @@
 			<nav class="breadcrumb-nav" aria-label="breadcrumb">
 				<a href="/">Home</a> <i class="bi bi-chevron-right"></i> <span>Services</span>
 			</nav>
-			<h1>Complete Property Maintenance Services</h1>
+			<h1>Property Maintenance Services</h1>
 			<p>12 specialized services — one team, one invoice, zero coordination headaches</p>
 		</div>
 	</section>

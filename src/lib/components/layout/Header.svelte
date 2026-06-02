@@ -14,7 +14,7 @@ const services = [
         items: [
             { href: '/services/cleaning',         label: 'Cleaning' },
             { href: '/services/carpet-cleaning',  label: 'Carpet Cleaning' },
-            { href: '/services/pressure-washing', label: 'Pressure Washing' },
+            /* { href: '/services/pressure-washing', label: 'Pressure Washing' }, */
             { href: '/services/trash-out',        label: 'Trash Out' },
         ]
     },
