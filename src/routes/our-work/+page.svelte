@@ -53,10 +53,9 @@
 		galleryEl.scrollBy({ left: dir * step * 2, behavior: 'smooth' });
 	}
 
-
 	function selectProject(id) {
-	selectedId = id;
-}
+		selectedId = id;
+	}
 
 	const filters = [
 		{ id: 'all',          label: 'ALL PROJECTS', icon: 'bi-grid-3x3-gap'     },
@@ -72,198 +71,71 @@
 			title: 'Pool Restroom Drywall Replacement & Fixture Installation',
 			category: 'renovation',
 			area: 'Restroom',
-			coverImg: '/assets/img/projects/project-1-after.jpg',
-			video: { src: '/assets/img/projects/video-1.mp4', poster: '/assets/img/projects/project-1-after.jpg' },
+			video: { src: '/assets/img/projects/project1/video-1.mp4', poster: '' },
 			gallery: [
-				{ src: '/assets/img/projects/img-2.png' },
-				{ src: '/assets/img/projects/img-3.png' },
-				{ src: '/assets/img/projects/img-4.png' },
-				{ src: '/assets/img/projects/img1.png'  }
+				{ src: '/assets/img/projects/project1/img1.png'  },
+				{ src: '/assets/img/projects/project1/img-2.png' },
+				{ src: '/assets/img/projects/project1/img-3.png' },
+				{ src: '/assets/img/projects/project1/img-4.png' }
 			],
-			scope: [
-				{
-					title: 'Drywall Installation & Replacement',
-					items: ['Complete full finishing process including taping, mudding, sanding, and smoothing all areas']
-				},
-				{
-					title: 'Fixture & Equipment Installation',
-					items: ['Install toilet', 'Install sink', 'Install (2) exhaust/vent fans', 'Install fire safety device', 'Install light fixtures']
-				},
-				{
-					title: 'Accessories Installation',
-					items: ['Install mirror', 'Install soap dispenser', 'Install paper dispenser']
-				},
-				{
-					title: 'Painting',
-					items: ['Full restroom paint after drywall completion', 'Includes preparation and finishing for a clean and uniform result']
-				}
-			],
-			details: { type: 'Renovation', property: 'Pool Restroom', duration: '3 Days', completed: 'May 2024', team: '3 Crews', location: 'Florida' }
+			description: [
+				'Full drywall installation and finishing was completed throughout the restroom, including taping, mudding, sanding, and surface smoothing. All fixtures were installed from scratch: toilet, sink, two exhaust fans, fire safety device, and light fixtures.',
+				'Accessories including mirror, soap dispenser, and paper dispenser were mounted and secured. The project concluded with a full paint application, covering all walls after drywall completion with proper preparation and finishing for a clean, uniform result.'
+			]
 		},
 		{
 			id: 2,
-			title: 'Concrete Pad & Vacuum Installation',
-			category: 'construction',
-			area: 'Exterior',
-			coverImg: '/assets/img/projects/project-2-after.jpg',
-			video: { src: '/assets/img/projects/video-2.mp4', poster: '/assets/img/projects/project-2-after.jpg' },
-			gallery: [
-				{ src: '/assets/img/projects/project-2-pad-before.jpg',    tag: 'Before'    },
-				{ src: '/assets/img/projects/project-2-vacuum-before.jpg', tag: 'Progress'  },
-				{ src: '/assets/img/projects/project-2-pad-after.jpg',     tag: 'After'     },
-				{ src: '/assets/img/projects/project-2-vacuum-after.jpg',  tag: 'Completed' }
-			],
-			scope: [
-				{
-					title: 'Concrete Pad Installation',
-					items: [
-						'Layout and preparation of installation area',
-						'Light excavation as needed',
-						'Gravel base preparation and compaction',
-						'Form setting',
-						'Pouring and finishing of concrete pad (broom finish)',
-						'Allow proper curing time'
-					]
-				},
-				{
-					title: 'Vacuum Installation',
-					items: ['Mounting and securing of vacuum equipment to the prepared pad']
-				},
-				{
-					title: 'Electrical Adjustment',
-					items: [
-						'Extension/relocation of existing electrical line approximately 12 feet to reach new equipment location',
-						'Installation of conduit and proper connections',
-						'Mounting and securing electrical box as needed'
-					]
-				},
-				{
-					title: 'Finalization',
-					items: ['Testing of installation (excluding internal equipment functionality)']
-				}
-			],
-			details: { type: 'Construction', property: 'Exterior Area', duration: '2 Days', completed: 'May 2024', team: '2 Crews', location: 'Florida' }
-		},
-		{
-			id: 3,
-			title: 'Exterior Wood Louver Doors',
-			category: 'finishes',
-			area: 'Exterior',
-			coverImg: '/assets/img/projects/project-3-after.jpg',
-			video: { src: '/assets/img/projects/video-3.mp4', poster: '/assets/img/projects/project-3-after.jpg' },
-			gallery: [
-				{ src: '/assets/img/projects/project-3-prep-before.jpg',   tag: 'Before'    },
-				{ src: '/assets/img/projects/project-3-finish-before.jpg', tag: 'Progress'  },
-				{ src: '/assets/img/projects/project-3-prep-after.jpg',    tag: 'After'     },
-				{ src: '/assets/img/projects/project-3-finish-after.jpg',  tag: 'Completed' }
-			],
-			scope: [
-				{
-					title: 'Surface Preparation',
-					items: [
-						'Deep cleaning using an exterior-grade cleaner to remove dirt, mildew, and surface contaminants',
-						'Full sanding of all door surfaces, including louvers and frames, to remove worn finish and prepare the wood for refinishing',
-						'Detailed hand sanding in louvered areas to ensure proper adhesion'
-					]
-				},
-				{
-					title: 'Wood Repairs',
-					items: [
-						'Minor wood repairs using exterior-grade wood filler as needed',
-						'Sanding of repaired areas to achieve a smooth, uniform surface'
-					]
-				},
-				{
-					title: 'Finishing & Protection',
-					items: [
-						'Application of two to three (2-3) coats of exterior spar urethane (gloss finish) to restore the natural wood appearance',
-						'Finish provides UV protection, moisture resistance, and a durable glossy like-new appearance',
-						'Light sanding between coats for a smooth professional finish'
-					]
-				},
-				{
-					title: 'Final Detailing',
-					items: ['Sealing of door edges and bottom to protect against moisture intrusion']
-				}
-			],
-			details: { type: 'Finishes', property: 'Exterior Doors', duration: '1 Day', completed: 'May 2024', team: '1 Crew', location: 'Florida' }
-		},
-		{
-			id: 4,
-			title: 'Staircase Pressure Washing, Metal Preparation & Painting',
-			category: 'maintenance',
-			area: 'Staircase',
-			coverImg: '/assets/img/projects/project-4-after.jpg',
-			video: { src: '/assets/img/projects/video-5.mp4', poster: '/assets/img/projects/project-4-after.jpg' },
-			gallery: [
-				{ src: '/assets/img/projects/project-4-washing-before.jpg', tag: 'Before'    },
-				{ src: '/assets/img/projects/project-4-metal-before.jpg',   tag: 'Progress'  },
-				{ src: '/assets/img/projects/project-4-paint-after.jpg',    tag: 'After'     },
-				{ src: '/assets/img/projects/project-4-washing-after.jpg',  tag: 'Completed' }
-			],
-			scope: [
-				{
-					title: 'Pressure Washing',
-					items: ['Full pressure washing of all staircase surfaces']
-				},
-				{
-					title: 'Metal Surface Preparation',
-					items: [
-						'Mechanical sanding of all metal components affected by rust and surface deterioration',
-						'Includes handrails and guardrails, interior and exterior metal stair edges, and metal sections at the base and start of each staircase',
-						'Removal of loose paint, rust, and oxidation to properly prepare surfaces for coating'
-					]
-				},
-				{
-					title: 'Priming',
-					items: ['Application of primer coat to all prepared metal surfaces']
-				},
-				{
-					title: 'Painting',
-					items: ['Application of finish coating to all metal components']
-				},
-				{
-					title: 'Final Result',
-					items: [
-						'Significantly improved overall appearance of the staircases',
-						'Enhanced curb appeal and a refreshed, well-maintained look throughout the property'
-					]
-				}
-			],
-			details: { type: 'Maintenance', property: 'Staircase', duration: '3 Days', completed: 'May 2024', team: '2 Crews', location: 'Florida' }
-		},
-		{
-			id: 5,
 			title: 'Bathroom Ceiling Drywall Repair & Restoration',
 			category: 'renovation',
 			area: 'Bathroom',
-			coverImg: '/assets/img/projects/project-5-after.jpg',
-			video: { src: '/assets/img/projects/video-7.mp4', poster: '/assets/img/projects/project-5-after.jpg' },
+			video: { src: '/assets/img/projects/project2/video-2.mp4', poster: '' },
 			gallery: [
-				{ src: '/assets/img/projects/project-5-ceiling-before.jpg',     tag: 'Before'    },
-				{ src: '/assets/img/projects/project-5-restoration-before.jpg', tag: 'Progress'  },
-				{ src: '/assets/img/projects/project-5-ceiling-after.jpg',      tag: 'After'     },
-				{ src: '/assets/img/projects/project-5-restoration-after.jpg',  tag: 'Completed' }
+				{ src: '/assets/img/projects/project2/1.jpg' },
+				{ src: '/assets/img/projects/project2/2.jpg' },
+				{ src: '/assets/img/projects/project2/3.jpg' },
+				{ src: '/assets/img/projects/project2/5.jpg' },
+				{ src: '/assets/img/projects/project2/6.jpg' }
 			],
-			scope: [
-				{
-					title: 'Ceiling Removal & Assessment',
-					items: ['Complete removal of all existing ceiling texture due to moisture damage and mold presence']
-				},
-				{
-					title: 'Drywall Repair',
-					items: ['Patching, smoothing, and preparing the surface to ensure a uniform and consistent finish']
-				},
-				{
-					title: 'Priming',
-					items: ['Application of high-quality primer to seal the surface and prevent future moisture issues']
-				},
-				{
-					title: 'Painting',
-					items: ['Painting of bathroom ceiling and surrounding areas to achieve a clean, even, and professional appearance']
-				}
-			],
-			details: { type: 'Renovation', property: 'Bathroom', duration: '2 Days', completed: 'May 2024', team: '1 Crew', location: 'Florida' }
+			description: [
+				'The bathroom ceiling was fully restored following moisture damage and mold presence. All existing ceiling texture was removed to properly address the affected areas before any repair work began.',
+				'Drywall repairs were performed including patching, smoothing, and surface preparation to achieve a uniform and consistent finish. A high-quality primer was applied to seal the surface and prevent future moisture issues. The project was completed with a professional paint finish across the ceiling and surrounding areas.'
+			]
+		},
+		{
+			id: 3,
+			title: 'Concrete Pad & Vacuum Installation',
+			category: 'construction',
+			area: 'Exterior',
+			video: { src: '/assets/img/projects/project3/video-3.mp4', poster: '' },
+			gallery: [],
+			description: [
+				'A concrete pad was built from the ground up: area layout and preparation, light excavation, gravel base compaction, form setting, and a broom-finish concrete pour with proper curing time.',
+				'The vacuum unit was mounted and secured to the finished pad. Electrical work included extending an existing line approximately 12 feet, running conduit, making proper connections, and securing the electrical box. The installation was tested upon completion.'
+			]
+		},
+		{
+			id: 4,
+			title: 'Exterior Wood Louver Doors',
+			category: 'finishes',
+			area: 'Exterior',
+			video: { src: '/assets/img/projects/project4/video-4.mp4', poster: '' },
+			gallery: [],
+			description: [
+				'All door surfaces were deep-cleaned with an exterior-grade cleaner to remove dirt, mildew, and contaminants. Full sanding followed — covering the louvers, frames, and all panels — with detailed hand sanding in the louvered areas to ensure proper adhesion. Minor wood repairs were made using exterior-grade filler where needed.',
+				'Two to three coats of exterior spar urethane in gloss finish were applied, with light sanding between coats. The final result restores the natural wood appearance and delivers UV protection, moisture resistance, and a durable like-new look. Door edges and bottoms were sealed to protect against moisture intrusion.'
+			]
+		},
+		{
+			id: 5,
+			title: 'Staircase Pressure Washing, Metal Preparation & Painting',
+			category: 'maintenance',
+			area: 'Staircase',
+			video: { src: '/assets/img/projects/project5/video-5.mp4', poster: '' },
+			gallery: [],
+			description: [
+				'All staircase surfaces were pressure washed before any metal work began. Mechanical sanding was then applied to every component showing rust or deterioration — handrails, guardrails, stair edges, and metal sections at the base of each staircase — removing loose paint, rust, and oxidation down to a clean surface.',
+				'A primer coat was applied to all prepared metal surfaces, followed by the finish painting. The completed work delivers a significantly improved appearance across all staircases, with enhanced curb appeal and a refreshed, well-maintained look throughout the property.'
+			]
 		}
 	];
 
@@ -341,7 +213,7 @@
 						{#if selectedProject.video}
 							{#key selectedProject.id}
 								<div class="project-video-stage">
-									<video controls poster={selectedProject.video.poster}>
+									<video controls poster={selectedProject.video.poster || undefined}>
 										<source src={selectedProject.video.src} type="video/mp4" />
 									</video>
 								</div>
@@ -396,24 +268,15 @@
 					{/if}
 
 					<div class="process-section">
-	<div class="process-header">
-		<h3>Project Description</h3>
-	</div>
-
-	<div class="scope-clean">
-		{#each selectedProject.scope as group, i}
-			<div class="scope-item">
-			<h4>{group.title}</h4>
-
-				<div class="scope-description">
-	{#each group.items as item}
-		<p>{item}</p>
-	{/each}
-</div>
-			</div>
-		{/each}
-	</div>
-</div>
+						<div class="process-header">
+							<h3>Project Description</h3>
+						</div>
+						<div class="desc-body">
+							{#each selectedProject.description as para}
+								<p>{para}</p>
+							{/each}
+						</div>
+					</div>
 
 				</section>
 			</div>
@@ -811,49 +674,36 @@
 		backdrop-filter: blur(4px);
 	}
 
-	/* PROJECT PROCESS */
+	/* PROJECT DESCRIPTION */
 	.process-section {
-	padding: 30px 28px 36px;
-	border-top: 1px solid rgba(34, 38, 30, 0.09);
-	background: #fff;
-}
+		padding: 30px 28px 36px;
+		border-top: 1px solid rgba(34, 38, 30, 0.09);
+		background: #fff;
+	}
 
 	.process-header {
-	margin-bottom: 22px;
-}
+		margin-bottom: 18px;
+	}
 
 	.process-header h3 {
-	margin: 0;
-	font-size: 22px;
-	font-weight: 900;
-	color: #232820;
-}
+		margin: 0;
+		font-size: 22px;
+		font-weight: 900;
+		color: #232820;
+	}
 
-.scope-clean {
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
-}
-.scope-item h4 {
-	margin: 0 0 8px;
-	font-size: 16px;
-	line-height: 1.35;
-	font-weight: 900;
-	color: #151b14;
-}
-.scope-description{
-	display:flex;
-	flex-direction:column;
-	gap:10px;
-}
+	.desc-body {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
 
-.scope-description p{
-	margin:0;
-	font-size:14px;
-	line-height:1.7;
-	color:#3a4138;
-}
-
+	.desc-body p {
+		margin: 0;
+		font-size: 15px;
+		line-height: 1.75;
+		color: #3a4138;
+	}
 
 	/* CTA */
 	.cta-box {
