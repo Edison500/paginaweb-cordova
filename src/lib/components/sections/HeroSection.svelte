@@ -49,7 +49,7 @@
 					<span class="eyebrow-line"></span>
 					<h3>Welcome to Cordova Property Services</h3>
 				</div>
-				<h2>Your Trusted Partner for Apartment Maintenance</h2>
+				<h2>Professional Apartment Turnover Services</h2>
 				<p>
 					Delivering Reliable, High-Quality Services That Keep Your Units Move-In Ready and Your Residents Satisfied.
 				</p>

@@ -71,7 +71,7 @@
 			title: 'Pool Restroom Drywall Replacement & Fixture Installation',
 			category: 'renovation',
 			area: 'Restroom',
-			video: { src: '/assets/img/projects/project1/video-1.mp4', poster: '' },
+			youtubeId: 'c-tEfUunsHo',
 			gallery: [
 				{ src: '/assets/img/projects/project1/img1.png'  },
 				{ src: '/assets/img/projects/project1/img-2.png' },
@@ -88,7 +88,7 @@
 			title: 'Bathroom Ceiling Drywall Repair & Restoration',
 			category: 'renovation',
 			area: 'Bathroom',
-			video: { src: '/assets/img/projects/project2/video-2.mp4', poster: '' },
+			youtubeId: '0DGU5MQpO7Y',
 			gallery: [
 				{ src: '/assets/img/projects/project2/1.jpg' },
 				{ src: '/assets/img/projects/project2/2.jpg' },
@@ -106,7 +106,7 @@
 			title: 'Concrete Pad & Vacuum Installation',
 			category: 'construction',
 			area: 'Exterior',
-			video: { src: '/assets/img/projects/project3/video-3.mp4', poster: '' },
+			youtubeId: 'ayvL0zxbN8M',
 			gallery: [],
 			description: [
 				'A concrete pad was built from the ground up: area layout and preparation, light excavation, gravel base compaction, form setting, and a broom-finish concrete pour with proper curing time.',
@@ -118,7 +118,7 @@
 			title: 'Exterior Wood Louver Doors',
 			category: 'finishes',
 			area: 'Exterior',
-			video: { src: '/assets/img/projects/project4/video-4.mp4', poster: '' },
+			youtubeId: 'syDvF8HyUKE',
 			gallery: [],
 			description: [
 				'All door surfaces were deep-cleaned with an exterior-grade cleaner to remove dirt, mildew, and contaminants. Full sanding followed — covering the louvers, frames, and all panels — with detailed hand sanding in the louvered areas to ensure proper adhesion. Minor wood repairs were made using exterior-grade filler where needed.',
@@ -130,7 +130,7 @@
 			title: 'Staircase Pressure Washing, Metal Preparation & Painting',
 			category: 'maintenance',
 			area: 'Staircase',
-			video: { src: '/assets/img/projects/project5/video-5.mp4', poster: '' },
+			youtubeId: 'Fvkffi1AI74',
 			gallery: [],
 			description: [
 				'All staircase surfaces were pressure washed before any metal work began. Mechanical sanding was then applied to every component showing rust or deterioration — handrails, guardrails, stair edges, and metal sections at the base of each staircase — removing loose paint, rust, and oxidation down to a clean surface.',
@@ -210,12 +210,16 @@
 					</div>
 
 					<div class="project-video">
-						{#if selectedProject.video}
+						{#if selectedProject.youtubeId}
 							{#key selectedProject.id}
 								<div class="project-video-stage">
-									<video controls poster={selectedProject.video.poster || undefined}>
-										<source src={selectedProject.video.src} type="video/mp4" />
-									</video>
+									<iframe
+										src="https://www.youtube.com/embed/{selectedProject.youtubeId}"
+										title={selectedProject.title}
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen
+									></iframe>
 								</div>
 							{/key}
 						{:else}
@@ -560,13 +564,14 @@
 		box-shadow: 0 14px 34px rgba(20, 24, 18, 0.14);
 	}
 
-	.project-video-stage video {
+	.project-video-stage video,
+	.project-video-stage iframe {
 		width: 100%;
 		aspect-ratio: 16 / 9;
 		max-height: 540px;
-		object-fit: cover;
 		display: block;
 		background: #000;
+		border: none;
 	}
 
 	.empty-state {

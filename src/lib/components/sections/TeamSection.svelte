@@ -9,7 +9,7 @@
             role: 'CEO & Founder',
             icon: 'bi-star-fill',
             desc: 'Founded Cordova Property Services with a vision to deliver reliable, high-quality maintenance solutions for multifamily communities across the region.',
-            tags: ['Founder', 'Multifamily', 'Strategic Vision'],
+            tags: ['STRATEGY', 'EXECUTION', 'GROWTH'],
             boss: true
         },
         {
@@ -39,7 +39,7 @@
             role: 'Operations Supervisor',
             icon: 'bi-clipboard-check-fill',
             desc: 'Coordinates field crews and quality control across active jobs, making sure every turn meets spec and is delivered on time.',
-            tags: ['Quality Control', 'Bilingual', 'Crew Lead'],
+            tags: ['QUALITY ASSURANCE', 'PROJECT OVERSIGHT', 'CREW LEAD'],
             boss: false
         }
     ];
@@ -527,7 +527,7 @@
         flex-wrap: wrap;
         gap: 6px;
         margin-bottom: 18px;
-        min-height: 62px;
+        min-height: auto;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.12s ease;
