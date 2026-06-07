@@ -136,7 +136,7 @@
 		content:"";
 		width:50px;
 		height:2px;
-		background:#e84545;
+		background:#6b6b28;
 		display:block;
 		border-radius:999px;
 	}

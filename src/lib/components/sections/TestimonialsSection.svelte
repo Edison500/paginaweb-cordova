@@ -64,7 +64,7 @@
 </section>
 
 <style>
-#testimonials{background:linear-gradient(180deg,#fafaf7 0%,#fff 100%);padding:80px 0;}
+#testimonials{background:#fafaf7;padding:80px 0;}
 
 .testimonial-card{
 	background:#fff;border-radius:16px;padding:32px 28px;

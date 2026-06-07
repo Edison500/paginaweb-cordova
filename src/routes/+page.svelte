@@ -23,10 +23,10 @@
 		<TrustBar />
 		<ClientsStrip />
 		<ServicesSection />
-		<PlatformsSection />
+		<!-- <PlatformsSection /> -->
 		<FeaturesSection />
-		<TestimonialsSection />
-		<FaqSection />
+		<!-- <TestimonialsSection /> -->
+		<!-- <FaqSection /> -->
 		<CtaSection />
 		<ContactSection />
 	</main>

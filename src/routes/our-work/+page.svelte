@@ -1,5 +1,7 @@
 <script>
 	import SiteShell from '$lib/components/layout/SiteShell.svelte';
+	import TestimonialsSection from '$lib/components/sections/TestimonialsSection.svelte';
+	import CtaSection from '$lib/components/sections/CtaSection.svelte';
 
 	let activeFilter = $state('all');
 	let selectedId   = $state(1);
@@ -311,6 +313,9 @@
 			{/key}
 		{/if}
 	</div>
+
+	<TestimonialsSection />
+	<CtaSection />
 
 </SiteShell>
 

@@ -13,12 +13,12 @@
 			<div class="trust-divider"></div>
 			<div class="trust-item">
 				<i class="bi bi-buildings-fill"></i>
-				<span>4,000+ Projects</span>
+				<span>5,008+ Projects</span>
 			</div>
 			<div class="trust-divider"></div>
 			<div class="trust-item">
 				<i class="bi bi-people-fill"></i>
-				<span>60+ Clients Served</span>
+				<span>120+ Clients Served</span>
 			</div>
 			<div class="trust-divider"></div>
 			<div class="trust-item">

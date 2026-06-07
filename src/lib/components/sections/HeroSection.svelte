@@ -17,8 +17,8 @@
 			requestAnimationFrame(step);
 		};
 		setTimeout(() => {
-			animate(4008, v => count1 = v);
-			animate(60, v => count2 = v, 1500);
+			animate(5008, v => count1 = v);
+			animate(120, v => count2 = v, 1500);
 			animate(24, v => count3 = v, 1400);
 		}, 400);
 
@@ -49,7 +49,7 @@
 					<span class="eyebrow-line"></span>
 					<h3>Welcome to Cordova Property Services</h3>
 				</div>
-				<h2>Professional Apartment Turnover Services</h2>
+				<h2>Professional Apartment Turnover & Property Maintenance Solutions</h2>
 				<p>
 					Delivering Reliable, High-Quality Services That Keep Your Units Move-In Ready and Your Residents Satisfied.
 				</p>
@@ -199,7 +199,7 @@
 	#hero :global(.hero-copy h2) {
 		color: #fff;
 		font-family: 'Fraunces', 'Times New Roman', Georgia, serif;
-		font-size: clamp(2.4rem, 5vw, 4.6rem);
+		font-size: clamp(2.1rem, 4.2vw, 3.8rem);
 		font-weight: 700;
 		font-variation-settings: 'opsz' 144;
 		font-feature-settings: 'ss01', 'ss02', 'kern';

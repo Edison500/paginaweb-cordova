@@ -2,6 +2,7 @@
 	import SiteShell from '$lib/components/layout/SiteShell.svelte';
 	import ContactSection from '$lib/components/sections/ContactSection.svelte';
 	import TeamSection from '$lib/components/sections/TeamSection.svelte';
+	import PlatformsSection from '$lib/components/sections/PlatformsSection.svelte';
 
 	const values = [
 		{ icon: 'bi-shield-fill-check', title: 'Accountability', desc: 'We own every job from start to finish. If something isn’t right, we come back and make it right — no excuses.' },
@@ -44,6 +45,14 @@ const differentiators = [
 		title: 'Photo documentation on every job',
 		desc: 'Before, during, and after photos uploaded with every completed work order — for your records and operational transparency.'
 	}
+];
+
+const platforms = [
+	{ src: '/assets/img/invoice-logo/realpage1.png', alt: 'RealPage' },
+	{ src: '/assets/img/invoice-logo/yardi1.png', alt: 'Yardi' },
+	{ src: '/assets/img/invoice-logo/netvendor1.png', alt: 'NetVendor' },
+	{ src: '/assets/img/invoice-logo/vendorcafe.png', alt: 'VendorCafe' },
+	{ src: '/assets/img/invoice-logo/opsmerchant.png', alt: 'OpsMerchant' },
 ];
 
 	const areas = [
@@ -176,6 +185,26 @@ const differentiators = [
 							</div>
 						</div>
 					{/each}
+				</div>
+			</div>
+
+			<div class="container" style="margin-top:24px; padding-bottom:60px;">
+				<div class="row gy-4">
+					<div class="col-12" data-aos="fade-up" data-aos-delay="400">
+						<div class="diff-card">
+							<div class="diff-num">05</div>
+							<div class="diff-body" style="width:100%;">
+								<h4>Invoicing &amp; Payments</h4>
+								<div class="platforms-logos">
+									<div class="plat-logo-card"><img src="/assets/img/invoice-logo/realpage1.png" alt="RealPage" /></div>
+									<div class="plat-logo-card"><img src="/assets/img/invoice-logo/yardi1.png" alt="Yardi" /></div>
+									<div class="plat-logo-card"><img src="/assets/img/invoice-logo/netvendor1.png" alt="NetVendor" /></div>
+									<div class="plat-logo-card"><img src="/assets/img/invoice-logo/vendorcafe.png" alt="VendorCafe" /></div>
+									<div class="plat-logo-card"><img src="/assets/img/invoice-logo/opsmerchant.png" alt="OpsMerchant" /></div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -735,6 +764,54 @@ const differentiators = [
 		box-shadow:
 			0 8px 20px rgba(107, 107, 40, 0.3),
 			inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	}
+
+	.invoicing-card-wrap {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	.diff-card-full {
+		align-items: center;
+	}
+
+	.platforms-logos {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 14px;
+		margin-top: 18px;
+	}
+
+	.plat-logo-card {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #fff;
+		border: 1px solid rgba(0,0,0,0.08);
+		border-radius: 10px;
+		padding: 14px 24px;
+		min-width: 160px;
+		height: 90px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+		transition: box-shadow 0.3s, border-color 0.3s;
+	}
+
+	.plat-logo-card:hover {
+		box-shadow: 0 6px 20px rgba(107,107,40,0.15);
+		border-color: rgba(107,107,40,0.25);
+	}
+
+	.plat-logo-card img {
+		width: 100%;
+		height: auto;
+		max-width: 160px;
+		max-height: 80px;
+		object-fit: contain;
+	}
+
+	.plat-logo-card img[alt="VendorCafe"] {
+		max-width: 80px;
+		max-height: 80px;
 	}
 
 	.btn-about-cta:hover {
