@@ -1,18 +1,19 @@
 <script>
 	const services = [
-		{ img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80', href: '/services/turnkey',             title: 'Turnkey Services',         desc: 'Full unit turnovers handled end-to-end. Move-in ready, faster.' },
-		{ img: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80', href: '/services/painting',            title: 'Painting',                  desc: 'Clean lines, consistent color, lasting results every time.' },
-		{ img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80', href: '/services/repairs',          title: 'Repairs',                   desc: 'Fast repairs for plumbing, drywall, fixtures and more.' },
-		{ img: 'https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=80', href: '/services/cleaning',         title: 'Cleaning',                  desc: 'Move-in/out deep cleans. Every corner spotless, every time.' },
-		// { img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', href: '/services/water-remediation', title: 'Water Remediation',         desc: 'Fast response to water damage — assess, dry, restore.' },
-		// { img: 'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?w=600&q=80', href: '/services/pressure-washing', title: 'Pressure Washing',         desc: 'Remove grime from exteriors and common areas. Curb appeal.' },
-		{ img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80', href: '/services/tub-resurfacing',     title: 'Tub & Shower Resurfacing',  desc: 'Like-new finish at a fraction of replacement cost.' },
-		{ img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80', href: '/services/counter-resurfacing', title: 'Counter Resurfacing',       desc: 'Refinish worn countertops without full replacement cost.' },
-		{ img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80', href: '/services/installations',   title: 'Installation Services',     desc: 'Appliances, flooring, fixtures — installed correctly, first time.' },
-		{ img: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80', href: '/services/cabinet-painting',    title: 'Cabinet Painting',          desc: 'Professional spray painting — fresh look without replacement.' },
-		{ img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=80', href: '/services/millwork',         title: 'Millwork',                  desc: 'Baseboards, door frames, molding — the finishing details.' },
-		{ img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80', href: '/services/sheetrock',        title: 'Sheetrock Repair',          desc: 'Patch, texture, prime — walls flawless before painting.' },
-		{ img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', href: '/services/carpet-cleaning',     title: 'Carpet Cleaning',           desc: 'Deep extraction cleaning — removes stains, odors, and allergens.' },
+		// Row 1: 1 3 7 9
+		{ img: '/assets/img/services/turnkey services/img.png',    href: '/services/turnkey',             title: 'Turnkey Services',         desc: 'Full unit turnovers handled end-to-end. Move-in ready, faster.' },
+		{ img: '/assets/img/services/Repairs/img.png',             href: '/services/repairs',             title: 'Repairs',                  desc: 'Fast repairs for plumbing, drywall, fixtures and more.' },
+		{ img: '/assets/img/services/Installations/img.png',       href: '/services/installations',       title: 'Installation Services',    desc: 'Appliances, flooring, fixtures — installed correctly, first time.' },
+		{ img: '/assets/img/services/Millwork/img.png',            href: '/services/millwork',            title: 'Millwork',                 desc: 'Baseboards, door frames, molding — the finishing details.' },
+		// Row 2: 2 8 5 6
+		{ img: '/assets/img/services/Painting/img.png',            href: '/services/painting',            title: 'Painting',                 desc: 'Clean lines, consistent color, lasting results every time.' },
+		{ img: '/assets/img/services/Cabinet painting/img.png',    href: '/services/cabinet-painting',    title: 'Cabinet Painting',         desc: 'Professional spray painting — fresh look without replacement.' },
+		{ img: '/assets/img/services/tub resurface/img.png',       href: '/services/tub-resurfacing',     title: 'Tub & Shower Resurfacing', desc: 'Like-new finish at a fraction of replacement cost.' },
+		{ img: '/assets/img/services/Countertop resurface/img.png',href: '/services/counter-resurfacing', title: 'Counter Resurfacing',      desc: 'Refinish worn countertops without full replacement cost.' },
+		// Row 3: 4 11 10
+		{ img: '/assets/img/services/Cleaning/img.png',            href: '/services/cleaning',            title: 'Cleaning',                 desc: 'Move-in/out deep cleans. Every corner spotless, every time.' },
+		{ img: '/assets/img/services/Carpet Cleaning/img.png',     href: '/services/carpet-cleaning',     title: 'Carpet Cleaning',          desc: 'Deep extraction cleaning — removes stains, odors, and allergens.' },
+		{ img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80', href: '/services/sheetrock', title: 'Sheetrock Repair', desc: 'Patch, texture, prime — walls flawless before painting.' },
 	];
 </script>
 
