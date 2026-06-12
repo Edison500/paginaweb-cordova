@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Paint all millwork and trim freshly after installation for a perfect, polished finish.", img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=75" },
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Paint all millwork and trim freshly after installation for a perfect, polished finish.", img: "/assets/img/services/Painting/img.png" },
 		{ href: "/services/sheetrock", icon: "bi-bricks", title: "Sheetrock Repair", desc: "Repair walls before installing new trim for a truly flawless result.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Hardware, fixtures, and structural installations completed in the same visit.", img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75" }
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Hardware, fixtures, and structural installations completed in the same visit.", img: "/assets/img/services/Installations/img.png" }
 	];
 
 	const faqs = [

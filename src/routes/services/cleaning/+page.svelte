@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/pressure-washing", icon: "bi-water", title: "Pressure Washing", desc: "Extend the clean to exterior walkways and common areas.", img: "https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?w=600&q=75" },
-		{ href: "/services/water-remediation", icon: "bi-droplet-fill", title: "Water Remediation", desc: "Water-damaged units need remediation before cleaning — we handle both.", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Cleaning is one piece — bundle into a full turnkey unit turn.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" }
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Pair the deep clean with a fresh coat of paint for a fully move-in ready unit.", img: "/assets/img/services/Painting/img.png" },
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Address any maintenance issues while the unit is already being turned.", img: "/assets/img/services/Repairs/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Cleaning is one piece — bundle into a full turnkey unit turn.", img: "/assets/img/services/turnkey services/img.png" }
 	];
 
 	const faqs = [

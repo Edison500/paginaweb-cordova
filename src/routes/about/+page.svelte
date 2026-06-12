@@ -194,7 +194,7 @@ const platforms = [
 						<div class="diff-card">
 							<div class="diff-num">05</div>
 							<div class="diff-body" style="width:100%;">
-								<h4>Invoicing &amp; Payments</h4>
+								<h4 style="text-align:center;width:100%;">Portals &amp; Compliance Platforms</h4>
 								<div class="platforms-logos">
 									<div class="plat-logo-card"><img src="/assets/img/invoice-logo/realpage1.png" alt="RealPage" /></div>
 									<div class="plat-logo-card"><img src="/assets/img/invoice-logo/yardi1.png" alt="Yardi" /></div>

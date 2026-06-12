@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Once the unit is cleared, our cleaning team comes in for a full move-out deep clean.", img: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
-		{ href: "/services/carpet-cleaning", icon: "bi-water", title: "Carpet Cleaning", desc: "After trash out, bring carpets back to life with professional extraction cleaning.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine trash out with all turn services for a fully coordinated unit flip.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" }
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Once the unit is cleared, our cleaning team comes in for a full move-out deep clean.", img: "/assets/img/services/Cleaning/img.png" },
+		{ href: "/services/carpet-cleaning", icon: "bi-water", title: "Carpet Cleaning", desc: "After trash out, bring carpets back to life with professional extraction cleaning.", img: "/assets/img/services/Carpet Cleaning/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine trash out with all turn services for a fully coordinated unit flip.", img: "/assets/img/services/turnkey services/img.png" }
 	];
 
 	const faqs = [

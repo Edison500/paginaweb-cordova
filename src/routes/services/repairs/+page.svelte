@@ -21,8 +21,8 @@
 
 	const related = [
 		{ href: "/services/sheetrock", icon: "bi-bricks", title: "Sheetrock Repair", desc: "Wall and ceiling damage repaired and ready for paint — same visit.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while we're already on-site.", img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all repairs into a complete, coordinated unit turn.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" }
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while we're already on-site.", img: "/assets/img/services/Installations/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all repairs into a complete, coordinated unit turn.", img: "/assets/img/services/turnkey services/img.png" }
 	];
 
 	const faqs = [

@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/tub-resurfacing", icon: "bi-bucket-fill", title: "Tub & Shower Resurfacing", desc: "Combine kitchen and bath resurfacing in one efficient visit.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75" },
-		{ href: "/services/cabinet-painting", icon: "bi-palette-fill", title: "Cabinet Painting", desc: "Complete the kitchen refresh with professionally painted cabinets.", img: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=75" },
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "A fresh coat of paint completes the full unit transformation.", img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=75" }
+		{ href: "/services/tub-resurfacing", icon: "bi-bucket-fill", title: "Tub & Shower Resurfacing", desc: "Combine kitchen and bath resurfacing in one efficient visit.", img: "/assets/img/services/tub resurface/img.png" },
+		{ href: "/services/cabinet-painting", icon: "bi-palette-fill", title: "Cabinet Painting", desc: "Complete the kitchen refresh with professionally painted cabinets.", img: "/assets/img/services/Cabinet painting/img.png" },
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "A fresh coat of paint completes the full unit transformation.", img: "/assets/img/services/Painting/img.png" }
 	];
 
 	const faqs = [

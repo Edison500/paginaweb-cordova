@@ -21,7 +21,7 @@
 
 	const related = [
 		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Paint immediately after sheetrock repair — same team, same visit, no delays.", img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=75" },
-		{ href: "/services/water-remediation", icon: "bi-droplet-fill", title: "Water Remediation", desc: "Drywall damaged by water may require remediation before repair.", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75" },
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Handle all related repair work in the same visit — no extra coordination needed.", img: "/assets/img/services/Repairs/img.png" },
 		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Sheetrock repair is always part of our complete unit turn process.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" }
 	];
 

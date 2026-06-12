@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Interior painting is always part of a complete unit turn.", img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=75" },
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Move-out deep cleans that leave every surface spotless and tenant-ready.", img: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "All repairs handled in the same turn — no separate vendors, no delays.", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=75" }
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Interior painting is always part of a complete unit turn.", img: "/assets/img/services/Painting/img.png" },
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Move-out deep cleans that leave every surface spotless and tenant-ready.", img: "/assets/img/services/Cleaning/img.png" },
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "All repairs handled in the same turn — no separate vendors, no delays.", img: "/assets/img/services/Repairs/img.png" }
 	];
 
 	const faqs = [

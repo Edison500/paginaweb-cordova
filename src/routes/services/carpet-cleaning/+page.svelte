@@ -20,8 +20,8 @@
 	];
 
 	const related = [
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Pair carpet cleaning with a full unit deep clean for a completely move-in ready apartment.", img: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Bundle carpet cleaning with all other turn services — one call, one invoice.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" },
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Pair carpet cleaning with a full unit deep clean for a completely move-in ready apartment.", img: "/assets/img/services/Cleaning/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Bundle carpet cleaning with all other turn services — one call, one invoice.", img: "/assets/img/services/turnkey services/img.png" },
 		{ href: "/services/trash-out", icon: "bi-trash3-fill", title: "Trash Out", desc: "Clear out the unit first, then bring us in for a full carpet clean.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" }
 	];
 

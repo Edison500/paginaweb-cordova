@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Address related repair needs during the same on-site visit.", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=75" },
-		{ href: "/services/millwork", icon: "bi-door-closed-fill", title: "Millwork & Trim", desc: "Trim and finish carpentry to complete the look after installations.", img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=75" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all installations into a complete, coordinated unit turnover.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" }
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Address related repair needs during the same on-site visit.", img: "/assets/img/services/Repairs/img.png" },
+		{ href: "/services/millwork", icon: "bi-door-closed-fill", title: "Millwork & Trim", desc: "Trim and finish carpentry to complete the look after installations.", img: "/assets/img/services/Millwork/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all installations into a complete, coordinated unit turnover.", img: "/assets/img/services/turnkey services/img.png" }
 	];
 
 	const faqs = [

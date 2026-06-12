@@ -13,7 +13,7 @@
 		// Row 3: 4 11 10
 		{ img: '/assets/img/services/Cleaning/img.png',            href: '/services/cleaning',            title: 'Cleaning',                 desc: 'Move-in/out deep cleans. Every corner spotless, every time.' },
 		{ img: '/assets/img/services/Carpet Cleaning/img.png',     href: '/services/carpet-cleaning',     title: 'Carpet Cleaning',          desc: 'Deep extraction cleaning — removes stains, odors, and allergens.' },
-		{ img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80', href: '/services/sheetrock', title: 'Sheetrock Repair', desc: 'Patch, texture, prime — walls flawless before painting.' },
+
 	];
 </script>
 
@@ -55,6 +55,14 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 12px;
+}
+
+/* Center last 2 cards in their row */
+.svc-grid > :nth-last-child(2) {
+	grid-column: 2;
+}
+.svc-grid > :nth-last-child(1) {
+	grid-column: 3;
 }
 
 .svc-card {

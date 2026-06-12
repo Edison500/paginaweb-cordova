@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/cabinet-painting", icon: "bi-palette-fill", title: "Cabinet Painting", desc: "Complete the bathroom or kitchen refresh with professionally painted cabinets.", img: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=75" },
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Deep clean before and after resurfacing for a fully move-in ready unit.", img: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine resurfacing with all other turn services in one coordinated visit.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" }
+		{ href: "/services/cabinet-painting", icon: "bi-palette-fill", title: "Cabinet Painting", desc: "Complete the bathroom or kitchen refresh with professionally painted cabinets.", img: "/assets/img/services/Cabinet painting/img.png" },
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Deep clean before and after resurfacing for a fully move-in ready unit.", img: "/assets/img/services/Cleaning/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine resurfacing with all other turn services in one coordinated visit.", img: "/assets/img/services/turnkey services/img.png" }
 	];
 
 	const faqs = [

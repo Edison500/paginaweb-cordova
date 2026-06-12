@@ -536,7 +536,7 @@ const services = [
 	gap: 7px;
 	margin-left: 16px;
 	padding: 12px 24px;
-	background: var(--red);
+	background: #C9A84C;
 	color: #fff;
 	border-radius: 8px;
 	font-size: 14px;
@@ -548,9 +548,9 @@ const services = [
 }
 
 .cps-cta:hover {
-	background: var(--red-dk);
+	background: #a8893a;
 	transform: translateY(-1px);
-	box-shadow: 0 6px 20px rgba(232,69,69,.3);
+	box-shadow: 0 6px 20px rgba(201,168,76,.35);
 	color: #fff;
 }
 

@@ -13,8 +13,8 @@
 
 	const services = [
 		'Turnkey Services','Painting','Repairs','Cleaning',
-		'Water Remediation','Tub & Shower Resurfacing','Counter Resurfacing',
-		'Installation Services','Cabinet Painting','Pressure Washing',
+		'Tub & Shower Resurfacing','Counter Resurfacing',
+		'Installation Services','Cabinet Painting',
 		'Millwork & Trim','Sheetrock Repair','Other / Multiple Services'
 	];
 
@@ -33,7 +33,6 @@
 			status = 'error';
 		}
 	}
-
 </script>
 
 <svelte:head>
@@ -62,7 +61,6 @@
 				<h1>Let's Get Your Units<br/>Move-In Ready</h1>
 				<p>Tell us about your property and we'll put together a free, detailed estimate — no obligation, no runaround.</p>
 			</div>
-			<!-- Quick contact strip -->
 			<div class="ct-quick-strip">
 				<a href="tel:+14482196669" class="ct-quick-item">
 					<i class="bi bi-telephone-fill"></i>
@@ -120,7 +118,6 @@
 								<h2>Request a Free Estimate</h2>
 								<p>The more detail you share, the faster we can put together your quote.</p>
 							</div>
-
 							<form onsubmit={handleSubmit}>
 								<div class="ct-form-section">
 									<p class="ct-form-section-label">Your Contact Info</p>
@@ -130,7 +127,7 @@
 											<input type="text" bind:value={name} placeholder="Sarah Johnson" required />
 										</div>
 										<div class="ct-field">
-											<label>Company / Property</label>
+											<label>Property Name / Address</label>
 											<input type="text" bind:value={company} placeholder="Gulf Coast Properties LLC" />
 										</div>
 									</div>
@@ -199,16 +196,10 @@
 				<!-- SIDEBAR -->
 				<aside class="ct-sidebar">
 
-					<!-- Team photo -->
 					<div class="ct-sidebar-photo">
-						<img src="/assets/img/contact-team.jpg" alt="Cordova Team" />
-						<div class="ct-photo-badge">
-							<i class="bi bi-patch-check-fill"></i>
-							<span>Licensed & Insured</span>
-						</div>
+						<img src="/assets/img/logo.png" alt="Cordova Property Services" style="object-fit:contain;background:#f4f3ee;padding:24px;" />
 					</div>
 
-					<!-- Why us -->
 					<div class="ct-why-card">
 						<h4>Why property managers choose us</h4>
 						<ul class="ct-why-list">
@@ -217,24 +208,22 @@
 							<li><i class="bi bi-check-circle-fill"></i> One team, one invoice, 12 services</li>
 							<li><i class="bi bi-check-circle-fill"></i> Already in your PM platform</li>
 							<li><i class="bi bi-check-circle-fill"></i> Before/after photos every job</li>
-							<li><i class="bi bi-check-circle-fill"></i> Bilingual team — English & Spanish</li>
 						</ul>
 					</div>
 
-					<!-- Direct contacts -->
 					<div class="ct-direct-card">
 						<h4>Reach us directly</h4>
 						<a href="tel:+14482196669" class="ct-direct-item">
 							<div class="ct-direct-icon"><i class="bi bi-telephone-fill"></i></div>
 							<div>
-								<span class="ct-direct-label">Main Line</span>
+								<span class="ct-direct-label">Office Number</span>
 								<span class="ct-direct-val">+1 (448) 219-6669</span>
 							</div>
 						</a>
 						<a href="tel:+18504852385" class="ct-direct-item">
 							<div class="ct-direct-icon"><i class="bi bi-telephone-fill"></i></div>
 							<div>
-								<span class="ct-direct-label">Secondary Line</span>
+								<span class="ct-direct-label">Direct Line</span>
 								<span class="ct-direct-val">+1 (850) 485-2385</span>
 							</div>
 						</a>
@@ -276,14 +265,11 @@
 </SiteShell>
 
 <style>
-/* areas final */
 .ct-areas-final{background:linear-gradient(135deg,#1a2018 0%,#0d120c 100%);padding:28px 0;}
 .ct-areas-label{font-size:12px;font-weight:700;color:rgba(255,252,217,.7);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
 .ct-areas-label i{color:#fffcd9;}
 .ct-areas-list{display:flex;flex-wrap:wrap;gap:8px;}
 .ct-areas-list span{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:6px 14px;}
-
-/* \u2500\u2500\u2500 HERO \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */
 .ct-hero{position:relative;min-height:480px;display:flex;align-items:center;overflow:hidden;}
 .ct-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
 .ct-hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,18,8,.9) 55%,rgba(107,107,40,.55) 100%);z-index:2;}
@@ -298,8 +284,6 @@
 @keyframes ctpulse{0%,100%{opacity:1;}50%{opacity:.4;}}
 .ct-hero-text h1{color:#fff;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:14px;letter-spacing:-.02em;}
 .ct-hero-text p{color:rgba(255,255,255,.82);font-size:16px;line-height:1.65;max-width:520px;margin-bottom:32px;}
-
-/* Quick strip */
 .ct-quick-strip{display:flex;align-items:center;gap:0;background:rgba(0,0,0,.45);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 32px;margin-top:40px;}
 .ct-quick-item{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none;flex:1;transition:opacity .2s;}
 .ct-quick-item:hover{opacity:.8;}
@@ -307,8 +291,6 @@
 .ct-quick-label{display:block;font-size:11px;font-weight:700;color:rgba(255,252,217,.7);text-transform:uppercase;letter-spacing:1.5px;}
 .ct-quick-value{display:block;font-size:14px;font-weight:700;color:#fff;margin-top:2px;}
 .ct-quick-div{width:1px;height:40px;background:rgba(255,255,255,.15);margin:0 28px;}
-
-/* \u2500\u2500\u2500 MAIN LAYOUT \u2500\u2500\u2500 */
 .ct-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start;}
 .ct-form-card{background:#fff;border:1px solid rgba(107,107,40,.1);border-radius:20px;padding:40px;box-shadow:0 8px 40px rgba(0,0,0,.07);}
 .ct-form-header h2{font-size:1.5rem;font-weight:800;color:#1a1a1a;margin-bottom:6px;}
@@ -335,12 +317,9 @@
 .ct-back-link{display:inline-block;margin-top:16px;color:#6b6b28;font-size:14px;text-decoration:none;}
 .ct-spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
-
-/* \u2500\u2500\u2500 SIDEBAR \u2500\u2500\u2500 */
 .ct-sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:100px;}
 .ct-sidebar-photo{position:relative;border-radius:16px;overflow:hidden;height:200px;}
 .ct-sidebar-photo img{width:100%;height:100%;object-fit:cover;}
-.ct-photo-badge{position:absolute;bottom:12px;left:12px;background:rgba(107,107,40,.9);backdrop-filter:blur(8px);color:#fffcd9;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px;display:flex;align-items:center;gap:6px;}
 .ct-why-card{background:#fff;border:1px solid rgba(107,107,40,.12);border-radius:16px;padding:22px 24px;}
 .ct-why-card h4{font-size:14px;font-weight:800;color:#1a1a1a;margin-bottom:14px;}
 .ct-why-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;}
@@ -355,8 +334,6 @@
 .ct-direct-icon i{color:#6b6b28;font-size:15px;}
 .ct-direct-label{display:block;font-size:10.5px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:1px;}
 .ct-direct-val{display:block;font-size:13px;font-weight:700;color:#1a1a1a;margin-top:1px;}
-
-/* \u2500\u2500\u2500 RESPONSIVE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */
 @media(max-width:1100px){
 	.ct-layout{grid-template-columns:1fr;gap:32px;}
 	.ct-sidebar{position:static;}

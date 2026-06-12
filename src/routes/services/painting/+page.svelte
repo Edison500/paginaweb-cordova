@@ -28,8 +28,8 @@
 
 	const related = [
 		{ href: '/services/sheetrock',  icon: 'bi-bricks',          title: 'Sheetrock Repair',  desc: 'Patch and prep walls before painting for a flawless finish.', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75' },
-		{ href: '/services/cleaning',   icon: 'bi-droplet-fill',    title: 'Cleaning',           desc: 'Full move-out clean paired with the paint job.', img: 'https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75' },
-		{ href: '/services/turnkey',    icon: 'bi-house-gear-fill', title: 'Turnkey Services',   desc: 'Let us handle the full unit turn — painting included.', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75' },
+		{ href: '/services/cleaning',   icon: 'bi-droplet-fill',    title: 'Cleaning',           desc: 'Full move-out clean paired with the paint job.', img: '/assets/img/services/Cleaning/img.png' },
+		{ href: '/services/turnkey',    icon: 'bi-house-gear-fill', title: 'Turnkey Services',   desc: 'Let us handle the full unit turn — painting included.', img: '/assets/img/services/turnkey services/img.png' },
 	];
 </script>
 

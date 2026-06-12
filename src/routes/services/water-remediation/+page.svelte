@@ -20,8 +20,8 @@
 	];
 
 	const related = [
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Repair damaged flooring and fixtures after remediation.", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=75" },
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Deep sanitizing clean after water damage restoration.", img: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Repair damaged flooring and fixtures after remediation.", img: "/assets/img/services/Repairs/img.png" },
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Deep sanitizing clean after water damage restoration.", img: "/assets/img/services/Cleaning/img.png" },
 		{ href: "/services/sheetrock", icon: "bi-bricks", title: "Sheetrock Repair", desc: "Replace water-damaged drywall with clean sheetrock.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" }
 	];
 

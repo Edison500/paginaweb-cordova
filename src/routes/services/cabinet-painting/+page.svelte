@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/counter-resurfacing", icon: "bi-square-fill", title: "Counter Resurfacing", desc: "Complete the kitchen transformation with refinished countertops in the same visit.", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75" },
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Full interior painting to complement the fresh new cabinets.", img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=75" },
-		{ href: "/services/tub-resurfacing", icon: "bi-bucket-fill", title: "Tub & Shower Resurfacing", desc: "Extend the refresh to bathrooms and maximize the unit's appeal.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75" }
+		{ href: "/services/counter-resurfacing", icon: "bi-square-fill", title: "Counter Resurfacing", desc: "Complete the kitchen transformation with refinished countertops in the same visit.", img: "/assets/img/services/Countertop resurface/img.png" },
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Full interior painting to complement the fresh new cabinets.", img: "/assets/img/services/Painting/img.png" },
+		{ href: "/services/tub-resurfacing", icon: "bi-bucket-fill", title: "Tub & Shower Resurfacing", desc: "Extend the refresh to bathrooms and maximize the unit's appeal.", img: "/assets/img/services/tub resurface/img.png" }
 	];
 
 	const faqs = [
