@@ -77,21 +77,6 @@
 			</div>
 		</div>
 
-		<div class="why-bottom-cta" data-aos="fade-up" data-aos-delay="220">
-			<div class="why-bottom-icon">
-				<i class="bi bi-calendar-check"></i>
-			</div>
-
-			<div>
-				<h3>Let’s make your next turn your easiest one yet.</h3>
-				<p>Reach out today and see the Cordova difference.</p>
-			</div>
-
-			<a href="/contact" class="why-btn why-btn-primary">
-				Get in Touch <i class="bi bi-arrow-right"></i>
-			</a>
-		</div>
-
 	</div>
 </section>
 
@@ -370,45 +355,6 @@
 		color:#fff;
 	}
 
-	.why-bottom-cta{
-		margin-top:34px;
-		display:grid;
-		grid-template-columns:76px 1fr auto;
-		gap:24px;
-		align-items:center;
-		padding:26px 34px;
-		border-radius:22px;
-		background:rgba(255,255,255,.78);
-		border:1px solid rgba(34,45,31,.08);
-		box-shadow:0 18px 50px rgba(34,45,31,.06);
-	}
-
-	.why-bottom-icon{
-		width:64px;
-		height:64px;
-		border-radius:50%;
-		background:#f1f0e8;
-		color:#60723a;
-		display:grid;
-		place-items:center;
-		font-size:28px;
-	}
-
-	.why-bottom-cta h3{
-		margin:0 0 6px;
-		font-size:22px;
-		line-height:1.2;
-		font-weight:950;
-		letter-spacing:-.025em;
-		color:#121814;
-	}
-
-	.why-bottom-cta p{
-		margin:0;
-		font-size:16px;
-		color:#5a6258;
-	}
-
 	@media(max-width:1200px){
 		.why-premium-grid{
 			grid-template-columns:1fr;
@@ -505,13 +451,6 @@
 
 		.why-promise-card p{
 			font-size:17px;
-		}
-
-		.why-bottom-cta{
-			grid-template-columns:1fr;
-			text-align:center;
-			justify-items:center;
-			padding:26px 22px;
 		}
 	}
 </style>

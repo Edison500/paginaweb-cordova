@@ -223,7 +223,7 @@
 						<a href="tel:+18504852385" class="ct-direct-item">
 							<div class="ct-direct-icon"><i class="bi bi-telephone-fill"></i></div>
 							<div>
-								<span class="ct-direct-label">Direct Line</span>
+								<span class="ct-direct-label">Scheduling</span>
 								<span class="ct-direct-val">+1 (850) 485-2385</span>
 							</div>
 						</a>

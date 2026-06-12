@@ -127,7 +127,7 @@ const platforms = [
 				<div class="row gy-5 align-items-center">
 					<div class="col-lg-6" data-aos="fade-right">
 						<div class="story-img-wrap">
-							<img src="/assets/img/features-light-2.jpg" alt="Our team at work" class="img-fluid" />
+							<img src="/assets/img/about.png" alt="Our team at work" class="img-fluid" />
 							<div class="story-badge">
 								<i class="bi bi-quote"></i>
 								<p>“We say yes.<br />We deliver solutions.”</p>

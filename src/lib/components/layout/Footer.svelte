@@ -12,8 +12,6 @@
 		{ href: '/services/cleaning',          label: 'Cleaning' },
 		{ href: '/services/sheetrock',         label: 'Sheetrock Repair' },
 		{ href: '/services/tub-resurfacing',   label: 'Tub Resurfacing' },
-		{ href: '/services/pressure-washing',  label: 'Pressure Washing' },
-		{ href: '/services/water-remediation', label: 'Water Remediation' },
 	];
 
 	const areas = [
