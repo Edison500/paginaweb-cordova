@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
+	import PageTracker from '$lib/components/analytics/PageTracker.svelte';
 
 
 	let { children } = $props();
@@ -69,6 +70,8 @@
 	<link rel="stylesheet" href="/assets/css/main.css" />
 </svelte:head>
 
+
+<PageTracker />
 
 {@render children()}
 

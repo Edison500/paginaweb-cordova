@@ -124,8 +124,8 @@ const platforms = [
 
 		<section class="about-story section">
 			<div class="container">
-				<div class="row gy-5 align-items-center">
-					<div class="col-lg-6" data-aos="fade-right">
+				<div class="row gy-5 align-items-stretch story-row">
+					<div class="col-lg-6 story-media-col" data-aos="fade-right">
 						<div class="story-img-wrap">
 							<img src="/assets/img/about.png" alt="Our team at work" class="img-fluid" />
 							<div class="story-badge">
@@ -135,7 +135,7 @@ const platforms = [
 						</div>
 					</div>
 
-					<div class="col-lg-6" data-aos="fade-left">
+					<div class="col-lg-6 story-copy-col" data-aos="fade-left">
 						<span class="section-eyebrow">Who We Are</span>
 						<h2>Your All-in-One Partner for Apartment Services</h2>
 
@@ -507,12 +507,33 @@ const platforms = [
 		letter-spacing: -0.005em;
 	}
 
+	.story-row {
+		align-items: stretch !important;
+	}
+
+	.story-media-col {
+		display: flex;
+	}
+
+	.story-copy-col {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
 	.story-img-wrap {
 		position: relative;
+		display: flex;
+		width: 100%;
+		height: 100%;
+		min-height: 430px;
 	}
 
 	.story-img-wrap img {
 		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 		border-radius: 18px;
 		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 	}
@@ -854,6 +875,20 @@ const platforms = [
 				rgba(0, 0, 0, 0.48) 50%,
 				rgba(0, 0, 0, 0.2) 100%
 			);
+		}
+
+		.story-media-col,
+		.story-copy-col {
+			display: block;
+		}
+
+		.story-img-wrap {
+			height: auto;
+			min-height: 0;
+		}
+
+		.story-img-wrap img {
+			height: auto;
 		}
 
 		.story-badge {

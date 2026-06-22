@@ -53,16 +53,6 @@
 				<p>
 					Delivering Reliable, High-Quality Services That Keep Your Units Move-In Ready and Your Residents Satisfied.
 				</p>
-				<div class="hero-actions">
-					<a href="/contact" class="btn-hero-primary">
-						<span>Contact Us</span>
-						<i class="bi bi-arrow-right"></i>
-					</a>
-					<a href="/services" class="btn-hero-secondary">
-						<i class="bi bi-play-circle"></i>
-						<span>View Services</span>
-					</a>
-				</div>
 				<div class="hero-stats">
 					<div class="stat">
 						<span class="stat-num">{count1.toLocaleString()}+</span>

@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Pair the deep clean with a fresh coat of paint for a fully move-in ready unit.", img: "/assets/img/services/Painting/img.png" },
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Address any maintenance issues while the unit is already being turned.", img: "/assets/img/services/Repairs/img.png" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Cleaning is one piece — bundle into a full turnkey unit turn.", img: "/assets/img/services/turnkey services/img.png" }
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Cleaning is one piece — bundle into a full turnkey unit turn.", img: "/assets/img/services/turnkey services/img.png" },
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while the unit is being cleaned and turned.", img: "/assets/img/services/Installations/img.png" },
+		{ href: "/services/carpet-cleaning", icon: "bi-droplet-fill", title: "Carpet Cleaning", desc: "Deep clean carpets after the unit clean for a fresher, move-in ready finish.", img: "/assets/img/services/Carpet Cleaning/img.png" }
 	];
 
 	const faqs = [

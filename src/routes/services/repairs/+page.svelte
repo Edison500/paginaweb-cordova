@@ -20,11 +20,10 @@
 	];
 
 	const related = [
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all repairs into a complete, coordinated unit turn.", img: "/assets/img/services/turnkey services/img.png" },
 		{ href: "/services/sheetrock", icon: "bi-bricks", title: "Sheetrock Repair", desc: "Wall and ceiling damage repaired and ready for paint — same visit.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while we're already on-site.", img: "/assets/img/services/Installations/img.png" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all repairs into a complete, coordinated unit turn.", img: "/assets/img/services/turnkey services/img.png" }
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while we're already on-site.", img: "/assets/img/services/Installations/img.png" }
 	];
-
 	const faqs = [
 		{ q: "What types of repairs do you handle?", a: "We handle doors, locks, windows, screens, drywall, flooring, plumbing fixtures, appliance hookups, cabinets, closets, and general handyman repairs — everything common in rental properties." },
 		{ q: "Can you respond to emergency repair requests?", a: "Yes. We prioritize urgent repairs and can typically respond within 24 hours. For true emergencies affecting habitability, we make every effort to respond same day." },

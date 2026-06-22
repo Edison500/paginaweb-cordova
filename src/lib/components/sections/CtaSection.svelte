@@ -29,8 +29,13 @@
 
 <style>
 #call-to-action.cta-custom{
-	background:linear-gradient(135deg,#6b6b28 0%,#4a4a1c 100%);
+	background-color:#5a5a21;
+	background-image:linear-gradient(135deg,#6b6b28 0%,#4a4a1c 100%);
 	padding:70px 0;position:relative;overflow:hidden;
+}
+
+#call-to-action.cta-custom::before{
+	content:none;display:none;
 }
 
 .cta-decoration-1, .cta-decoration-2{

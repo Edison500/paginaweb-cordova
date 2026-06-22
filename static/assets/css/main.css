@@ -2865,3 +2865,95 @@ section,
   font-size: 14px;
 }
 
+
+/*--------------------------------------------------------------
+# Global Mobile Spacing Fix
+# Keeps all sections away from the screen edges on phones.
+--------------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl,
+  .container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .row {
+    --bs-gutter-x: 1.5rem;
+  }
+
+  section,
+  .section {
+    overflow-x: clip;
+  }
+
+  .hero .container,
+  #hero .container,
+  #hero .hero-content,
+  .about-hero .container,
+  .ct-hero .container,
+  .page-hero .container,
+  .sp-hero .container,
+  .work-hero .container {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .contact-form-premium,
+  .ct-form-card,
+  .sp-content-card,
+  .project-detail,
+  .cta-box,
+  .service-card,
+  .related-card,
+  .contact-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl,
+  .container-fluid,
+  .hero .container,
+  #hero .container,
+  #hero .hero-content,
+  .about-hero .container,
+  .ct-hero .container,
+  .page-hero .container,
+  .sp-hero .container,
+  .work-hero .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}

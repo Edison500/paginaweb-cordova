@@ -20,9 +20,9 @@
 	];
 
 	const related = [
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine resurfacing with all other turn services in one coordinated visit.", img: "/assets/img/services/turnkey services/img.png" },
 		{ href: "/services/cabinet-painting", icon: "bi-palette-fill", title: "Cabinet Painting", desc: "Complete the bathroom or kitchen refresh with professionally painted cabinets.", img: "/assets/img/services/Cabinet painting/img.png" },
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Deep clean before and after resurfacing for a fully move-in ready unit.", img: "/assets/img/services/Cleaning/img.png" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine resurfacing with all other turn services in one coordinated visit.", img: "/assets/img/services/turnkey services/img.png" }
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "A fresh coat of paint completes the full unit transformation.", img: "/assets/img/services/Painting/img.png" }
 	];
 
 	const faqs = [

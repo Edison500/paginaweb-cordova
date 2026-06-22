@@ -20,11 +20,10 @@
 	];
 
 	const related = [
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "All repairs handled in the same turn — no separate vendors, no delays.", img: "/assets/img/services/Repairs/img.png" },
 		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Interior painting is always part of a complete unit turn.", img: "/assets/img/services/Painting/img.png" },
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Move-out deep cleans that leave every surface spotless and tenant-ready.", img: "/assets/img/services/Cleaning/img.png" },
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "All repairs handled in the same turn — no separate vendors, no delays.", img: "/assets/img/services/Repairs/img.png" }
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Move-out deep cleans that leave every surface spotless and tenant-ready.", img: "/assets/img/services/Cleaning/img.png" }
 	];
-
 	const faqs = [
 		{ q: "How quickly can you start a unit turn?", a: "We can typically start within 24-48 hours of receiving the work order. We do an initial walkthrough within 24 hours and have a full proposal ready the same day." },
 		{ q: "Do you handle the full turn or just parts of it?", a: "We handle everything — trash-out, cleaning, painting, repairs, resurfacing, millwork, and final documentation. One team, one invoice, no coordination on your end." },

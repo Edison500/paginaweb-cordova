@@ -361,8 +361,8 @@
 .sp-related-header p{font-size:14px;color:#666;}
 .sp-related-card{display:block;height:100%;border:1px solid rgba(0,0,0,.07);border-radius:14px;background:#fff;text-decoration:none;transition:all .3s;overflow:hidden;}
 .sp-related-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(107,107,40,.12);border-color:rgba(107,107,40,.3);}
-.sp-related-img{position:relative;height:160px;overflow:hidden;}
-.sp-related-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.sp-related-img{position:relative;height:220px;overflow:hidden;}
+.sp-related-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s ease;}
 .sp-related-card:hover .sp-related-img img{transform:scale(1.06);}
 .sp-related-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,32,24,.7) 0%,transparent 60%);display:flex;align-items:flex-end;padding:12px;}
 .sp-related-overlay i{font-size:20px;color:#fffcd9;}

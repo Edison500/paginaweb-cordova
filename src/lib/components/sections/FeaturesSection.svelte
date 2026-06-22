@@ -21,8 +21,6 @@
 							All the services you need under one roof. One invoice, one point of contact.
 						</p>
 					</div>
-
-					<i class="bi bi-chevron-right why-arrow"></i>
 				</article>
 
 				<article class="why-card">
@@ -33,8 +31,6 @@
 							We respond fast, show up on time, and get the job done right.
 						</p>
 					</div>
-
-					<i class="bi bi-chevron-right why-arrow"></i>
 				</article>
 
 				<article class="why-card">
@@ -43,22 +39,11 @@
 					<div class="why-content">
 						<h3>Trusted by Property Managers.</h3>
 						<p>
-							Fully insured, experienced, and committed to quality communication.
+							Fully insured, experienced, and committed to quality.
 						</p>
 					</div>
-
-					<i class="bi bi-chevron-right why-arrow"></i>
 				</article>
 
-				<div class="why-actions">
-					<a href="/services" class="why-btn why-btn-primary">
-						Explore Services <i class="bi bi-arrow-right"></i>
-					</a>
-
-					<a href="/contact" class="why-btn why-btn-outline">
-						Contact Us <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
 			</div>
 
 			<div class="why-visual" data-aos="fade-left" data-aos-delay="180">
@@ -155,6 +140,7 @@
 	}
 
 	.why-benefits{
+		align-self:stretch;
 		display:flex;
 		flex-direction:column;
 		gap:0;
@@ -168,7 +154,7 @@
 	.why-card{
 		position:relative;
 		display:grid;
-		grid-template-columns:98px 1fr 30px;
+		grid-template-columns:98px 1fr;
 		gap:22px;
 		align-items:center;
 		min-height:158px;
@@ -212,75 +198,13 @@
 		color:#4e574e;
 	}
 
-	.why-arrow{
-		font-size:26px;
-		color:#60723a;
-		transition:transform .25s ease;
-	}
 
-	.why-card:hover .why-arrow{
-		transform:translateX(5px);
-	}
-
-	.why-actions{
-		display:flex;
-		gap:18px;
-		padding:28px;
-		background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(250,249,244,.95));
-	}
-
-	.why-btn{
-		min-height:58px;
-		padding:0 32px;
-		border-radius:10px;
-		display:inline-flex;
-		align-items:center;
-		justify-content:center;
-		gap:14px;
-		font-size:15px;
-		font-weight:900;
-		text-decoration:none;
-		transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
-	}
-
-	.why-btn-primary{
-		background:linear-gradient(135deg,#6f7835 0%,#4f5b22 100%);
-		color:#fff;
-		box-shadow:0 14px 30px rgba(95,111,69,.22);
-	}
-
-	.why-btn-outline{
-		background:#fff;
-		color:#5f6e33;
-		border:1px solid rgba(95,111,69,.35);
-	}
-
-	.why-btn:hover{
-		transform:translateY(-3px);
-	}
-
-	.why-btn-primary:hover{
-		color:#fff;
-		box-shadow:0 18px 38px rgba(95,111,69,.32);
-	}
-
-	.why-btn-outline:hover{
-		background:#f7f7f1;
-		color:#4f5b22;
-	}
-
-	.why-btn i{
-		font-size:18px;
-		transition:transform .25s ease;
-	}
-
-	.why-btn:hover i{
-		transform:translateX(4px);
-	}
 
 	.why-visual{
 		position:relative;
-		min-height:620px;
+		align-self:stretch;
+		min-height:0;
+		height:auto;
 		border-radius:28px;
 		overflow:hidden;
 		background:#ddd;
@@ -298,6 +222,8 @@
 	}
 
 	.why-visual img{
+		position:absolute;
+		inset:0;
 		width:100%;
 		height:100%;
 		object-fit:cover;
@@ -360,8 +286,12 @@
 			grid-template-columns:1fr;
 		}
 
+		.why-benefits{
+			align-self:start;
+		}
+
 		.why-visual{
-			min-height:560px;
+			min-height:520px;
 		}
 	}
 
@@ -399,7 +329,7 @@
 		}
 
 		.why-card{
-			grid-template-columns:70px 1fr 24px;
+			grid-template-columns:70px 1fr;
 			gap:16px;
 			padding:24px 18px;
 		}
@@ -420,14 +350,6 @@
 			font-size:15px;
 		}
 
-		.why-actions{
-			flex-direction:column;
-			padding:22px;
-		}
-
-		.why-btn{
-			width:100%;
-		}
 
 		.why-visual{
 			min-height:430px;

@@ -2,34 +2,84 @@
 	import SiteShell from '$lib/components/layout/SiteShell.svelte';
 	import FaqSection from '$lib/components/sections/FaqSection.svelte';
 
-	let name = $state('');
+	let firstName = $state('');
+	let lastName = $state('');
 	let email = $state('');
 	let phone = $state('');
-	let company = $state('');
-	let units = $state('');
+	let propertyAddress = $state('');
 	let service = $state('');
 	let message = $state('');
 	let status = $state('');
+	let errorMessage = $state('');
 
 	const services = [
-		'Turnkey Services','Painting','Repairs','Cleaning',
+		'Turnkey Services','Painting','General Repairs','Cleaning',
 		'Tub & Shower Resurfacing','Counter Resurfacing',
 		'Installation Services','Cabinet Painting',
 		'Millwork & Trim','Sheetrock Repair','Other / Multiple Services'
 	];
 
-	const unitRanges = [
-		'1–10 units','11–50 units','51–100 units','100+ units'
-	];
+	function isValidEmail(value) {
+		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+	}
+
+	function validateForm() {
+		if (!service) return 'Please select the service you need.';
+		if (firstName.trim().length < 2) return 'Please enter your first name.';
+		if (lastName.trim().length < 2) return 'Please enter your last name.';
+		if (!isValidEmail(email)) return 'Please enter a valid email address.';
+		if (phone.trim() && phone.replace(/\D/g, '').length < 7) return 'Please enter a valid phone number or leave it blank.';
+		if (message.trim().length < 10) return 'Please tell us a little more about your property.';
+		return '';
+	}
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+		if (status === 'sending') return;
+
+		const validationError = validateForm();
+		if (validationError) {
+			errorMessage = validationError;
+			status = 'error';
+			return;
+		}
+
 		status = 'sending';
+		errorMessage = '';
+
 		try {
-			await new Promise(r => setTimeout(r, 1200));
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					serviceNeeded: service,
+					firstName,
+					lastName,
+					email,
+					phone,
+					propertyAddress,
+					message,
+					sourcePage: typeof window !== 'undefined' ? window.location.pathname : 'website'
+				})
+			});
+
+			const result = await response.json().catch(() => ({}));
+
+			if (!response.ok || !result.ok) {
+				throw new Error(result.message || 'Could not send your request.');
+			}
+
+			if (!result.requestId) {
+				throw new Error('The request was not saved. Please try again or call us directly.');
+			}
+
 			status = 'sent';
-			name = email = phone = company = units = service = message = '';
+			firstName = lastName = email = phone = propertyAddress = service = message = '';
 		} catch(err) {
+			console.error(err);
+			errorMessage = err?.message || 'Something went wrong. Please try again or call us directly.';
 			status = 'error';
 		}
 	}
@@ -56,10 +106,10 @@
 			<div class="ct-hero-text">
 				<span class="ct-eyebrow">
 					<span class="ct-dot"></span>
-					Ready within 24 hours
+					Free Quote • 24h Response
 				</span>
-				<h1>Let's Get Your Units<br/>Move-In Ready</h1>
-				<p>Tell us about your property and we'll put together a free, detailed estimate — no obligation, no runaround.</p>
+				<h1>Ready to Get Your Units<br/>Move-In Ready?</h1>
+				<p>Send one request and our team will help coordinate painting, cleaning, repairs, turnovers and more — no pressure, no obligation.</p>
 			</div>
 			<div class="ct-quick-strip">
 				<a href="tel:+14482196669" class="ct-quick-item">
@@ -101,7 +151,7 @@
 							<div class="ct-success-icon">
 								<i class="bi bi-check-lg"></i>
 							</div>
-							<h3>Message Sent!</h3>
+							<h3>Request Sent!</h3>
 							<p>Thank you for reaching out. Our team will review your request and respond within 24 hours — often same day.</p>
 							<div class="ct-success-next">
 								<p class="ct-next-label">While you wait, you can also reach us directly:</p>
@@ -114,64 +164,50 @@
 						</div>
 					{:else}
 						<div class="ct-form-card">
-							<div class="ct-form-header">
-								<h2>Request a Free Estimate</h2>
-								<p>The more detail you share, the faster we can put together your quote.</p>
-							</div>
 							<form onsubmit={handleSubmit}>
-								<div class="ct-form-section">
-									<p class="ct-form-section-label">Your Contact Info</p>
-									<div class="ct-form-row">
-										<div class="ct-field">
-											<label>Full Name *</label>
-											<input type="text" bind:value={name} placeholder="Sarah Johnson" required />
-										</div>
-										<div class="ct-field">
-											<label>Property Name / Address</label>
-											<input type="text" bind:value={company} placeholder="Gulf Coast Properties LLC" />
-										</div>
-									</div>
-									<div class="ct-form-row">
-										<div class="ct-field">
-											<label>Email Address *</label>
-											<input type="email" bind:value={email} placeholder="sarah@example.com" required />
-										</div>
-										<div class="ct-field">
-											<label>Phone Number</label>
-											<input type="tel" bind:value={phone} placeholder="(850) 000-0000" />
-										</div>
+								<div class="ct-field ct-field-full">
+									<label>Service Needed</label>
+									<div class="ct-select-wrap">
+										<select bind:value={service} required>
+											<option value="">Select a service...</option>
+											{#each services as s}<option value={s}>{s}</option>{/each}
+										</select>
 									</div>
 								</div>
 
-								<div class="ct-form-section">
-									<p class="ct-form-section-label">About Your Property</p>
-									<div class="ct-form-row">
-										<div class="ct-field">
-											<label>Service Needed</label>
-											<select bind:value={service}>
-												<option value="">Select a service...</option>
-												{#each services as s}<option value={s}>{s}</option>{/each}
-											</select>
-										</div>
-										<div class="ct-field">
-											<label>Number of Units</label>
-											<select bind:value={units}>
-												<option value="">Select range...</option>
-												{#each unitRanges as u}<option value={u}>{u}</option>{/each}
-											</select>
-										</div>
+								<div class="ct-form-row">
+									<div class="ct-field">
+										<label>First Name</label>
+										<input type="text" bind:value={firstName} placeholder="John" minlength="2" maxlength="100" required />
 									</div>
-									<div class="ct-field ct-field-full">
-										<label>Tell Us More *</label>
-										<textarea bind:value={message} rows="5"
-											placeholder="Describe your property and what you need — location, condition, urgency, number of units to turn, etc." required></textarea>
+									<div class="ct-field">
+										<label>Last Name</label>
+										<input type="text" bind:value={lastName} placeholder="Doe" minlength="2" maxlength="100" required />
 									</div>
+								</div>
+								<div class="ct-form-row">
+									<div class="ct-field">
+										<label>Email</label>
+										<input type="email" bind:value={email} placeholder="you@example.com" maxlength="180" required />
+									</div>
+									<div class="ct-field">
+										<label>Phone</label>
+										<input type="tel" bind:value={phone} placeholder="(555) 000-0000" maxlength="80" />
+									</div>
+								</div>
+								<div class="ct-field ct-field-full">
+									<label>Property Address</label>
+									<input type="text" bind:value={propertyAddress} placeholder="123 Main St, Pensacola, FL 32501" maxlength="300" />
+								</div>
+								<div class="ct-field ct-field-full">
+									<label>Tell Us About Your Property</label>
+									<textarea bind:value={message} rows="5" placeholder="Describe your property, the services you need, urgency, number of units, and anything else helpful." minlength="10" maxlength="4000" required></textarea>
 								</div>
 
 								{#if status === 'error'}
 									<div class="ct-error-msg">
 										<i class="bi bi-exclamation-circle-fill"></i>
-										Something went wrong. Please try again or call us directly.
+										{errorMessage || 'Something went wrong. Please try again or call us directly.'}
 									</div>
 								{/if}
 
@@ -180,14 +216,11 @@
 										<span class="ct-spinner"></span>
 										Sending...
 									{:else}
-										<i class="bi bi-send-fill"></i>
-										Send Message & Request Quote
+										Request Free Quote
+										<i class="bi bi-arrow-right"></i>
 									{/if}
 								</button>
-								<p class="ct-form-note">
-									<i class="bi bi-lock-fill"></i>
-									Your information is private. No spam, ever.
-								</p>
+								<p class="ct-form-note ct-form-note-quote">Prefer to talk now? <a href="tel:+18503238103">Call (850) 323-8103</a></p>
 							</form>
 						</div>
 					{/if}
@@ -265,6 +298,7 @@
 </SiteShell>
 
 <style>
+.hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;}
 .ct-areas-final{background:linear-gradient(135deg,#1a2018 0%,#0d120c 100%);padding:28px 0;}
 .ct-areas-label{font-size:12px;font-weight:700;color:rgba(255,252,217,.7);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
 .ct-areas-label i{color:#fffcd9;}
@@ -293,20 +327,23 @@
 .ct-quick-div{width:1px;height:40px;background:rgba(255,255,255,.15);margin:0 28px;}
 .ct-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start;}
 .ct-form-card{background:#fff;border:1px solid rgba(107,107,40,.1);border-radius:20px;padding:40px;box-shadow:0 8px 40px rgba(0,0,0,.07);}
-.ct-form-header h2{font-size:1.5rem;font-weight:800;color:#1a1a1a;margin-bottom:6px;}
-.ct-form-header p{font-size:13.5px;color:#777;margin-bottom:28px;}
-.ct-form-section{margin-bottom:28px;}
-.ct-form-section-label{font-size:11px;font-weight:700;color:#6b6b28;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
-.ct-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-.ct-field label{display:block;font-size:12px;font-weight:700;color:#444;margin-bottom:6px;}
-.ct-field input,.ct-field select,.ct-field textarea{width:100%;padding:11px 14px;font-size:14px;color:#1a1a1a;background:#fafaf7;border:1.5px solid rgba(107,107,40,.15);border-radius:10px;font-family:inherit;transition:border-color .2s,box-shadow .2s;outline:none;}
-.ct-field input:focus,.ct-field select:focus,.ct-field textarea:focus{border-color:#6b6b28;box-shadow:0 0 0 3px rgba(107,107,40,.08);}
-.ct-field textarea{resize:vertical;min-height:110px;}
+.ct-form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:0;}
+.ct-field{margin-bottom:18px;}
+.ct-field label{display:block;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#4b5563;margin-bottom:8px;}
+.ct-field input,.ct-field select,.ct-field textarea{width:100%;padding:16px 18px;font-size:15px;color:#1f2937;background:#fbfbfd;border:1.5px solid #e6e8ef;border-radius:16px;font-family:inherit;transition:border-color .25s,box-shadow .25s,background .25s;outline:none;}
+.ct-field input:focus,.ct-field select:focus,.ct-field textarea:focus{border-color:#6b6b28;box-shadow:0 0 0 4px rgba(107,107,40,.10);background:#fff;}
+.ct-field textarea{resize:vertical;min-height:130px;}
 .ct-field-full{margin-top:0;}
-.ct-submit{width:100%;padding:15px;background:linear-gradient(135deg,#6b6b28 0%,#4a4a1c 100%);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s;margin-top:8px;}
+.ct-select-wrap{position:relative;}
+.ct-select-wrap::after{content:"▾";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#4a4a1c;font-size:15px;pointer-events:none;}
+.ct-field select{appearance:none;padding-right:46px;cursor:pointer;}
+.ct-submit{width:100%;padding:18px;background:linear-gradient(135deg,#6b6b28 0%,#4a4a1c 100%);color:#fff;border:none;border-radius:999px;font-size:18px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s;margin-top:8px;box-shadow:0 12px 24px rgba(107,107,40,.28);}
 .ct-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 30px rgba(107,107,40,.35);}
 .ct-submit:disabled{opacity:.7;cursor:not-allowed;}
 .ct-form-note{font-size:12px;color:#aaa;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:5px;}
+.ct-form-note-quote{display:block;font-size:15px;color:#7a7f87;margin-top:16px;}
+.ct-form-note-quote a{color:#6b6b28;font-weight:800;text-decoration:none;}
+.ct-form-note-quote a:hover{text-decoration:underline;}
 .ct-error-msg{background:#fef2f2;border:1px solid #fecaca;color:#dc2626;padding:12px 16px;border-radius:10px;font-size:13px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .ct-success{background:#fff;border:1px solid rgba(107,107,40,.1);border-radius:20px;padding:60px 40px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.07);}
 .ct-success-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#6b6b28,#4a4a1c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px;}
@@ -342,5 +379,6 @@
 	.ct-quick-strip{flex-direction:column;align-items:flex-start;gap:16px;border-radius:12px;}
 	.ct-quick-div{display:none;}
 	.ct-form-row{grid-template-columns:1fr;}
+	.ct-form-card{padding:28px 22px;}
 }
 </style>

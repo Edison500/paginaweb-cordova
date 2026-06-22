@@ -1,6 +1,8 @@
-node_modules/ 
-".svelte-kit/" 
-"node_modules/" 
+node_modules/
 .svelte-kit/
+build/
+.vercel/
+.env
+.env.*
+!.env.example
 *.mp4
-.vercel

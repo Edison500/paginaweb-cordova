@@ -20,8 +20,8 @@
 	];
 
 	const related = [
-		{ href: "/services/tub-resurfacing", icon: "bi-bucket-fill", title: "Tub & Shower Resurfacing", desc: "Combine kitchen and bath resurfacing in one efficient visit.", img: "/assets/img/services/tub resurface/img.png" },
-		{ href: "/services/cabinet-painting", icon: "bi-palette-fill", title: "Cabinet Painting", desc: "Complete the kitchen refresh with professionally painted cabinets.", img: "/assets/img/services/Cabinet painting/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine resurfacing with all other turn services in one coordinated visit.", img: "/assets/img/services/turnkey services/img.png" },
+		{ href: "/services/cabinet-painting", icon: "bi-palette-fill", title: "Cabinet Painting", desc: "Complete the bathroom or kitchen refresh with professionally painted cabinets.", img: "/assets/img/services/Cabinet painting/img.png" },
 		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "A fresh coat of paint completes the full unit transformation.", img: "/assets/img/services/Painting/img.png" }
 	];
 
