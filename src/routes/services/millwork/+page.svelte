@@ -36,7 +36,7 @@
 <ServicePage
 	title="Millwork & Trim"
 	tagline="Millwork & Trim Services for Apartment Communities"
-	heroImg="/assets/img/features-light-1.jpg"
+	heroImg="/assets/img/services/Millwork/img2.png"
 	description="At Cordova Property Services, we provide professional millwork and trim services designed to enhance the appearance, durability, and overall value of your units. Whether during unit turns, renovations, or ongoing maintenance, our team delivers clean, precise, and reliable results — because details matter."
 	why="Well-installed trim and finishes make a significant difference in the final presentation of any unit. Clean baseboards, crisp door frames, and properly installed molding give units a finished, cared-for quality that stands out to every prospective tenant."
 	{includes}

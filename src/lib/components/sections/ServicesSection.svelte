@@ -1,12 +1,12 @@
 <script>
 	const services = [
 		// Row 1: 1 3 7 9
-		{ img: '/assets/img/services/turnkey services/img.png',    href: '/services/turnkey',             title: 'Turnkey Services',         desc: 'Full unit turnovers handled end-to-end. Move-in ready, faster.' },
+		{ img: '/assets/img/services/turnkey services/img2.jpeg',    href: '/services/turnkey',             title: 'Turnkey Services',         desc: 'Full unit turnovers handled end-to-end. Move-in ready, faster.' },
 		{ img: '/assets/img/services/Repairs/img.png',             href: '/services/repairs',             title: 'Repairs',                  desc: 'Fast repairs for plumbing, drywall, fixtures and more.' },
 		{ img: '/assets/img/services/Installations/img.png',       href: '/services/installations',       title: 'Installation Services',    desc: 'Appliances, flooring, fixtures — installed correctly, first time.' },
 		{ img: '/assets/img/services/Millwork/img.png',            href: '/services/millwork',            title: 'Millwork',                 desc: 'Baseboards, door frames, molding — the finishing details.' },
 		// Row 2: 2 8 5 6
-		{ img: '/assets/img/services/Painting/img.png',            href: '/services/painting',            title: 'Painting',                 desc: 'Clean lines, consistent color, lasting results every time.' },
+		{ img: '/assets/img/services/Painting/img3.jpeg',            href: '/services/painting',            title: 'Painting',                 desc: 'Clean lines, consistent color, lasting results every time.' },
 		{ img: '/assets/img/services/Cabinet painting/img.png',    href: '/services/cabinet-painting',    title: 'Cabinet Painting',         desc: 'Professional spray painting — fresh look without replacement.' },
 		{ img: '/assets/img/services/tub resurface/img.png',       href: '/services/tub-resurfacing',     title: 'Tub & Shower Resurfacing', desc: 'Like-new finish at a fraction of replacement cost.' },
 		{ img: '/assets/img/services/Countertop resurface/img.png',href: '/services/counter-resurfacing', title: 'Counter Resurfacing',      desc: 'Refinish worn countertops without full replacement cost.' },
@@ -57,12 +57,15 @@
 	gap: 12px;
 }
 
-/* Center last 2 cards in their row */
-.svc-grid > :nth-last-child(2) {
-	grid-column: 2;
-}
-.svc-grid > :nth-last-child(1) {
-	grid-column: 3;
+/* Solo en escritorio centramos los 2 ultimos cards.
+   En pantallas pequenas esto antes rompia el grid y dejaba huecos. */
+@media (min-width: 1201px) {
+	.svc-grid > :nth-last-child(2) {
+		grid-column: 2;
+	}
+	.svc-grid > :nth-last-child(1) {
+		grid-column: 3;
+	}
 }
 
 .svc-card {
@@ -157,13 +160,20 @@
 
 @media (max-width: 1200px) {
 	.svc-grid { grid-template-columns: repeat(3, 1fr); }
+	.svc-grid > * { grid-column: auto !important; }
+	/* Con 10 servicios, en 3 columnas dejamos el ultimo centrado. */
+	.svc-grid > :last-child { grid-column: 2 !important; }
 }
 @media (max-width: 768px) {
-	.svc-grid { grid-template-columns: repeat(2, 1fr); }
+	.svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.svc-grid > * { grid-column: auto !important; }
 	.svc-img-wrap { height: 170px; }
 }
 @media (max-width: 480px) {
-	.svc-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-	.svc-img-wrap { height: 140px; }
+	.svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+	.svc-grid > * { grid-column: auto !important; }
+	.svc-img-wrap { height: 145px; }
+	.svc-overlay { padding: 12px; }
+	.svc-overlay h4 { font-size: 12px; }
 }
 </style>

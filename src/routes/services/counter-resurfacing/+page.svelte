@@ -36,7 +36,7 @@
 <ServicePage
 	title="Countertop Resurface"
 	tagline="Countertop Resurfacing for Apartment Communities"
-	heroImg="/assets/img/features-light-1.jpg"
+	heroImg="/assets/img/services/Countertop resurface/img2.png"
 	description="At Cordova Property Services, our countertop resurfacing service revitalizes surfaces that show signs of age, damage, or heavy use — providing a durable, updated finish that enhances the overall look of kitchens and bathrooms. A cost-effective solution that delivers real visual impact without the disruption or expense of full replacement."
 	why="Kitchen condition drives leasing decisions. Resurfacing delivers a fresh, clean surface that signals a well-maintained property — at a fraction of the cost of replacement and with faster turnaround."
 	{includes}

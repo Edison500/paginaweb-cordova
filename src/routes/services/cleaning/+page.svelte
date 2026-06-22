@@ -36,7 +36,8 @@
 <ServicePage
 	title="Cleaning"
 	tagline="Professional Cleaning Services for Apartment Communities"
-	heroImg="/assets/img/cta-bg.jpg"
+	heroImg="/assets/img/services/Cleaning/img2.png"
+	heroPosition="center top"
 	description="At Cordova Property Services, we offer professional cleaning solutions tailored to apartment communities, ensuring every unit meets move-in standards. We provide different levels of cleaning based on the condition of each unit — from a quick touch-up to a full move-out deep clean or a heavy clean for units with significant buildup."
 	why="We understand that every unit is different. Our goal is to provide the right level of cleaning, every time, with reliable service and consistent results that keep your operations moving."
 	{includes}

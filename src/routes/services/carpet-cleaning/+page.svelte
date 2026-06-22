@@ -37,7 +37,7 @@
 <ServicePage
 	title="Carpet Cleaning"
 	tagline="Professional Carpet Cleaning for Apartment Turnovers & Communities"
-	heroImg="/assets/img/features-light-2.jpg"
+	heroImg="/assets/img/services/Carpet Cleaning/img2.png"
 	description="Stained, worn, or odor-affected carpets are one of the top reasons prospective tenants reject a unit. Cordova's professional carpet cleaning service uses hot water extraction to deep-clean rental carpets — removing embedded dirt, allergens, pet odors, and stains that surface cleaning can't reach. We work on the timeline property managers need: fast turnaround, reliable results, and volume pricing for communities."
 	why="Carpet condition is one of the first things a prospective tenant notices. A professionally cleaned carpet signals a well-maintained property — and for many units, it's the difference between a fast lease and a vacancy that lingers. Professional extraction also extends carpet life, saving on replacement costs."
 	{includes}

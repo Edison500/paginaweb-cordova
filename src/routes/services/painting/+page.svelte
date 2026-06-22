@@ -36,7 +36,7 @@
 <ServicePage
 	title="Painting"
 	tagline="Professional interior painting for rental properties — fast, clean, and consistent across every unit."
-	heroImg="/assets/img/services.jpg"
+	heroImg="/assets/img/services/Painting/img2.png"
 	description="Cordova Property Services delivers professional-grade interior painting for apartment communities across the Gulf Coast. Our painting crews are trained specifically for multifamily work — fast turnaround, consistent results, and minimal downtime between residents. Whether it's a full unit repaint, spot touch-ups, or a complete color change, we deliver results that look great and hold up through multiple tenancy cycles."
 	why="Fresh paint is the single highest-impact improvement you can make to a vacant unit — and the fastest way to raise perceived value before a new tenant moves in. Properly primed and painted walls also reduce turnover costs in future cycles."
 	{includes}

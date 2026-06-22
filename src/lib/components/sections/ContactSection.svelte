@@ -11,8 +11,8 @@
 
 	const services = [
 		'Turnkey Services','Painting','General Repairs','Cleaning',
-		'Water Remediation','Tub & Shower Resurfacing','Counter Resurfacing',
-		'Installation Services','Cabinet Painting','Pressure Washing',
+		'Tub & Shower Resurfacing','Counter Resurfacing',
+		'Installation Services','Cabinet Painting',
 		'Millwork','Sheetrock Repair','Other / Multiple Services'
 	];
 
@@ -204,7 +204,7 @@
 									<span>{status === 'sending' ? 'Sending...' : 'Request Free Quote'}</span>
 									{#if status !== 'sending'}<i class="bi bi-arrow-right"></i>{/if}
 								</button>
-								<p class="form-call-note">Prefer to talk now? <a href="tel:+18503238103">Call (850) 323-8103</a></p>
+								<p class="form-call-note">Prefer to talk now? <a href="tel:+14482196669">Call (448) 219-6669</a></p>
 							</div>
 						</div>
 					</form>

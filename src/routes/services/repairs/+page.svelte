@@ -35,7 +35,7 @@
 <ServicePage
 	title="Repairs"
 	tagline="Reliable Repair Services for Apartment Communities"
-	heroImg="/assets/img/features-light-2.jpg"
+	heroImg="/assets/img/services/Repairs/img2.png"
 	description="At Cordova Property Services, we provide reliable and efficient repair services tailored to apartment communities. Our team is experienced in handling a wide range of interior repairs — ensuring every issue is addressed quickly and professionally to meet your property standards and timelines."
 	why="We don't just fix issues — we help prevent delays, reduce rework, and ensure every unit meets move-in standards. Fast response and quality workmanship keep your operations running smoothly."
 	{includes}

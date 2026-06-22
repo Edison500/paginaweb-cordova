@@ -35,7 +35,7 @@
 <ServicePage
 	title="Installation Services"
 	tagline="Professional Installation & Replacement Services for Rental Properties"
-	heroImg="/assets/img/features-light-2.jpg"
+	heroImg="/assets/img/services/Installations/img2.png"
 	description="At Cordova Property Services, we specialize in professional installation and replacement of essential fixtures and components for apartment communities. No matter the size of the job, our experienced team ensures every installation is completed efficiently, safely, and up to industry standards — the first time."
 	why="Incorrect installations void warranties and generate maintenance callbacks. One vendor who does it right saves you time, protects your investment, and keeps your tenants satisfied."
 	{includes}
