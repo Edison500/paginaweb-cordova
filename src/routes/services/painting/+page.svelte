@@ -27,7 +27,7 @@
 	];
 
 	const related = [
-		{ href: '/services/turnkey',    icon: 'bi-house-gear-fill', title: 'Turnkey Services',   desc: 'Let us handle the full unit turn — painting included.', img: '/assets/img/services/turnkey services/img.png' },
+		{ href: '/services/turnkey',    icon: 'bi-house-gear-fill', title: 'Turnkey Services',   desc: 'Let us handle the full unit turn — painting included.', img: '/assets/img/services/turnkey services/img2.jpeg' },
 		{ href: '/services/sheetrock',  icon: 'bi-bricks',          title: 'Sheetrock Repair',  desc: 'Patch and prep walls before painting for a flawless finish.', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75' },
 		{ href: '/services/cleaning',   icon: 'bi-droplet-fill',    title: 'Cleaning',           desc: 'Full move-out clean paired with the paint job.', img: '/assets/img/services/Cleaning/img.png' },
 	];
@@ -37,6 +37,8 @@
 	title="Painting"
 	tagline="Professional interior painting for rental properties — fast, clean, and consistent across every unit."
 	heroImg="/assets/img/services/Painting/img2.png"
+	heroPosition="center center"
+	heroFlip={true}
 	description="Cordova Property Services delivers professional-grade interior painting for apartment communities across the Gulf Coast. Our painting crews are trained specifically for multifamily work — fast turnaround, consistent results, and minimal downtime between residents. Whether it's a full unit repaint, spot touch-ups, or a complete color change, we deliver results that look great and hold up through multiple tenancy cycles."
 	why="Fresh paint is the single highest-impact improvement you can make to a vacant unit — and the fastest way to raise perceived value before a new tenant moves in. Properly primed and painted walls also reduce turnover costs in future cycles."
 	{includes}

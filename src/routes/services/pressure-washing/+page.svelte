@@ -21,7 +21,7 @@
 
 	const related = [
 		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Pressure washing is the ideal prep step before any exterior painting.", img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=75" },
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Pair exterior washing with interior deep cleans for a complete property refresh.", img: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Pair exterior washing with interior deep cleans for a complete property refresh.", img: '/assets/img/services/Cleaning/img.png' },
 		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Address any surface damage uncovered during the pressure washing visit.", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=75" }
 	];
 

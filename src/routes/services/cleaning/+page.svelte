@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Cleaning is one piece — bundle into a full turnkey unit turn.", img: "/assets/img/services/turnkey services/img.png" },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while the unit is being cleaned and turned.", img: "/assets/img/services/Installations/img.png" },
-		{ href: "/services/carpet-cleaning", icon: "bi-droplet-fill", title: "Carpet Cleaning", desc: "Deep clean carpets after the unit clean for a fresher, move-in ready finish.", img: "/assets/img/services/Carpet Cleaning/img.png" }
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Cleaning is one piece — bundle into a full turnkey unit turn.", img: '/assets/img/services/turnkey services/img2.jpeg' },
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while the unit is being cleaned and turned.", img: "/assets/img/services/Installations/img2.png" },
+		{ href: "/services/carpet-cleaning", icon: "bi-droplet-fill", title: "Carpet Cleaning", desc: "Deep clean carpets after the unit clean for a fresher, move-in ready finish.", img: "/assets/img/services/Carpet Cleaning/img2.png" }
 	];
 
 	const faqs = [
@@ -37,7 +37,8 @@
 	title="Cleaning"
 	tagline="Professional Cleaning Services for Apartment Communities"
 	heroImg="/assets/img/services/Cleaning/img2.png"
-	heroPosition="center top"
+	heroPosition="center center"
+	heroFlip={true}
 	description="At Cordova Property Services, we offer professional cleaning solutions tailored to apartment communities, ensuring every unit meets move-in standards. We provide different levels of cleaning based on the condition of each unit — from a quick touch-up to a full move-out deep clean or a heavy clean for units with significant buildup."
 	why="We understand that every unit is different. Our goal is to provide the right level of cleaning, every time, with reliable service and consistent results that keep your operations moving."
 	{includes}

@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Schedule a full property clean alongside concrete repair work.", img: "/assets/img/services/Cleaning/img.png" },
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Interior repairs and concrete work often go hand-in-hand on full property rehabs.", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=75" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Exterior concrete repairs as part of a complete property turn and refresh.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" }
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Schedule a full property clean alongside concrete repair work.", img: '/assets/img/services/Cleaning/img.png' },
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Interior repairs and concrete work often go hand-in-hand on full property rehabs.", img: "/assets/img/services/Repairs/img2.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Exterior concrete repairs as part of a complete property turn and refresh.", img: '/assets/img/services/turnkey services/img2.jpeg' }
 	];
 
 	const faqs = [

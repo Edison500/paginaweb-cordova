@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "All repairs handled in the same turn — no separate vendors, no delays.", img: "/assets/img/services/Repairs/img.png" },
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Interior painting is always part of a complete unit turn.", img: "/assets/img/services/Painting/img.png" },
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Move-out deep cleans that leave every surface spotless and tenant-ready.", img: "/assets/img/services/Cleaning/img.png" }
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "All repairs handled in the same turn — no separate vendors, no delays.", img: "/assets/img/services/Repairs/img2.png" },
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Interior painting is always part of a complete unit turn.", img: "/assets/img/services/Painting/img3.jpeg" },
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Move-out deep cleans that leave every surface spotless and tenant-ready.", img: '/assets/img/services/Cleaning/img.png' }
 	];
 	const faqs = [
 		{ q: "How quickly can you start a unit turn?", a: "We can typically start within 24-48 hours of receiving the work order. We do an initial walkthrough within 24 hours and have a full proposal ready the same day." },
@@ -35,7 +35,9 @@
 <ServicePage
 	title="Turnkey Services"
 	tagline="Full Unit Turns — One Call, One Team, Done Right"
-	heroImg="/assets/img/services.jpg"
+	heroImg="/assets/img/services/turnkey services/img2.jpeg"
+	heroPosition="center center"
+	heroFlip={true}
 	description="At Cordova Property Services, our turnkey service handles every aspect of the unit turn — trash-out, cleaning, painting, repairs, resurfacing, and more — coordinated by a single team. Every vacant day costs you money. We move fast, communicate clearly, and get your unit back on the market faster."
 	why="Juggling multiple vendors slows everything down. One team that handles the full turn cuts your timeline significantly, reduces back-and-forth, and ensures every service is completed to a consistent standard."
 	{includes}

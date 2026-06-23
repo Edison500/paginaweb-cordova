@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Once the unit is cleared, our cleaning team comes in for a full move-out deep clean.", img: "/assets/img/services/Cleaning/img.png" },
-		{ href: "/services/carpet-cleaning", icon: "bi-water", title: "Carpet Cleaning", desc: "After trash out, bring carpets back to life with professional extraction cleaning.", img: "/assets/img/services/Carpet Cleaning/img.png" },
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine trash out with all turn services for a fully coordinated unit flip.", img: "/assets/img/services/turnkey services/img.png" }
+		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Once the unit is cleared, our cleaning team comes in for a full move-out deep clean.", img: '/assets/img/services/Cleaning/img.png' },
+		{ href: "/services/carpet-cleaning", icon: "bi-water", title: "Carpet Cleaning", desc: "After trash out, bring carpets back to life with professional extraction cleaning.", img: "/assets/img/services/Carpet Cleaning/img2.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine trash out with all turn services for a fully coordinated unit flip.", img: '/assets/img/services/turnkey services/img2.jpeg' }
 	];
 
 	const faqs = [

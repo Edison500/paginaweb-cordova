@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all repairs into a complete, coordinated unit turn.", img: "/assets/img/services/turnkey services/img.png" },
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all repairs into a complete, coordinated unit turn.", img: '/assets/img/services/turnkey services/img2.jpeg' },
 		{ href: "/services/sheetrock", icon: "bi-bricks", title: "Sheetrock Repair", desc: "Wall and ceiling damage repaired and ready for paint — same visit.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while we're already on-site.", img: "/assets/img/services/Installations/img.png" }
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while we're already on-site.", img: "/assets/img/services/Installations/img2.png" }
 	];
 	const faqs = [
 		{ q: "What types of repairs do you handle?", a: "We handle doors, locks, windows, screens, drywall, flooring, plumbing fixtures, appliance hookups, cabinets, closets, and general handyman repairs — everything common in rental properties." },
@@ -36,6 +36,8 @@
 	title="Repairs"
 	tagline="Reliable Repair Services for Apartment Communities"
 	heroImg="/assets/img/services/Repairs/img2.png"
+	heroPosition="center center"
+	heroFlip={true}
 	description="At Cordova Property Services, we provide reliable and efficient repair services tailored to apartment communities. Our team is experienced in handling a wide range of interior repairs — ensuring every issue is addressed quickly and professionally to meet your property standards and timelines."
 	why="We don't just fix issues — we help prevent delays, reduce rework, and ensure every unit meets move-in standards. Fast response and quality workmanship keep your operations running smoothly."
 	{includes}

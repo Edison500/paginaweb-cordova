@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all installations into a complete, coordinated unit turnover.", img: "/assets/img/services/turnkey services/img.png" },
-		{ href: "/services/millwork", icon: "bi-door-closed-fill", title: "Millwork & Trim", desc: "Trim and finish carpentry to complete the look after installations.", img: "/assets/img/services/Millwork/img.png" },
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Address related repair needs during the same on-site visit.", img: "/assets/img/services/Repairs/img.png" }
+		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Roll all installations into a complete, coordinated unit turnover.", img: '/assets/img/services/turnkey services/img2.jpeg' },
+		{ href: "/services/millwork", icon: "bi-door-closed-fill", title: "Millwork & Trim", desc: "Trim and finish carpentry to complete the look after installations.", img: "/assets/img/services/Millwork/img2.png" },
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Address related repair needs during the same on-site visit.", img: "/assets/img/services/Repairs/img2.png" }
 	];
 	const faqs = [
 		{ q: "What types of installations do you handle?", a: "We install appliances, flooring, lighting fixtures, ceiling fans, cabinet hardware, door hardware, bathroom fixtures, and more — all common rental property needs." },
@@ -36,6 +36,8 @@
 	title="Installation Services"
 	tagline="Professional Installation & Replacement Services for Rental Properties"
 	heroImg="/assets/img/services/Installations/img2.png"
+	heroPosition="center center"
+	heroFlip={true}
 	description="At Cordova Property Services, we specialize in professional installation and replacement of essential fixtures and components for apartment communities. No matter the size of the job, our experienced team ensures every installation is completed efficiently, safely, and up to industry standards — the first time."
 	why="Incorrect installations void warranties and generate maintenance callbacks. One vendor who does it right saves you time, protects your investment, and keeps your tenants satisfied."
 	{includes}

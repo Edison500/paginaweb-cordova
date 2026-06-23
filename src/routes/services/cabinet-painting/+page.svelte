@@ -20,8 +20,8 @@
 	];
 
 	const related = [
-		{ href: "/services/counter-resurfacing", icon: "bi-square-fill", title: "Counter Resurfacing", desc: "Complete the kitchen transformation with refinished countertops in the same visit.", img: "/assets/img/services/Countertop resurface/img.png" },
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Full interior painting to complement the fresh new cabinets.", img: "/assets/img/services/Painting/img.png" },
+		{ href: "/services/counter-resurfacing", icon: "bi-square-fill", title: "Counter Resurfacing", desc: "Complete the kitchen transformation with refinished countertops in the same visit.", img: "/assets/img/services/Countertop resurface/img2.png" },
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Full interior painting to complement the fresh new cabinets.", img: "/assets/img/services/Painting/img3.jpeg" },
 		{ href: "/services/tub-resurfacing", icon: "bi-bucket-fill", title: "Tub & Shower Resurfacing", desc: "Extend the refresh to bathrooms and maximize the unit's appeal.", img: "/assets/img/services/tub resurface/img.png" }
 	];
 

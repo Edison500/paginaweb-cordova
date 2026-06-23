@@ -2,17 +2,17 @@
 	const services = [
 		// Row 1: 1 3 7 9
 		{ img: '/assets/img/services/turnkey services/img2.jpeg',    href: '/services/turnkey',             title: 'Turnkey Services',         desc: 'Full unit turnovers handled end-to-end. Move-in ready, faster.' },
-		{ img: '/assets/img/services/Repairs/img.png',             href: '/services/repairs',             title: 'Repairs',                  desc: 'Fast repairs for plumbing, drywall, fixtures and more.' },
-		{ img: '/assets/img/services/Installations/img.png',       href: '/services/installations',       title: 'Installation Services',    desc: 'Appliances, flooring, fixtures — installed correctly, first time.' },
-		{ img: '/assets/img/services/Millwork/img.png',            href: '/services/millwork',            title: 'Millwork',                 desc: 'Baseboards, door frames, molding — the finishing details.' },
+		{ img: '/assets/img/services/Repairs/img2.png',             href: '/services/repairs',             title: 'Repairs',                  desc: 'Fast repairs for plumbing, drywall, fixtures and more.' },
+		{ img: '/assets/img/services/Installations/img2.png',       href: '/services/installations',       title: 'Installation Services',    desc: 'Appliances, flooring, fixtures — installed correctly, first time.' },
+		{ img: '/assets/img/services/Millwork/img2.png',            href: '/services/millwork',            title: 'Millwork',                 desc: 'Baseboards, door frames, molding — the finishing details.' },
 		// Row 2: 2 8 5 6
 		{ img: '/assets/img/services/Painting/img3.jpeg',            href: '/services/painting',            title: 'Painting',                 desc: 'Clean lines, consistent color, lasting results every time.' },
 		{ img: '/assets/img/services/Cabinet painting/img.png',    href: '/services/cabinet-painting',    title: 'Cabinet Painting',         desc: 'Professional spray painting — fresh look without replacement.' },
 		{ img: '/assets/img/services/tub resurface/img.png',       href: '/services/tub-resurfacing',     title: 'Tub & Shower Resurfacing', desc: 'Like-new finish at a fraction of replacement cost.' },
-		{ img: '/assets/img/services/Countertop resurface/img.png',href: '/services/counter-resurfacing', title: 'Counter Resurfacing',      desc: 'Refinish worn countertops without full replacement cost.' },
+		{ img: '/assets/img/services/Countertop resurface/img2.png',href: '/services/counter-resurfacing', title: 'Counter Resurfacing',      desc: 'Refinish worn countertops without full replacement cost.' },
 		// Row 3: 4 11 10
-		{ img: '/assets/img/services/Cleaning/img.png',            href: '/services/cleaning',            title: 'Cleaning',                 desc: 'Move-in/out deep cleans. Every corner spotless, every time.' },
-		{ img: '/assets/img/services/Carpet Cleaning/img.png',     href: '/services/carpet-cleaning',     title: 'Carpet Cleaning',          desc: 'Deep extraction cleaning — removes stains, odors, and allergens.' },
+		{ img: '/assets/img/services/Cleaning/img2.png',            href: '/services/cleaning',            title: 'Cleaning',                 desc: 'Move-in/out deep cleans. Every corner spotless, every time.' },
+		{ img: '/assets/img/services/Carpet Cleaning/img2.png',     href: '/services/carpet-cleaning',     title: 'Carpet Cleaning',          desc: 'Deep extraction cleaning — removes stains, odors, and allergens.' },
 
 	];
 </script>
@@ -88,8 +88,9 @@
 	background-size: cover;
 	background-position: center;
 	transition: transform .5s cubic-bezier(0.4,0,0.2,1);
+	transform: scaleX(-1);
 }
-.svc-card:hover .svc-img { transform: scale(1.08); }
+.svc-card:hover .svc-img { transform: scaleX(-1) scale(1.08); }
 
 /* Overlay siempre visible abajo, se expande en hover */
 .svc-overlay {

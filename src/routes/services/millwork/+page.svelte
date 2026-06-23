@@ -20,9 +20,9 @@
 	];
 
 	const related = [
-		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Paint all millwork and trim freshly after installation for a perfect, polished finish.", img: "/assets/img/services/Painting/img.png" },
+		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Paint all millwork and trim freshly after installation for a perfect, polished finish.", img: "/assets/img/services/Painting/img3.jpeg" },
 		{ href: "/services/sheetrock", icon: "bi-bricks", title: "Sheetrock Repair", desc: "Repair walls before installing new trim for a truly flawless result.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Hardware, fixtures, and structural installations completed in the same visit.", img: "/assets/img/services/Installations/img.png" }
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Hardware, fixtures, and structural installations completed in the same visit.", img: "/assets/img/services/Installations/img2.png" }
 	];
 
 	const faqs = [
@@ -37,6 +37,8 @@
 	title="Millwork & Trim"
 	tagline="Millwork & Trim Services for Apartment Communities"
 	heroImg="/assets/img/services/Millwork/img2.png"
+	heroPosition="center center"
+	heroFlip={true}
 	description="At Cordova Property Services, we provide professional millwork and trim services designed to enhance the appearance, durability, and overall value of your units. Whether during unit turns, renovations, or ongoing maintenance, our team delivers clean, precise, and reliable results — because details matter."
 	why="Well-installed trim and finishes make a significant difference in the final presentation of any unit. Clean baseboards, crisp door frames, and properly installed molding give units a finished, cared-for quality that stands out to every prospective tenant."
 	{includes}
