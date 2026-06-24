@@ -30,31 +30,15 @@
 <SiteShell>
 <main class="main">
 
-	<!-- HERO -->
-	<section class="sp-hero dark-background" style={`--sp-hero-position: ${heroPosition};`}>
-		<img src={heroImg} alt={title} class={`sp-hero-bg ${heroFlip ? 'sp-flip-x' : ''}`} />
-		<div class="sp-hero-overlay"></div>
-		<div class="container sp-hero-content">
-			<div class="sp-hero-text">
-				<nav class="sp-breadcrumb">
-					<a href="/">Home</a>
-					<i class="bi bi-chevron-right"></i>
-					<a href="/services">Services</a>
-					<i class="bi bi-chevron-right"></i>
-					<span>{title}</span>
-				</nav>
-				<div class="sp-hero-eyebrow">
-					<i class="bi bi-geo-alt-fill"></i>
-					Pensacola & Gulf Coast
-				</div>
-				<h1>{title}</h1>
-				<p>{tagline}</p>
-				<div class="sp-hero-badges">
-					<span><i class="bi bi-shield-fill-check"></i> Licensed & Insured</span>
-					<span><i class="bi bi-clock-fill"></i> 24h Response</span>
-					<span><i class="bi bi-camera-fill"></i> Photo Documentation</span>
-				</div>
-			</div>
+	<!-- HERO: mismo alto y estilo visual que Our Work -->
+	<section class="sp-hero" style={`--sp-hero-img: url('${heroImg}'); --sp-hero-position: ${heroPosition};`}>
+		<div class="sp-hero-img"></div>
+
+		<div class="sp-hero-copy">
+			<span>PENSACOLA & GULF COAST</span>
+			<h1>{title}</h1>
+			<div class="sp-hero-line"></div>
+			<p>{tagline}</p>
 		</div>
 	</section>
 
@@ -253,120 +237,102 @@
 
 <style>
 /* ─── HERO ─────────────────────────────────── */
-/* SERVICE HERO VIEW-FIRST V9: sin botones en el hero para no duplicar el CTA del sidebar y dejar ver mejor la foto. */
-.sp-hero{
-	position:relative;
-	min-height:720px;
-	display:flex;
-	align-items:flex-end;
-	overflow:hidden;
-	background:#111;
-}
-.sp-hero.dark-background{background:#111!important;color:inherit;}
-.sp-hero-bg{
-	position:absolute;
-	inset:0;
-	width:100%;
-	height:100%;
-	object-fit:cover;
-	object-position:var(--sp-hero-position,center center);
-	z-index:1;
-}
-.sp-hero-bg.sp-flip-x{transform:scaleX(-1);}
-/* No hay capa verde/oscura sobre toda la foto. La imagen queda limpia. */
-.sp-hero-overlay{display:none;}
-.sp-hero-content{
-	position:relative;
-	z-index:3;
-	padding:0 0 34px;
-}
-.sp-hero-text{
-	position:relative;
-	isolation:isolate;
-	overflow:hidden;
-	max-width:760px;
-	background:rgba(12,14,10,.46);
-	border:1px solid rgba(255,255,255,.26);
-	border-radius:22px;
-	padding:24px 28px 22px;
-	box-shadow:0 20px 55px rgba(0,0,0,.26);
-	backdrop-filter:blur(1.5px) saturate(1.02);
-	-webkit-backdrop-filter:blur(1.5px) saturate(1.02);
-}
-.sp-hero-text::before{
-	content:'';
-	position:absolute;
-	inset:0;
-	z-index:-1;
-	background:linear-gradient(135deg,rgba(0,0,0,.26) 0%,rgba(0,0,0,.08) 58%,rgba(255,255,255,.04) 100%);
-	pointer-events:none;
+/* SERVICE HERO V18: mismo alto y CSS base del banner Our Work.
+   Aplica a todos los servicios porque todos usan ServicePage.svelte. */
+.sp-hero {
+	position: relative;
+	min-height: 520px;
+	height: 520px;
+	display: flex;
+	align-items: center;
+	background: #f6f3ed;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(30, 36, 28, 0.08);
 }
 
-.sp-breadcrumb{
-	position:static!important;
-	display:flex;
-	align-items:center;
-	gap:8px;
-	color:rgba(255,255,255,.76);
-	font-size:12px;
-	margin:0 0 12px;
-	padding:0;
-	background:transparent;
-	box-shadow:none;
-	text-shadow:0 2px 10px rgba(0,0,0,.55);
-}
-.sp-breadcrumb a{color:rgba(255,255,255,.76);text-decoration:none;transition:color .2s;}
-.sp-breadcrumb a:hover{color:#fffcd9;}
-.sp-breadcrumb i{font-size:9px;color:rgba(255,255,255,.45);}
-.sp-breadcrumb span{color:#fffcd9;font-weight:700;}
-
-.sp-hero-eyebrow{
-	display:inline-flex;
-	align-items:center;
-	gap:8px;
-	font-size:11px;
-	font-weight:850;
-	color:#fffcd9;
-	text-transform:uppercase;
-	letter-spacing:2px;
-	margin-bottom:10px;
-	text-shadow:0 2px 12px rgba(0,0,0,.58);
-}
-.sp-hero-eyebrow i{font-size:12px;}
-.sp-hero-text h1{
-	color:#fff;
-	font-size:clamp(2.3rem,4.4vw,4rem);
-	font-weight:900;
-	line-height:.98;
-	margin-bottom:12px;
-	letter-spacing:-.055em;
-	max-width:650px;
-	text-shadow:0 3px 18px rgba(0,0,0,.58);
-}
-.sp-hero-text p{
-	color:rgba(255,255,255,.92);
-	font-size:clamp(.98rem,1.15vw,1.15rem);
-	line-height:1.55;
-	margin-bottom:16px;
-	max-width:620px;
-	text-shadow:0 2px 12px rgba(0,0,0,.52);
+.sp-hero-img {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background:
+		linear-gradient(
+			90deg,
+			rgba(250, 249, 244, 0.78) 0%,
+			rgba(250, 249, 244, 0.62) 22%,
+			rgba(250, 249, 244, 0.30) 42%,
+			rgba(250, 249, 244, 0.00) 62%
+		),
+		var(--sp-hero-img) var(--sp-hero-position, center center) / cover no-repeat;
 }
 
-
-.sp-hero-badges{display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.22);padding-top:16px;}
-.sp-hero-badges span{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.92);font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.50);}
-.sp-hero-badges i{color:#fffcd9;font-size:14px;}
-
-@media(min-width:1200px){
-	.sp-hero-text{max-width:780px;}
-	.sp-hero-badges{max-width:650px;}
+.sp-hero-copy {
+	position: relative;
+	z-index: 2;
+	max-width: 520px;
+	padding-left: 48px;
+	padding-right: 24px;
 }
-@media(max-width:768px){
-	.sp-hero{min-height:620px;align-items:flex-end;}
-	.sp-hero-content{padding:0 0 22px;}
-	.sp-hero-text{padding:22px 20px 20px;border-radius:18px;background:rgba(12,14,10,.56);}
-	.sp-hero-text h1{font-size:clamp(2.15rem,12vw,3.1rem);}
-	.sp-hero-badges{gap:12px;}
+
+.sp-hero-copy span {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 800;
+	color: #7b8b32;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	margin-bottom: 18px;
+}
+
+.sp-hero-copy h1 {
+	margin: 0;
+	font-size: clamp(42px, 4.4vw, 62px);
+	line-height: 0.98;
+	font-weight: 900;
+	letter-spacing: -0.055em;
+	color: #1c271a;
+}
+
+.sp-hero-line {
+	width: 48px;
+	height: 2px;
+	background: #7b8b32;
+	margin: 24px 0;
+}
+
+.sp-hero-copy p {
+	max-width: 390px;
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.65;
+	color: #4e574a;
+}
+
+@media (max-width: 820px) {
+	.sp-hero {
+		height: 420px;
+		min-height: 420px;
+	}
+
+	.sp-hero-img {
+		background:
+			linear-gradient(
+				90deg,
+				rgba(250, 249, 244, 0.88) 0%,
+				rgba(250, 249, 244, 0.68) 48%,
+				rgba(250, 249, 244, 0.26) 100%
+			),
+			var(--sp-hero-img) var(--sp-hero-position, center center) / cover no-repeat;
+	}
+
+	.sp-hero-copy {
+		padding-left: 24px;
+		padding-right: 20px;
+		max-width: 420px;
+	}
+
+	.sp-hero-copy h1 {
+		font-size: 42px;
+	}
 }
 
 /* ─── MAIN LAYOUT ──────────────────────────── */
@@ -444,8 +410,8 @@
 .sp-related-card{display:block;height:100%;border:1px solid rgba(0,0,0,.07);border-radius:14px;background:#fff;text-decoration:none;transition:all .3s;overflow:hidden;}
 .sp-related-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(107,107,40,.12);border-color:rgba(107,107,40,.3);}
 .sp-related-img{position:relative;height:260px;overflow:hidden;background:#f4f0e7;}
-.sp-related-img img{width:100%;height:100%;object-fit:cover;object-position:center center;transition:transform .4s ease;transform:scaleX(-1);}
-.sp-related-card:hover .sp-related-img img{transform:scaleX(-1) scale(1.06);}
+.sp-related-img img{width:100%;height:100%;object-fit:cover;object-position:center center;transition:transform .4s ease;}
+.sp-related-card:hover .sp-related-img img{transform:scale(1.06);}
 .sp-related-overlay{position:absolute;left:12px;bottom:12px;width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.12);}
 .sp-related-overlay i{font-size:18px;color:#6b6b28;}
 .sp-related-body{padding:16px 18px;}
@@ -477,7 +443,6 @@
 	.sp-sidebar-header,.sp-sidebar-sub,.sp-sidebar-divider,.sp-sidebar-trust{grid-column:1/-1;}
 }
 @media(max-width:768px){
-	.sp-hero-content{padding:80px 0 50px;}
 	.sp-related-img{height:220px;}
 	.sp-includes-grid{grid-template-columns:1fr;}
 	.sp-sidebar-card{display:block;}

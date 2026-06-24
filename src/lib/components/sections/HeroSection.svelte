@@ -31,16 +31,14 @@
 <section id="hero" class="hero section dark-background">
 	<div class="hero-bg-wrap" style="transform:translateY({scrollY * 0.25}px);">
 		<img
-			src="/assets/img/img1.png"
+			src="/assets/img/services/Home/img.png"
 			alt="Cordova Property Services"
 			class="hero-bg"
 			fetchpriority="high"
 			decoding="async"
 		/>
 	</div>
-	<div class="hero-overlay"></div>
-	<div class="hero-pattern"></div>
-	<div class="hero-fade-bottom"></div>
+
 
 	<div class="container hero-content">
 		<div class="row align-items-center">
@@ -84,10 +82,9 @@
 	/* === FOUNDATION === */
 	#hero {
 		position: relative;
-		/* Adaptive sizing: never demasiado corto, nunca demasiado alto.
-		   En pantallas grandes (>1080px alto) se queda en 920px en lugar
-		   de los ~993px que daba 92vh — usuario ve el siguiente bloque sin scrollear tanto. */
-		min-height: clamp(560px, 86vh, 920px);
+		height: 460px;
+		min-height: 460px;
+		padding: 0;
 		display: flex;
 		align-items: center;
 		overflow: hidden;
@@ -99,14 +96,29 @@
 		text-rendering: optimizeLegibility;
 	}
 
+	#hero :global(.hero-bg) {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+#hero::before,
+#hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+#hero :global(.hero-overlay),
+#hero :global(.hero-pattern),
+#hero :global(.hero-fade-bottom) {
+  display: none !important;
+}
 	/* === BANNER IMG (sizing y framing optimizados) === */
 	#hero :global(.hero-bg-wrap) {
 		position: absolute;
 		inset: 0;
 		z-index: 1;
 		will-change: transform;
-		/* +6% extra abajo para que el parallax tenga rango sin mostrar bordes */
-		height: 106%;
+		height: 100%;
 	}
 	#hero :global(.hero-bg) {
 		position: absolute;
@@ -114,47 +126,11 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		/* Encuadra el edificio en la mitad superior (típico de fotos multifamily) */
-		object-position: center 35%;
-		/* Zoom muy ligero: 102% (era 110% + scale 1.05 = ~115%, demasiado recorte) */
-		transform: scale(1.02);
+		object-position: center center;
+		transform: none;
 	}
 
-	#hero :global(.hero-overlay) {
-		position: absolute;
-		inset: 0;
-		z-index: 2;
-		background: linear-gradient(
-			90deg,
-			rgba(0, 0, 0, 0.65) 0%,
-			rgba(0, 0, 0, 0.30) 35%,
-			rgba(0, 0, 0, 0.06) 55%,
-			rgba(0, 0, 0, 0.01) 70%,
-			transparent 100%
-		);
-	}
 
-	#hero :global(.hero-pattern) {
-		position: absolute;
-		inset: 0;
-		z-index: 2;
-		opacity: 0.08;
-		pointer-events: none;
-		background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.4) 1px, transparent 0);
-		background-size: 30px 30px;
-	}
-
-	/* Fade sutil abajo para transición suave hacia la siguiente sección */
-	#hero :global(.hero-fade-bottom) {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		height: 80px;
-		z-index: 3;
-		pointer-events: none;
-		background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.35) 100%);
-	}
 
 	#hero :global(.hero-content) {
 		position: relative;
@@ -375,21 +351,20 @@
 	/* === RESPONSIVE: tablet === */
 	@media (max-width: 1024px) {
 		#hero {
-			min-height: clamp(540px, 82vh, 800px);
+			height: 420px;
+			min-height: 420px;
 		}
 	}
 
 	/* === RESPONSIVE: mobile === */
 	@media (max-width: 768px) {
 		#hero {
-			/* Mobile más compacto: 75vh vs el 80vh anterior. En iPhone 15 Pro
-			   pasa de 682px a 639px — diferencia notable de respiración. */
-			min-height: clamp(520px, 75vh, 700px);
-			padding: 60px 0;
+			height: 390px;
+			min-height: 390px;
+			padding: 0;
 		}
 		#hero :global(.hero-bg) {
-			/* En mobile la foto se ve mejor centrada (menos cielo cortado) */
-			object-position: center 40%;
+			object-position: center center;
 		}
 		#hero :global(.hero-stats) {
 			gap: 16px;
@@ -417,7 +392,8 @@
 	/* === RESPONSIVE: mobile pequeño === */
 	@media (max-width: 480px) {
 		#hero {
-			min-height: clamp(480px, 72vh, 640px);
+			height: 390px;
+			min-height: 390px;
 		}
 		#hero :global(.hero-content) {
 			padding: 32px 0;

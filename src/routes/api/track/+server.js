@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { env } from '$env/dynamic/private';
 import { supabaseAdmin } from '$lib/server/supabase';
 
-const DUPLICATE_WINDOW_MS = 30 * 1000;
+const DUPLICATE_WINDOW_MS = 60 * 1000;
 
 function cleanText(value, max = 500) {
 	return String(value ?? '').trim().slice(0, max);

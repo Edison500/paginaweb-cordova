@@ -21,7 +21,7 @@
 
 	const related = [
 		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Once the unit is cleared, our cleaning team comes in for a full move-out deep clean.", img: '/assets/img/services/Cleaning/img.png' },
-		{ href: "/services/carpet-cleaning", icon: "bi-water", title: "Carpet Cleaning", desc: "After trash out, bring carpets back to life with professional extraction cleaning.", img: "/assets/img/services/Carpet Cleaning/img2.png" },
+		{ href: "/services/carpet-cleaning", icon: "bi-water", title: "Carpet Cleaning", desc: "After trash out, bring carpets back to life with professional extraction cleaning.", img: "/assets/img/services/Carpet Cleaning/img.png" },
 		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Combine trash out with all turn services for a fully coordinated unit flip.", img: '/assets/img/services/turnkey services/img2.jpeg' }
 	];
 
@@ -37,7 +37,7 @@
 <ServicePage
 	title="Trash Out"
 	tagline="Fast Unit Clear-Outs for Property Managers — We Handle Everything"
-	heroImg="/assets/img/features-light-3.jpg"
+	heroImg="/assets/img/services/Trash Out/img.png"
 	description="When a tenant leaves — or is removed — the unit often can't be cleaned, repaired, or shown until everything is cleared out. Cordova's trash out service removes furniture, appliances, trash, and abandoned belongings fast, so your turnover process can start immediately. We're built for property managers: reliable scheduling, no-hassle access requirements, before-and-after documentation, and responsible disposal."
 	why="Every day a unit sits full of junk is a day it can't be cleaned, repaired, or leased. A fast, professional trash out is the first step in getting a vacant unit back on the market — and your maintenance team shouldn't be wasting time moving mattresses and hauling refrigerators."
 	{includes}

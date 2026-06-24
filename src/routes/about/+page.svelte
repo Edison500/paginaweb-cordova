@@ -72,16 +72,13 @@ const platforms = [
 
 		<section class="about-hero dark-background">
 			<img
-				src="/assets/img/img1.png"
+				src="/assets/img/services/About/img.png"
 				alt="About Cordova"
 				class="about-hero-bg"
 				fetchpriority="high"
 				decoding="async"
 			/>
 
-			<div class="about-hero-overlay"></div>
-			<div class="about-hero-pattern"></div>
-			<div class="about-hero-fade-bottom"></div>
 
 			<div class="container about-hero-content">
 				<nav class="breadcrumb-nav">
@@ -256,7 +253,8 @@ const platforms = [
 
 	.about-hero {
 		position: relative;
-		min-height: 92vh;
+		height: 460px;
+		min-height: 460px;
 		display: flex;
 		align-items: center;
 		overflow: hidden;
@@ -266,58 +264,17 @@ const platforms = [
 		position: absolute;
 		inset: 0;
 		width: 100%;
-		height: 110%;
+		height: 100%;
 		object-fit: cover;
-		object-position: center 38%;
+		object-position: center center;
 		z-index: 1;
-		transform: scale(1.05);
+		transform: none;
 		transition: transform 6s ease;
 	}
 
-	.about-hero-overlay {
-	position: absolute;
-	inset: 0;
-	z-index: 2;
-	background:
-		linear-gradient(
-			90deg,
-			rgba(0, 0, 0, 0.78) 0%,
-			rgba(0, 0, 0, 0.55) 28%,
-			rgba(0, 0, 0, 0.25) 55%,
-			rgba(0, 0, 0, 0.08) 75%,
-			transparent 100%
-		),
-		linear-gradient(
-			180deg,
-			rgba(0,0,0,0.15) 0%,
-			rgba(0,0,0,0.35) 100%
-		);
-}
 
-	.about-hero-pattern {
-		position: absolute;
-		inset: 0;
-		z-index: 3;
-		pointer-events: none;
-		opacity: 0.06;
-		background-image: radial-gradient(
-			circle at 1px 1px,
-			rgba(255, 255, 255, 0.45) 1px,
-			transparent 0
-		);
-		background-size: 30px 30px;
-	}
 
-	.about-hero-fade-bottom {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		height: 90px;
-		z-index: 3;
-		pointer-events: none;
-		background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.32) 100%);
-	}
+
 
 	.about-hero-content {
 		position: relative;
@@ -332,7 +289,7 @@ const platforms = [
 		color: rgba(255, 255, 255, 0.68);
 		font-size: 12.5px;
 		font-weight: 500;
-		margin-bottom: 22px;
+		margin-bottom: 16px;
 		letter-spacing: 0.01em;
 	}
 
@@ -369,13 +326,13 @@ const platforms = [
 	.about-hero-text h1 {
 		color: #fff;
 		font-family: 'Fraunces', 'Times New Roman', Georgia, serif;
-		font-size: clamp(2.6rem, 5.2vw, 4.8rem);
+		font-size: clamp(2rem, 4vw, 3.2rem);
 		font-weight: 700;
 		font-variation-settings: 'opsz' 144;
 		font-feature-settings: 'ss01', 'kern';
-		line-height: 0.95;
+		line-height: 1.05;
 		letter-spacing: -0.04em;
-		margin-bottom: 22px;
+		margin-bottom: 16px;
 		max-width: 780px;
 		text-wrap: balance;
 		text-shadow:
@@ -387,7 +344,7 @@ const platforms = [
 		color: rgba(255, 255, 255, 0.92);
 		font-size: 1.15rem;
 		line-height: 1.7;
-		margin-bottom: 34px;
+		margin-bottom: 22px;
 		max-width: 620px;
 		font-weight: 400;
 		text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
@@ -422,20 +379,28 @@ const platforms = [
 
 	.impact-stats {
 		background: linear-gradient(135deg, #1a2018 0%, #0d120c 100%);
-		padding: 64px 0;
+		padding: 14px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 	}
 
 	.impact-grid {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
 		gap: 0;
 	}
 
 	.impact-item {
-		text-align: center;
-		padding: 22px 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		text-align: left;
+		padding: 6px 20px;
 		position: relative;
-		border-right: 1px solid rgba(255, 255, 255, 0.08);
+		border-right: 1px solid rgba(255, 255, 255, 0.15);
+		white-space: nowrap;
 	}
 
 	.impact-item:last-child {
@@ -443,31 +408,32 @@ const platforms = [
 	}
 
 	.impact-item i {
-		font-size: 22px;
+		font-size: 15px;
 		color: #fffcd9;
-		opacity: 0.72;
-		display: block;
-		margin-bottom: 12px;
+		opacity: 0.85;
+		display: inline-flex;
+		align-items: center;
+		margin-bottom: 0;
 	}
 
 	.impact-num {
-		display: block;
-		font-size: clamp(1.6rem, 2vw, 2rem);
+		display: inline-block;
+		font-size: 13px;
 		font-weight: 800;
 		color: #fff;
-		letter-spacing: -0.028em;
+		letter-spacing: -0.01em;
 		line-height: 1;
-		margin-bottom: 8px;
+		margin-bottom: 0;
 		font-variant-numeric: tabular-nums lining-nums;
 		font-feature-settings: 'tnum' 1, 'lnum' 1;
 	}
 
 	.impact-label {
-		font-size: 10.5px;
-		color: rgba(255, 255, 255, 0.62);
-		text-transform: uppercase;
-		letter-spacing: 1.6px;
-		font-weight: 700;
+		font-size: 12px;
+		color: rgba(255, 252, 217, 0.9);
+		text-transform: none;
+		letter-spacing: 0;
+		font-weight: 600;
 	}
 
 	.section-eyebrow {
@@ -845,27 +811,25 @@ const platforms = [
 
 	@media (max-width: 1199px) {
 		.impact-grid {
-			grid-template-columns: repeat(3, 1fr);
-			gap: 8px 0;
+			justify-content: center;
+			gap: 0;
 		}
 
-		.impact-item:nth-child(3) {
-			border-right: none;
-		}
-
+		.impact-item:nth-child(3),
 		.impact-item:nth-child(n+4) {
-			border-top: 1px solid rgba(255, 255, 255, 0.08);
-			padding-top: 26px;
+			border-top: none;
+			padding-top: 6px;
 		}
 	}
 
 	@media (max-width: 991px) {
 		.about-hero {
-			min-height: 82vh;
+			height: 460px;
+			min-height: 460px;
 		}
 
 		.about-hero-content {
-			padding: 80px 0 70px;
+			padding: 58px 0 44px;
 		}
 
 		.about-hero-overlay {
@@ -899,16 +863,17 @@ const platforms = [
 
 	@media (max-width: 640px) {
 		.about-hero {
-			min-height: 80vh;
+			height: 390px;
+			min-height: 390px;
 		}
 
 		.about-hero-bg {
-			object-position: center 40%;
-			transform: scale(1.08);
+			object-position: center center;
+			transform: none;
 		}
 
 		.about-hero-content {
-			padding: 74px 0 64px;
+			padding: 46px 0 34px;
 		}
 
 		.breadcrumb-nav {
@@ -942,30 +907,37 @@ const platforms = [
 			font-size: 13px;
 		}
 
+		.impact-stats {
+			overflow-x: auto;
+			padding: 12px 0;
+		}
+
 		.impact-grid {
-			grid-template-columns: repeat(2, 1fr);
+			justify-content: flex-start;
+			flex-wrap: nowrap;
+			min-width: max-content;
 		}
 
 		.impact-item {
-			border-right: 1px solid rgba(255, 255, 255, 0.08);
-			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-		}
-
-		.impact-item:nth-child(2n) {
-			border-right: none;
-		}
-
-		.impact-item:nth-last-child(-n+2) {
+			padding: 6px 16px;
+			border-right: 1px solid rgba(255, 255, 255, 0.15);
 			border-bottom: none;
 		}
 
-		.impact-item:nth-child(n+4) {
+		.impact-item:nth-child(2n),
+		.impact-item:nth-child(3),
+		.impact-item:nth-child(n+4),
+		.impact-item:nth-last-child(-n+2) {
 			border-top: none;
-			padding-top: 22px;
+			border-bottom: none;
+		}
+
+		.impact-item:last-child {
+			border-right: none;
 		}
 
 		.impact-num {
-			font-size: 1.6rem;
+			font-size: 13px;
 		}
 
 		.diff-card {

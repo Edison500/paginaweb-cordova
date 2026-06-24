@@ -20,7 +20,7 @@
 	];
 
 	const related = [
-		{ href: "/services/counter-resurfacing", icon: "bi-square-fill", title: "Counter Resurfacing", desc: "Complete the kitchen transformation with refinished countertops in the same visit.", img: "/assets/img/services/Countertop resurface/img2.png" },
+		{ href: "/services/counter-resurfacing", icon: "bi-square-fill", title: "Counter Resurfacing", desc: "Complete the kitchen transformation with refinished countertops in the same visit.", img: "/assets/img/services/Countertop resurface/img.png" },
 		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Full interior painting to complement the fresh new cabinets.", img: "/assets/img/services/Painting/img3.jpeg" },
 		{ href: "/services/tub-resurfacing", icon: "bi-bucket-fill", title: "Tub & Shower Resurfacing", desc: "Extend the refresh to bathrooms and maximize the unit's appeal.", img: "/assets/img/services/tub resurface/img.png" }
 	];
@@ -36,7 +36,7 @@
 <ServicePage
 	title="Cabinet Painting"
 	tagline="Professional Cabinet Painting for Apartment Communities"
-	heroImg="/assets/img/features-light-3.jpg"
+	heroImg="/assets/img/services/Cabinet painting/img2.png"
 	description="At Cordova Property Services, we provide professional cabinet painting services designed to transform kitchens and bathrooms without the cost of full cabinet replacement. Our process is ideal for apartment communities looking to update the look of their units quickly, efficiently, and cost-effectively — while maintaining a clean, modern appearance."
 	why="Cabinet painting is a great solution for refreshing outdated finishes, covering wear and tear, and improving the overall presentation of a unit before move-in. We focus on quality, efficiency, and consistency so your units stand out and stay move-in ready."
 	{includes}

@@ -21,7 +21,7 @@
 
 	const related = [
 		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Bundle carpet cleaning with all other turn services — one call, one invoice.", img: '/assets/img/services/turnkey services/img2.jpeg' },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while the unit is being cleaned and turned.", img: "/assets/img/services/Installations/img2.png" },
+		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while the unit is being cleaned and turned.", img: "/assets/img/services/Installations/img.png" },
 		{ href: "/services/cleaning", icon: "bi-droplet-fill", title: "Cleaning", desc: "Pair carpet cleaning with a full unit deep clean for a completely move-in ready apartment.", img: '/assets/img/services/Cleaning/img.png' }
 	];
 

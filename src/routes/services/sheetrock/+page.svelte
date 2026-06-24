@@ -21,7 +21,7 @@
 
 	const related = [
 		{ href: "/services/painting", icon: "bi-brush-fill", title: "Painting", desc: "Paint immediately after sheetrock repair — same team, same visit, no delays.", img: "/assets/img/services/Painting/img3.jpeg" },
-		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Handle all related repair work in the same visit — no extra coordination needed.", img: "/assets/img/services/Repairs/img2.png" },
+		{ href: "/services/repairs", icon: "bi-tools", title: "Repairs", desc: "Handle all related repair work in the same visit — no extra coordination needed.", img: "/assets/img/services/Repairs/img.png" },
 		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Sheetrock repair is always part of our complete unit turn process.", img: '/assets/img/services/turnkey services/img2.jpeg' }
 	];
 
@@ -36,7 +36,7 @@
 <ServicePage
 	title="Sheetrock Repair"
 	tagline="Professional Sheetrock & Drywall Repair for Apartment Communities"
-	heroImg="/assets/img/features-light-2.jpg"
+	heroImg="/assets/img/services/Sheetrock/img.png"
 	description="At Cordova Property Services, we provide professional sheetrock and drywall repair services tailored specifically for apartment communities. Our team handles all types of drywall damage — from minor imperfections to larger repairs caused by water damage, wear and tear, or previous work — ensuring walls and ceilings are restored to a clean, seamless finish."
 	why="Drywall repairs must blend perfectly with the existing surface. We focus on precision, proper prep, and exact texture matching so repairs are virtually unnoticeable — keeping your units ready for residents without delays."
 	{includes}

@@ -10,7 +10,7 @@
 		{ href: '/services/painting',          label: 'Painting' },
 		{ href: '/services/repairs',           label: 'Repairs' },
 		{ href: '/services/cleaning',          label: 'Cleaning' },
-		{ href: '/services/sheetrock',         label: 'Sheetrock Repair' },
+		/* { href: '/services/sheetrock',         label: 'Sheetrock Repair' }, */
 		{ href: '/services/tub-resurfacing',   label: 'Tub Resurfacing' },
 	];
 
@@ -107,7 +107,7 @@
 							<i class="bi bi-clock-fill"></i>
 							<div>
 								<span class="cps-contact-label">Office Hours</span>
-								<span class="cps-contact-val">Mon–Fri 8AM–6PM</span>
+								<span class="cps-contact-val">Mon–Fri 8AM–5PM</span>
 							</div>
 						</div>
 						<div class="cps-contact-item">
