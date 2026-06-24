@@ -14,8 +14,8 @@
 	];
 
 	const stats = [
-		{ num: '4,008+', label: 'Projects Completed', icon: 'bi-hammer' },
-		{ num: '60+', label: 'Clients Served', icon: 'bi-buildings-fill' },
+		{ num: '5,008+', label: 'Projects Completed', icon: 'bi-hammer' },
+		{ num: '120+', label: 'Clients Served', icon: 'bi-buildings-fill' },
 		{ num: '11', label: 'Cities Covered', icon: 'bi-geo-alt-fill' },
 		{ num: '12', label: 'Specialized Services', icon: 'bi-tools' },
 		{ num: '24h', label: 'Response Guarantee', icon: 'bi-clock-fill' }
