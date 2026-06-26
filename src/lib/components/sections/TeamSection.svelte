@@ -259,8 +259,7 @@
         <div class="team-note" data-aos="fade-up">
             <i class="bi bi-people-fill"></i>
             <p>
-                Our full team of <strong>15+ field professionals</strong> serves Pensacola, Gulf
-                Breeze, Navarre, Fort Walton, Crestview, Milton, Mobile, and surrounding areas.
+                Our dedicated field team proudly serves Pensacola, Gulf Breeze, Navarre, Fort Walton Beach, Crestview, Milton, Mobile, and surrounding areas.
             </p>
         </div>
     </div>

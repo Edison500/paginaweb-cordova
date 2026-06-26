@@ -90,7 +90,7 @@
 							<i class="bi bi-telephone-fill"></i>
 							<div>
 								<span class="cps-contact-label">Scheduling</span>
-								<span class="cps-contact-val">+1 (850) 3238103</span>
+								<span class="cps-contact-val">+1 (850) 323-8103</span>
 							</div>
 						</a>
 						<a href="mailto:customer@cordovaps.com" class="cps-contact-item">
