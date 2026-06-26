@@ -86,11 +86,11 @@
 								<span class="cps-contact-val">+1 (448) 219-6669</span>
 							</div>
 						</a>
-						<a href="tel:+18504852385" class="cps-contact-item">
+						<a href="tel:+1850328103" class="cps-contact-item">
 							<i class="bi bi-telephone-fill"></i>
 							<div>
 								<span class="cps-contact-label">Scheduling</span>
-								<span class="cps-contact-val">+1 (850) 485-2385</span>
+								<span class="cps-contact-val">+1 (850) 3238103</span>
 							</div>
 						</a>
 						<a href="mailto:customer@cordovaps.com" class="cps-contact-item">

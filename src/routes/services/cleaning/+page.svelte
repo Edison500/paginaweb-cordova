@@ -21,7 +21,7 @@
 
 	const related = [
 		{ href: "/services/turnkey", icon: "bi-house-gear-fill", title: "Turnkey Services", desc: "Cleaning is one piece — bundle into a full turnkey unit turn.", img: '/assets/img/services/turnkey services/img2.jpeg' },
-		{ href: "/services/installations", icon: "bi-wrench-adjustable", title: "Installation Services", desc: "Replace fixtures, appliances, or hardware while the unit is being cleaned and turned.", img: "/assets/img/services/Installations/img.png" },
+		{ href: "/services/trash-out", icon: "bi-trash3-fill", title: "Trash Out", desc: "Clear out furniture, debris, and abandoned items before the unit cleaning starts.", img: "/assets/img/services/Trash Out/img2.png" },
 		{ href: "/services/carpet-cleaning", icon: "bi-droplet-fill", title: "Carpet Cleaning", desc: "Deep clean carpets after the unit clean for a fresher, move-in ready finish.", img: "/assets/img/services/Carpet Cleaning/img.png" }
 	];
 
