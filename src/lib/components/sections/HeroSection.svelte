@@ -82,7 +82,7 @@
 	/* === FOUNDATION === */
 	#hero {
 		position: relative;
-		height: 460px;
+		height: 480px;
 		min-height: 460px;
 		padding: 0;
 		display: flex;

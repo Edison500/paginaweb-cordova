@@ -146,14 +146,14 @@
 							<span>Request This Service</span>
 						</div>
 						<p class="sp-sidebar-sub">Free estimate · 24h response · Gulf Coast coverage</p>
-						<a href="/contact" class="sp-sidebar-btn-primary">Schedule Now</a>
+						<a href="/contact" class="sp-sidebar-btn-primary">Contact us</a>
 						<a href="tel:+14482196669" class="sp-sidebar-btn-call">
 							<i class="bi bi-telephone-fill"></i>
 							(448) 219-6669
 						</a>
-						<a href="mailto:scheduling@cordovaps.com" class="sp-sidebar-btn-email">
+						<a href="mailto:customer@cordovaps.com" class="sp-sidebar-btn-email">
 							<i class="bi bi-envelope-fill"></i>
-							scheduling@cordovaps.com
+							customer@cordovaps.com
 						</a>
 						<div class="sp-sidebar-divider"></div>
 						<ul class="sp-sidebar-trust">

@@ -124,11 +124,11 @@
 					</div>
 				</a>
 				<div class="ct-quick-div"></div>
-				<a href="mailto:scheduling@cordovaps.com" class="ct-quick-item">
+				<a href="mailto:customer@cordovaps.com" class="ct-quick-item">
 					<i class="bi bi-envelope-fill"></i>
 					<div>
-						<span class="ct-quick-label">Email Scheduling</span>
-						<span class="ct-quick-value">scheduling@cordovaps.com</span>
+						<span class="ct-quick-label">Email office</span>
+						<span class="ct-quick-value">customer@cordovaps.com</span>
 					</div>
 				</a>
 				<div class="ct-quick-div"></div>
@@ -257,11 +257,11 @@
 								<span class="ct-direct-val">+1 (448) 219-6669</span>
 							</div>
 						</a>
-						<a href="tel:+18504852385" class="ct-direct-item">
+						<a href="tel:+18503238103" class="ct-direct-item">
 							<div class="ct-direct-icon"><i class="bi bi-telephone-fill"></i></div>
 							<div>
 								<span class="ct-direct-label">Scheduling</span>
-								<span class="ct-direct-val">+1 (850) 485-2385</span>
+								<span class="ct-direct-val">+1 (850) 323-8103</span>
 							</div>
 						</a>
 						<a href="mailto:customer@cordovaps.com" class="ct-direct-item">

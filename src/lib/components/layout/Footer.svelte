@@ -6,12 +6,16 @@
 	});
 
 	const services = [
-		{ href: '/services/turnkey',           label: 'Turnkey Services' },
-		{ href: '/services/painting',          label: 'Painting' },
-		{ href: '/services/repairs',           label: 'Repairs' },
-		{ href: '/services/cleaning',          label: 'Cleaning' },
-		/* { href: '/services/sheetrock',         label: 'Sheetrock Repair' }, */
-		{ href: '/services/tub-resurfacing',   label: 'Tub Resurfacing' },
+		{ href: '/services/turnkey',              label: 'Turnkey Services' },
+		{ href: '/services/repairs',              label: 'Repairs' },
+		{ href: '/services/installations',        label: 'Installation Services' },
+		{ href: '/services/millwork',             label: 'Millwork' },
+		{ href: '/services/painting',             label: 'Painting' },
+		{ href: '/services/cabinet-painting',     label: 'Cabinet Painting' },
+		{ href: '/services/tub-resurfacing',      label: 'Tub & Shower Resurfacing' },
+		{ href: '/services/counter-resurfacing',  label: 'Counter Resurfacing' },
+		{ href: '/services/cleaning',             label: 'Cleaning' },
+		{ href: '/services/carpet-cleaning',      label: 'Carpet Cleaning' }
 	];
 
 	const areas = [
@@ -45,9 +49,9 @@
 				</div>
 
 				<!-- Col 2: Services -->
-				<div class="cps-footer-col">
+				<div class="cps-footer-col cps-footer-services">
 					<h4>Our Services</h4>
-					<ul>
+					<ul class="cps-service-list">
 						{#each services as s}
 							<li><a href={s.href}>{s.label}</a></li>
 						{/each}
@@ -85,7 +89,7 @@
 						<a href="tel:+18504852385" class="cps-contact-item">
 							<i class="bi bi-telephone-fill"></i>
 							<div>
-								<span class="cps-contact-label">Secondary</span>
+								<span class="cps-contact-label">Scheduling</span>
 								<span class="cps-contact-val">+1 (850) 485-2385</span>
 							</div>
 						</a>
@@ -138,12 +142,17 @@
 .cps-footer{background:#1a2018;color:rgba(255,255,255,.75);}
 
 /* TOP */
-.cps-footer-top{padding:60px 0 48px;}
-.cps-footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1.2fr 1.4fr;gap:48px;}
+.cps-footer-top{padding:58px 0 46px;}
+.cps-footer-grid{
+	display:grid;
+	grid-template-columns:minmax(260px,1.15fr) minmax(350px,1.3fr) minmax(230px,1fr) minmax(300px,1.2fr);
+	gap:38px;
+	align-items:start;
+}
 
 /* Brand col */
 .cps-footer-logo img{max-height:52px;width:auto;filter:brightness(0) invert(1);opacity:.9;}
-.cps-footer-tagline{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.7;margin:16px 0 18px;}
+.cps-footer-tagline{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.7;margin:16px 0 18px;max-width:360px;}
 .cps-footer-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
 .cps-footer-badges span{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:rgba(255,252,217,.85);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:5px 12px;}
 .cps-footer-badges i{font-size:12px;color:#fffcd9;}
@@ -152,24 +161,57 @@
 .cps-footer-social a:hover{background:rgba(107,107,40,.5);border-color:#6b6b28;color:#fff;}
 
 /* Link cols */
-.cps-footer-col h4{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;}
+.cps-footer-col h4{font-size:13px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1.6px;margin:0 0 16px;}
 .cps-footer-col .mt-4{margin-top:28px !important;}
-.cps-footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
-.cps-footer-col ul li a{font-size:13.5px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:6px;}
-.cps-footer-col ul li a::before{content:'→';font-size:11px;color:#6b6b28;opacity:0;transition:opacity .2s;}
+.cps-footer-col ul{list-style:none;padding:0;margin:0;}
+.cps-footer-col ul li a{font-size:13.5px;color:rgba(255,255,255,.62);text-decoration:none;transition:color .2s;}
 .cps-footer-col ul li a:hover{color:#fffcd9;}
-.cps-footer-col ul li a:hover::before{opacity:1;}
+
+/* Services: compact and clean */
+.cps-footer-services{min-width:0;}
+.cps-service-list{
+	display:grid;
+	grid-template-columns:repeat(2,minmax(155px,1fr));
+	column-gap:22px;
+	row-gap:11px;
+	max-width:380px;
+}
+.cps-service-list li a{
+	display:inline-flex;
+	align-items:center;
+	gap:8px;
+	font-size:13px;
+	line-height:1.25;
+	white-space:nowrap;
+	letter-spacing:-.01em;
+}
+.cps-service-list li a::before{
+	content:'';
+	width:5px;
+	height:5px;
+	border-radius:50%;
+	background:#c9a63c;
+	box-shadow:0 0 0 3px rgba(201,166,60,.08);
+	flex:0 0 5px;
+}
+.cps-service-list li a:hover::before{background:#fffcd9;}
+
+/* Company links */
+.cps-footer-col:not(.cps-footer-services) > ul{display:flex;flex-direction:column;gap:9px;}
+.cps-footer-col:not(.cps-footer-services) > ul li a{display:inline-flex;align-items:center;gap:7px;}
+.cps-footer-col:not(.cps-footer-services) > ul li a::before{content:'→';font-size:11px;color:#6b6b28;opacity:0;transition:opacity .2s;}
+.cps-footer-col:not(.cps-footer-services) > ul li a:hover::before{opacity:1;}
 
 /* Areas */
-.cps-footer-areas{display:flex;flex-wrap:wrap;gap:5px;}
-.cps-footer-areas span{font-size:11px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:3px 9px;}
+.cps-footer-areas{display:flex;flex-wrap:wrap;gap:6px;max-width:260px;}
+.cps-footer-areas span{font-size:11px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:3px 9px;}
 
 /* Contact col */
 .cps-footer-contact-list{display:flex;flex-direction:column;gap:12px;}
 .cps-contact-item{display:flex;align-items:flex-start;gap:11px;text-decoration:none;transition:color .2s;}
 .cps-contact-item i{font-size:14px;color:#6b6b28;flex-shrink:0;margin-top:2px;}
-.cps-contact-label{display:block;font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:1px;}
-.cps-contact-val{display:block;font-size:13px;color:rgba(255,255,255,.75);transition:color .2s;}
+.cps-contact-label{display:block;font-size:10px;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:1px;margin-bottom:1px;}
+.cps-contact-val{display:block;font-size:13px;color:rgba(255,255,255,.78);transition:color .2s;}
 a.cps-contact-item:hover .cps-contact-val{color:#fffcd9;}
 
 /* BOTTOM */
@@ -180,9 +222,15 @@ a.cps-contact-item:hover .cps-contact-val{color:#fffcd9;}
 .cps-footer-credit{font-size:12px;color:rgba(255,255,255,.3);}
 
 /* RESPONSIVE */
-@media(max-width:1100px){.cps-footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
-@media(max-width:600px){
-	.cps-footer-grid{grid-template-columns:1fr;gap:28px;}
+@media(max-width:1200px){
+	.cps-footer-grid{grid-template-columns:1.1fr 1fr;gap:36px 44px;}
+	.cps-service-list{max-width:none;grid-template-columns:repeat(2,minmax(150px,1fr));}
+}
+@media(max-width:700px){
+	.cps-footer-top{padding:46px 0 36px;}
+	.cps-footer-grid{grid-template-columns:1fr;gap:30px;}
+	.cps-service-list{grid-template-columns:1fr;row-gap:10px;}
+	.cps-service-list li a{white-space:normal;}
 	.cps-footer-bottom-inner{justify-content:center;text-align:center;}
 }
 </style>

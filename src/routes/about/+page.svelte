@@ -253,7 +253,7 @@ const platforms = [
 
 	.about-hero {
 		position: relative;
-		height: 460px;
+		height: 480px;
 		min-height: 460px;
 		display: flex;
 		align-items: center;
