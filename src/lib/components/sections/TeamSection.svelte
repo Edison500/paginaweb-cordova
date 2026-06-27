@@ -9,39 +9,58 @@
             role: 'CEO & Founder',
             icon: 'bi-star-fill',
             desc: 'Founded Cordova Property Services with a vision to deliver reliable, high-quality maintenance solutions for multifamily communities across the region.',
-            tags: ['STRATEGY', 'EXECUTION', 'GROWTH'],
+            tags: [
+                { label: 'Strategy', icon: 'bi-compass' },
+                { label: 'Execution', icon: 'bi-rocket-takeoff' },
+                { label: 'Growth', icon: 'bi-graph-up-arrow' }
+            ],
             boss: true
         },
         {
             id: 2,
-            img: '/assets/img/team/team-1.jpg',
-            name: 'Marcus Reed',
+            img: '/assets/img/team/team-1.jpeg',
+            name: 'Victoria Cordova',
             role: 'Operations Manager',
-            icon: 'bi-diagram-3-fill',
-            desc: 'Oversees day-to-day field operations, ensuring every unit turn runs on schedule and meets our quality standards.',
-            tags: ['10+ Years', 'Operations', 'Field Logistics'],
-            boss: false
+            icon: 'bi-person-gear',
+            desc: 'Ensures every project is properly planned, staffed, and executed, maintaining operational excellence while delivering reliable, high-quality service to every client.',
+            tags: [
+                { label: 'Problem Solving', icon: 'bi-puzzle' },
+                { label: 'Strategic Planning', icon: 'bi-signpost-split' },
+                { label: 'Quality Control', icon: 'bi-patch-check' }
+            ],
+            boss: false,
+            compactText: true
         },
         {
             id: 3,
-            img: '/assets/img/team/team-3.jpg',
-            name: 'James Patterson',
-            role: 'Maintenance Technician',
-            icon: 'bi-tools',
-            desc: 'Handles repairs, installations, and sheetrock work — a key part of our turnkey unit turn process.',
-            tags: ['HVAC Certified', 'Plumbing', 'Sheetrock'],
+            img: '/assets/img/team/team-7.png',
+            name: 'Gustavo A. Chirinos',
+            role: 'Operations Supervisor',
+            icon: 'bi-person-check-fill',
+            desc: 'Coordinates field crews and quality control across active jobs, making sure every turn meets spec and is delivered on time.',
+            tags: [
+                { label: 'Quality Assurance', icon: 'bi-award' },
+                { label: 'Project Oversight', icon: 'bi-clipboard-data' },
+                { label: 'Crew Lead', icon: 'bi-people-fill' }
+            ],
             boss: false
         },
         {
             id: 4,
-            img: '/assets/img/team/team-7.png',
-            name: 'Gustavo A. Chirinos',
-            role: 'Operations Supervisor',
-            icon: 'bi-clipboard-check-fill',
-            desc: 'Coordinates field crews and quality control across active jobs, making sure every turn meets spec and is delivered on time.',
-            tags: ['QUALITY ASSURANCE', 'PROJECT OVERSIGHT', 'CREW LEAD'],
-            boss: false
+            img: '/assets/img/team/team-2.jpeg',
+            name: 'Gabriela Galarza',
+            role: 'Administrative Assistant',
+            icon: 'bi-person-workspace',
+            desc: 'Coordinates scheduling, customer communications, and project documentation, helping ensure every service is organized, efficient, and completed on time.',
+            tags: [
+                { label: 'Scheduling', icon: 'bi-calendar2-check' },
+                { label: 'Customer Care', icon: 'bi-chat-dots' },
+                { label: 'Work Orders', icon: 'bi-journal-check' }
+            ],
+            boss: false,
+            compactText: true
         }
+
     ];
 
     let centerIdx = $state(0);
@@ -220,12 +239,23 @@
 
                                 <div class="team-info">
                                     <h4>{member.name}</h4>
-                                    <p>{member.desc}</p>
+                                    <p class:desc-compact={member.compactText}>{member.desc}</p>
 
-                                    <div class="tags" class:is-visible={isCenter}>
-                                        {#each member.tags as tag}
-                                            <span class="tag">{tag}</span>
-                                        {/each}
+                                    <div class="skills-block" class:is-visible={isCenter}>
+                                        <div class="skills-title">
+                                            <span>SPECIALTIES</span>
+                                        </div>
+
+                                        <div class="tags">
+                                            {#each member.tags as tag}
+                                                <span class="tag">
+                                                    <span class="tag-icon">
+                                                        <i class="bi {tag.icon}"></i>
+                                                    </span>
+                                                    <span class="tag-label">{tag.label}</span>
+                                                </span>
+                                            {/each}
+                                        </div>
                                     </div>
                                 </div>
                             </button>
@@ -279,7 +309,7 @@
     }
     .team-track {
         position: relative;
-        min-height: 580px;
+        min-height: 670px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -407,22 +437,27 @@
         box-shadow: 0 10px 28px rgba(184, 146, 58, 0.4);
     }
     .team-card {
-    display: block;
-    width: 100%;
-    background: #fff;
-    border-radius: 20px;
-    padding: 32px 24px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    cursor: pointer;
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.16s ease,
-        filter 0.16s ease;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 560px;
+        background: #fff;
+        border-radius: 20px;
+        padding: 32px 24px 26px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        cursor: pointer;
+        overflow: hidden;
+        box-sizing: border-box;
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.16s ease,
+            filter 0.16s ease;
+    }
     .card-wrapper.is-center .team-card {
     transform: translateY(-10px);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
@@ -439,9 +474,9 @@
     }
     .team-photo-wrap {
         position: relative;
-        width: 160px;
-        height: 160px;
-        margin: 0 auto 20px;
+        width: 158px;
+        height: 158px;
+        margin: 0 auto 18px;
     }
     .team-photo {
         width: 100%;
@@ -487,13 +522,29 @@
             transform: rotate(360deg);
         }
     }
+    .team-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        min-height: 0;
+    }
+
     .team-info h4 {
-    font-size: 20px;
-    font-weight: 800;
-    color: #1a1a1a;
-    margin-bottom: 10px; /* 👈 antes 4px */
-    letter-spacing: -0.01em;
-}
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 800;
+        color: #1a1a1a;
+        margin: 0 0 8px;
+        letter-spacing: -0.01em;
+        line-height: 1.15;
+    }
+
     .team-card-featured .team-info h4 {
         color: #4a4a1c;
     }
@@ -514,41 +565,123 @@
         background: rgba(184, 146, 58, 0.14);
     }
     .team-info p {
-    font-size: 13.5px;
-    color: #666;
-    line-height: 1.7;      /* 👈 antes 1.65 */
-    margin-top: 2px;       /* 👈 nuevo */
-    margin-bottom: 18px;   /* 👈 antes 16px */
-}
-    .tags {
+        width: 100%;
+        height: 106px;
+        max-width: 274px;
         display: flex;
+        align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 18px;
-        min-height: auto;
+        font-size: 13.5px;
+        color: #666;
+        line-height: 1.55;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .team-info p.desc-compact {
+        font-size: 12.9px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+    .skills-block {
+        width: 100%;
+        margin-top: auto;
+        padding-top: 14px;
         opacity: 0;
-        pointer-events: none;
+        visibility: hidden;
         transition: opacity 0.12s ease;
     }
-    .tags.is-visible {
+
+    .skills-block.is-visible {
         opacity: 1;
+        visibility: visible;
     }
-    .tag {
-        font-size: 10.5px;
-        font-weight: 700;
+
+    .skills-title {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        margin-bottom: 14px;
+    }
+
+    .skills-title::before,
+    .skills-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: rgba(184, 146, 58, 0.38);
+    }
+
+    .skills-title span {
+        color: #9a7a25;
+        font-size: 11px;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 0.8px;
-        padding: 5px 11px;
-        border-radius: 16px;
-        background: rgba(107, 107, 40, 0.1);
-        color: #5a5f2c;
-        border: 1px solid rgba(107, 107, 40, 0.15);
+        letter-spacing: 3px;
+        line-height: 1;
     }
+
+    .tags {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 0;
+    }
+
+    .tag {
+        min-height: 104px;
+        padding: 12px 8px 11px;
+        border-radius: 8px;
+        background: rgba(255, 252, 242, 0.72);
+        border: 1px solid rgba(184, 146, 58, 0.28);
+        color: #4a4a1c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.035);
+    }
+
+    .tag-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid rgba(184, 146, 58, 0.28);
+        color: #b8923a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+        flex-shrink: 0;
+    }
+
+    .tag-label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        text-transform: none;
+    }
+
+    .team-card-featured .skills-title::before,
+    .team-card-featured .skills-title::after {
+        background: rgba(184, 146, 58, 0.45);
+    }
+
     .team-card-featured .tag {
-        background: rgba(184, 146, 58, 0.12);
-        color: #7a6020;
-        border-color: rgba(184, 146, 58, 0.25);
+        background: rgba(255, 250, 232, 0.78);
+        border-color: rgba(184, 146, 58, 0.34);
+    }
+
+    .team-card-featured .tag-icon {
+        color: #b8923a;
+        border-color: rgba(184, 146, 58, 0.34);
     }
     .team-socials {
         display: flex;
@@ -680,7 +813,7 @@
     }
     @media (max-width: 991px) {
     .team-track {
-        min-height: 600px;
+        min-height: 670px;
     }
     .card-wrapper {
         width: 280px;
@@ -714,7 +847,7 @@
         padding: 28px 0 4px;
     }
     .team-track {
-        min-height: 620px;
+        min-height: 680px;
     }
     .card-wrapper {
         width: calc(100vw - 88px);
@@ -737,7 +870,8 @@
         right: 0;
     }
     .team-card {
-        padding: 32px 22px;
+        height: 560px;
+        padding: 32px 22px 24px;
     }
 
     .card-wrapper.is-center .team-card {
@@ -752,7 +886,16 @@
         font-size: 19px;
     }
     .team-info p {
+        height: 104px;
+        max-width: 270px;
         font-size: 13px;
+        line-height: 1.55;
+        overflow: hidden;
+    }
+
+    .team-info p.desc-compact {
+        font-size: 12.4px;
+        line-height: 1.48;
     }
     .role-badge {
         top: -18px;
@@ -760,9 +903,39 @@
         font-size: 10px;
         letter-spacing: 1.3px;
     }
-    .tag {
+    .skills-block {
+        padding-top: 16px;
+    }
+
+    .skills-title {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .skills-title span {
         font-size: 10px;
-        padding: 4px 9px;
+        letter-spacing: 2.4px;
+    }
+
+    .tags {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .tag {
+        min-height: 94px;
+        padding: 10px 6px;
+    }
+
+    .tag-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .tag-label {
+        font-size: 11.5px;
+        line-height: 1.15;
     }
     .side-tooltip {
         display: none;
