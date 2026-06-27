@@ -5,21 +5,21 @@
 			name: "Testimonial Pending",
 			role: "Property Manager",
 			company: "Multifamily Community",
-			avatar: '/assets/img/team/team-2.jpg'
+			avatar: '/assets/img/testimonials/testimonials-2.jpg'
 		},
 		{
 			quote: "We've tried other vendors for painting and repairs — Cordova is in a league of their own. Bilingual team, professional results, and they work perfectly with our PO system.",
 			name: "Testimonial Pending",
 			role: "Operations Director",
 			company: "Property Management Group",
-			avatar: '/assets/img/team/team-4.jpg'
+			avatar: '/assets/img/testimonials/testimonials-5.jpg'
 		},
 		{
 			quote: "Reliable, fast, and the quality is consistent across every unit. They've saved us countless hours of vendor coordination. Highly recommended.",
 			name: "Testimonial Pending",
 			role: "Regional Manager",
 			company: "Apartment Communities",
-			avatar: '/assets/img/team/team-5.jpg'
+			avatar: '/assets/img/testimonials/testimonials-3.jpg'
 		}
 	];
 </script>
