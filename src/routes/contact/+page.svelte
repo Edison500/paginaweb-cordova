@@ -253,7 +253,7 @@
 						<a href="tel:+14482196669" class="ct-direct-item">
 							<div class="ct-direct-icon"><i class="bi bi-telephone-fill"></i></div>
 							<div>
-								<span class="ct-direct-label">Office Number</span>
+								<span class="ct-direct-label">Office</span>
 								<span class="ct-direct-val">+1 (448) 219-6669</span>
 							</div>
 						</a>

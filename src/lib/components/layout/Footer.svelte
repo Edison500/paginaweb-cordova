@@ -82,7 +82,7 @@
 						<a href="tel:+14482196669" class="cps-contact-item">
 							<i class="bi bi-telephone-fill"></i>
 							<div>
-								<span class="cps-contact-label">Main Line</span>
+								<span class="cps-contact-label">Office</span>
 								<span class="cps-contact-val">+1 (448) 219-6669</span>
 							</div>
 						</a>
