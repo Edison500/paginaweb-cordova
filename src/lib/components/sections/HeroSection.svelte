@@ -31,7 +31,7 @@
 <section id="hero" class="hero section dark-background">
 	<div class="hero-bg-wrap" style="transform:translateY({scrollY * 0.25}px);">
 		<img
-			src="/assets/img/services/Home/img.jpeg"
+			src="/assets/img/services/Home/img.png"
 			alt="Cordova Property Services"
 			class="hero-bg"
 			fetchpriority="high"
