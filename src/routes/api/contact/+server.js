@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { supabaseAdmin } from '$lib/server/supabase';
-import { sendContactEmail } from '$lib/server/mail';
+import { sendContactEmail, sendCustomerConfirmationEmail } from '$lib/server/mail';
 
 const SERVICES = new Set([
 	'Turnkey Services',
@@ -173,6 +173,14 @@ export async function POST({ request }) {
 				email_error: null
 			})
 			.eq('id', savedRequest.id);
+
+		try {
+			await sendCustomerConfirmationEmail({ ...payload, id: savedRequest.id });
+		} catch (confirmError) {
+			// La solicitud ya se guardó y el admin ya fue notificado; que falle el
+			// correo de cortesía al cliente no debe convertir esto en un error 500.
+			console.error('Customer confirmation email error:', confirmError);
+		}
 
 		return json({
 			ok: true,

@@ -96,6 +96,41 @@
 		return `/admin/dashboard${qs ? `?${qs}` : ''}`;
 	}
 
+	function buildExportUrl() {
+		const url = buildFilterUrl();
+		const [path, qs] = url.split('?');
+		return `${path}/export${qs ? `?${qs}` : ''}`;
+	}
+
+	const STALE_HOURS = 24;
+
+	function isStale(request) {
+		if (request.status !== 'new') return false;
+		const created = new Date(request.created_at).getTime();
+		if (Number.isNaN(created)) return false;
+		return Date.now() - created > STALE_HOURS * 60 * 60 * 1000;
+	}
+
+	function formatReferrer(referrer) {
+		if (!referrer) return 'Directo / desconocido';
+		try {
+			return new URL(referrer).host;
+		} catch {
+			return referrer;
+		}
+	}
+
+	function formatUserAgent(ua) {
+		if (!ua) return 'Desconocido';
+		const isMobile = /Mobile|Android|iPhone/i.test(ua);
+		let browser = 'Navegador';
+		if (/Edg\//.test(ua)) browser = 'Edge';
+		else if (/Chrome\//.test(ua) && !/Chromium/.test(ua)) browser = 'Chrome';
+		else if (/Firefox\//.test(ua)) browser = 'Firefox';
+		else if (/Safari\//.test(ua) && !/Chrome/.test(ua)) browser = 'Safari';
+		return `${isMobile ? 'Móvil' : 'Escritorio'} · ${browser}`;
+	}
+
 	function currentMonthValue() {
 		const now = new Date();
 		return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
@@ -234,6 +269,13 @@
 			</div>
 		{/if}
 
+		{#if data.stats.staleNew > 0}
+			<div class="notice warning">
+				⏰ {data.stats.staleNew} solicitud(es) llevan más de 24 horas como "Nuevo" sin atenderse.
+				<a href={buildFilterUrl({ status: 'new' })} data-sveltekit-noscroll>Ver cuáles</a>
+			</div>
+		{/if}
+
 		<section class="panel">
 			<form class="filters" method="GET" data-sveltekit-noscroll data-sveltekit-keepfocus>
 				<input type="hidden" name="status" value={data.filters.status} />
@@ -293,7 +335,10 @@
 				<b>Nuevo:</b> sin revisar · <b>Visto:</b> ya abierto · <b>Contactado:</b> ya se le respondió · <b>Cerrado:</b> finalizado
 			</p>
 
-			<p class="result-count">{data.filteredTotal} resultado(s). Mostrando los últimos 75.</p>
+			<div class="result-row">
+				<p class="result-count">{data.filteredTotal} resultado(s). Mostrando los últimos 75.</p>
+				<a href={buildExportUrl()} class="export-btn" data-sveltekit-reload>Exportar CSV</a>
+			</div>
 
 			<div class="inbox-list">
 				{#if data.requests.length === 0}
@@ -318,6 +363,9 @@
 								<p class="inbox-snippet">{preview(request.message, 110)}</p>
 							</div>
 							<div class="inbox-side">
+								{#if isStale(request)}
+									<span class="stale-badge" title="Sin atender hace más de 24 horas">⏰ Sin atender</span>
+								{/if}
 								<span class="status-badge status-{request.status}">{statusLabels[request.status]}</span>
 								<span class="date-cell">{formatDate(request.created_at)}</span>
 								{#if request.email_error}
@@ -405,6 +453,43 @@
 					</div>
 				{/if}
 			</div>
+
+			<div class="panel">
+				<p class="eyebrow small">Tráfico</p>
+				<h2>Dispositivos</h2>
+				<p class="side-copy">{data.topPagesRange.label} · aproximado por ancho de pantalla.</p>
+				{#if data.deviceBreakdown.length === 0}
+					<p class="empty-side">Sin datos todavía.</p>
+				{:else}
+					<div class="service-list">
+						{#each data.deviceBreakdown as item}
+							<div class="service-row">
+								<span>{item.device}</span>
+								<strong>{item.count}</strong>
+							</div>
+						{/each}
+					</div>
+				{/if}
+			</div>
+
+			<div class="panel">
+				<p class="eyebrow small">Insights</p>
+				<h2>Conversión visita → solicitud</h2>
+				<p class="side-copy">{data.topPagesRange.label} · % de visitas a esa página que terminaron en una solicitud.</p>
+				{#if data.conversionByPage.length === 0}
+					<p class="empty-side">Sin datos todavía.</p>
+				{:else}
+					<div class="service-list">
+						{#each data.conversionByPage as item}
+							<div class="service-row conversion-row">
+								<span>{formatPageName(item.path)}</span>
+								<span class="conversion-detail">{item.leads} de {item.visits} visitas</span>
+								<strong>{item.rate.toFixed(1)}%</strong>
+							</div>
+						{/each}
+					</div>
+				{/if}
+			</div>
 		</section>
 	{/if}
 </main>
@@ -448,6 +533,14 @@
 					<dd>{formatPageName(selectedRequest.source_page || 'website')}</dd>
 				</div>
 				<div>
+					<dt>Llegó desde</dt>
+					<dd>{formatReferrer(selectedRequest.referrer)}</dd>
+				</div>
+				<div>
+					<dt>Dispositivo</dt>
+					<dd>{formatUserAgent(selectedRequest.user_agent)}</dd>
+				</div>
+				<div>
 					<dt>Recibido</dt>
 					<dd>{formatDate(selectedRequest.created_at)}</dd>
 				</div>
@@ -467,12 +560,40 @@
 
 			{#if selectedRequest.email_error}
 				<div class="email-error-box">{selectedRequest.email_error}</div>
+				<form
+					method="POST"
+					action="?/retryEmail"
+					use:enhance={() => async ({ update }) => update({ reset: false })}
+					class="retry-form"
+				>
+					<input type="hidden" name="id" value={selectedRequest.id} />
+					<button type="submit">Reintentar envío de correo</button>
+				</form>
 			{/if}
 
 			<div class="modal-message">
 				<p class="eyebrow small">Mensaje</p>
 				<p>{selectedRequest.message}</p>
 			</div>
+
+			<form
+				method="POST"
+				action="?/saveNotes"
+				use:enhance={() => async ({ update }) => update({ reset: false })}
+				class="notes-form"
+			>
+				<label class="notes-label" for="internal-notes-{selectedRequest.id}">
+					<span class="eyebrow small">Nota interna</span>
+				</label>
+				<input type="hidden" name="id" value={selectedRequest.id} />
+				<textarea
+					id="internal-notes-{selectedRequest.id}"
+					name="internal_notes"
+					rows="3"
+					placeholder="Ej. Llamar después de las 5pm, ya se le envió cotización..."
+				>{selectedRequest.internal_notes || ''}</textarea>
+				<button type="submit" class="notes-save-btn">Guardar nota</button>
+			</form>
 
 			<div class="modal-actions">
 				<form
@@ -537,6 +658,7 @@
 	.notice a{margin-left:8px;text-decoration:underline;}
 	.success{background:#eef7e9;border:1px solid #c9e7be;color:#275317;}
 	.error{background:#fff1f1;border:1px solid #ffd5d5;color:#b42318;}
+	.warning{background:#fff9e8;border:1px solid #f3e4b0;color:#7a5b0a;}
 
 	.tabs{display:flex;gap:6px;margin-bottom:18px;background:#eceae0;border-radius:14px;padding:5px;width:fit-content;}
 	.tab{border:none;background:transparent;color:#5c6152;border-radius:10px;padding:10px 20px;font-weight:800;cursor:pointer;font-size:13.5px;transition:background .15s ease,color .15s ease;}
@@ -579,7 +701,10 @@
 	.pill:hover{border-color:var(--accent-color,#6b6b28);color:var(--accent-color,#6b6b28);text-decoration:none;}
 	.pill.active{background:var(--accent-color,#6b6b28);border-color:var(--accent-color,#6b6b28);color:#fff;}
 	.pill-legend{margin:0 0 14px;color:#9a9e8f;font-size:11.5px;}
-	.result-count{margin:0 0 12px;color:#8a9083;font-size:12.5px;}
+	.result-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 12px;flex-wrap:wrap;}
+	.result-count{margin:0;color:#8a9083;font-size:12.5px;}
+	.export-btn{border:1.5px solid #e4e5db;background:#fff;color:#4a4a1c;border-radius:10px;padding:8px 14px;font-weight:800;font-size:12.5px;white-space:nowrap;}
+	.export-btn:hover{background:#f7f6f0;text-decoration:none;}
 
 	/* Inbox-style list */
 	.inbox-list{display:flex;flex-direction:column;border:1px solid #ecebe1;border-radius:16px;overflow:hidden;}
@@ -609,7 +734,11 @@
 	.status-badge.status-closed{background:#f1f2eb;color:#66705f;}
 	.email-ok{display:inline-flex;color:#116329;background:#eaf7ee;border-radius:999px;padding:4px 9px;font-weight:800;font-size:11.5px;}
 	.email-fail{display:inline-flex;color:#b42318;background:#fff1f1;border-radius:999px;padding:4px 9px;font-weight:800;font-size:11.5px;}
+	.stale-badge{display:inline-flex;white-space:nowrap;color:#7a5b0a;background:#fff9e8;border:1px solid #f3e4b0;border-radius:999px;padding:4px 9px;font-weight:800;font-size:11px;}
 	.email-error-box{margin:14px 0;padding:12px;border-radius:12px;background:#fff1f1;color:#b42318;font-size:12px;line-height:1.5;}
+	.retry-form{margin:-6px 0 14px;}
+	.retry-form button{border:1.5px solid #ffd5d5;background:#fff;color:#b42318;border-radius:10px;padding:8px 13px;font-weight:800;font-size:12px;cursor:pointer;}
+	.retry-form button:hover{background:#fff1f1;}
 
 	.side-copy{margin:0 0 10px;color:#8a9083;font-size:13px;line-height:1.5;}
 	.pages-period-picker{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
@@ -621,6 +750,8 @@
 	.service-row strong{background:var(--accent-color,#6b6b28);color:#fff;border-radius:999px;min-width:32px;height:26px;display:grid;place-items:center;font-size:12.5px;}
 	.empty-side{color:#8a9083;font-weight:700;}
 	.page-row span{font-size:13px;word-break:break-word;}
+	.conversion-row{flex-wrap:wrap;}
+	.conversion-detail{color:#8a9083;font-size:11.5px;font-weight:600;}
 
 	/* Modal */
 	.detail-modal{padding:0;border:none;border-radius:20px;max-width:620px;width:calc(100vw - 32px);box-shadow:0 30px 70px rgba(0,0,0,.28);opacity:0;transform:translateY(10px) scale(.98);transition:opacity .16s ease,transform .16s ease;}
@@ -635,6 +766,12 @@
 	.detail-grid dd{margin:0;font-size:13px;color:#172015;font-weight:700;}
 	.modal-message{background:#f7f6f0;border-radius:14px;padding:14px;margin-bottom:18px;}
 	.modal-message p:last-child{margin:0;color:#343a31;line-height:1.6;white-space:pre-wrap;}
+	.notes-form{margin-bottom:18px;}
+	.notes-label{display:block;margin-bottom:6px;}
+	.notes-form textarea{width:100%;resize:vertical;border:1.5px solid #e4e5db;border-radius:12px;padding:10px 12px;font-family:inherit;font-size:13px;color:#172015;outline:none;box-sizing:border-box;}
+	.notes-form textarea:focus{border-color:var(--accent-color,#6b6b28);box-shadow:0 0 0 3px rgba(107,107,40,.1);}
+	.notes-save-btn{margin-top:8px;border:1.5px solid #e4e5db;background:#fff;color:#4a4a1c;border-radius:10px;padding:8px 13px;font-weight:800;font-size:12px;cursor:pointer;}
+	.notes-save-btn:hover{background:#f7f6f0;}
 	.modal-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;}
 	.status-form-modal{display:flex;gap:8px;align-items:center;}
 	.status-form-modal select{min-width:130px;font-weight:800;}

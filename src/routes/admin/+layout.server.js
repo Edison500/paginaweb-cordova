@@ -22,17 +22,22 @@ async function countQuery(builder) {
 	return count || 0;
 }
 
+const STALE_LEAD_HOURS = 24;
+
 async function getDashboardStats() {
-	const [today, month, newLeads, contacted, closed, emailFailed] = await Promise.all([
+	const staleCutoff = new Date(Date.now() - STALE_LEAD_HOURS * 60 * 60 * 1000).toISOString();
+
+	const [today, month, newLeads, contacted, closed, emailFailed, staleNew] = await Promise.all([
 		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).gte('created_at', startOfToday())),
 		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).gte('created_at', startOfMonth())),
 		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).eq('status', 'new')),
 		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).eq('status', 'contacted')),
 		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).eq('status', 'closed')),
-		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).eq('email_sent', false).not('email_error', 'is', null))
+		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).eq('email_sent', false).not('email_error', 'is', null)),
+		countQuery(supabaseAdmin.from('contact_requests').select('id', { count: 'exact', head: true }).eq('status', 'new').lt('created_at', staleCutoff))
 	]);
 
-	return { today, month, newLeads, contacted, closed, emailFailed };
+	return { today, month, newLeads, contacted, closed, emailFailed, staleNew };
 }
 
 async function getTopServices() {
@@ -70,21 +75,17 @@ async function safeVisitCount(builder) {
 }
 
 async function getUniqueVisitors(sinceIso) {
-	let query = supabaseAdmin.from('page_visits').select('visitor_id, ip_hash').limit(5000);
-	if (sinceIso) query = query.gte('created_at', sinceIso);
+	const { data, error } = await supabaseAdmin.rpc('get_unique_visitor_count', {
+		p_since: sinceIso || '1970-01-01T00:00:00.000Z',
+		p_until: null
+	});
 
-	const { data, error } = await query;
 	if (error) {
 		console.error('Supabase unique visitors error:', error);
 		return 0;
 	}
 
-	const unique = new Set();
-	for (const row of data || []) {
-		const key = row.visitor_id || row.ip_hash;
-		if (key) unique.add(key);
-	}
-	return unique.size;
+	return Number(data) || 0;
 }
 
 async function getVisitStats() {
@@ -149,6 +150,39 @@ async function getTopPages(range) {
 	return data || [];
 }
 
+async function getDeviceBreakdown(range) {
+	const { data, error } = await supabaseAdmin.rpc('get_device_breakdown', {
+		p_since: range.since,
+		p_until: range.until
+	});
+
+	if (error) {
+		console.error('Supabase device breakdown error:', error);
+		return [];
+	}
+
+	return data || [];
+}
+
+async function getConversionByPage(range) {
+	const { data, error } = await supabaseAdmin.rpc('get_conversion_by_page', {
+		p_since: range.since,
+		p_until: range.until
+	});
+
+	if (error) {
+		console.error('Supabase conversion by page error:', error);
+		return [];
+	}
+
+	return (data || []).map((row) => ({
+		path: row.path || '/',
+		visits: Number(row.visits) || 0,
+		leads: Number(row.leads) || 0,
+		rate: row.visits > 0 ? ((Number(row.leads) || 0) / Number(row.visits)) * 100 : 0
+	}));
+}
+
 export async function load({ cookies, url, route }) {
 	const session = readAdminSession(cookies);
 	const isLoginPage = url.pathname === '/admin/login';
@@ -169,12 +203,23 @@ export async function load({ cookies, url, route }) {
 	}
 
 	const topPagesRange = resolveTopPagesRange(url);
-	const [stats, topServices, visitStats, topPages] = await Promise.all([
+	const [stats, topServices, visitStats, topPages, deviceBreakdown, conversionByPage] = await Promise.all([
 		getDashboardStats(),
 		getTopServices(),
 		getVisitStats(),
-		getTopPages(topPagesRange)
+		getTopPages(topPagesRange),
+		getDeviceBreakdown(topPagesRange),
+		getConversionByPage(topPagesRange)
 	]);
 
-	return { admin: session, stats, topServices, visitStats, topPages, topPagesRange };
+	return {
+		admin: session,
+		stats,
+		topServices,
+		visitStats,
+		topPages,
+		topPagesRange,
+		deviceBreakdown,
+		conversionByPage
+	};
 }

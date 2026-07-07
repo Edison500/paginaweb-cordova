@@ -1,59 +1,10 @@
 <script>
 	import SiteShell from '$lib/components/layout/SiteShell.svelte';
-	import TestimonialsSection from '$lib/components/sections/TestimonialsSection.svelte';
+	// import TestimonialsSection from '$lib/components/sections/TestimonialsSection.svelte';
 	import CtaSection from '$lib/components/sections/CtaSection.svelte';
 
 	let activeFilter = $state('all');
 	let selectedId   = $state(1);
-
-	let hoveredPhoto = $state(null);
-	let zoomVisible  = $state(false);
-	let hoverTimer;
-
-	function showZoom(photo) {
-		clearTimeout(hoverTimer);
-		if (zoomVisible) {
-			hoveredPhoto = photo;
-		} else {
-			hoverTimer = setTimeout(() => {
-				hoveredPhoto = photo;
-				zoomVisible  = true;
-			}, 90);
-		}
-	}
-
-	function hideZoom() {
-		clearTimeout(hoverTimer);
-		zoomVisible = false;
-	}
-
-	let galleryEl;
-	let isDragging  = $state(false);
-	let startX      = 0;
-	let startScroll = 0;
-
-	function dragStart(e) {
-		isDragging  = true;
-		startX      = e.pageX - galleryEl.offsetLeft;
-		startScroll = galleryEl.scrollLeft;
-	}
-
-	function dragEnd() { isDragging = false; }
-
-	function dragMove(e) {
-		if (!isDragging) return;
-		e.preventDefault();
-		const x    = e.pageX - galleryEl.offsetLeft;
-		const walk = (x - startX) * 1.4;
-		galleryEl.scrollLeft = startScroll - walk;
-	}
-
-	function scrollGallery(dir) {
-		if (!galleryEl) return;
-		const card = galleryEl.querySelector('.gallery-item');
-		const step = card ? card.offsetWidth + 14 : 220;
-		galleryEl.scrollBy({ left: dir * step * 2, behavior: 'smooth' });
-	}
 
 	function selectProject(id) {
 		selectedId = id;
@@ -195,7 +146,9 @@
 								<span class="num">{String(project.id).padStart(2, '0')}</span>
 								<h3>{project.title}</h3>
 								<div class="tags">
-									<span><i class="bi bi-flower1"></i> {project.category}</span>
+									{#if project.category !== 'renovation'}
+										<span><i class="bi bi-flower1"></i> {project.category}</span>
+									{/if}
 									<span><i class="bi bi-diagram-3"></i> {project.area}</span>
 								</div>
 							</div>
@@ -211,67 +164,11 @@
 						<h2>{selectedProject.title}</h2>
 					</div>
 
-					<div class="project-video">
-						{#if selectedProject.youtubeId}
-							{#key selectedProject.id}
-								<div class="project-video-stage">
-									<iframe
-										src="https://www.youtube.com/embed/{selectedProject.youtubeId}"
-										title={selectedProject.title}
-										frameborder="0"
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-										allowfullscreen
-									></iframe>
-								</div>
-							{/key}
-						{:else}
-							<div class="empty-state">No video available</div>
-						{/if}
+					<div class="coming-soon">
+						<div class="coming-soon-icon"><i class="bi bi-camera-reels"></i></div>
+						<h3>Photos &amp; Video Coming Soon</h3>
+						<p>We're updating this project's media. Check back soon to see the full before-and-after gallery.</p>
 					</div>
-
-					{#if selectedProject.gallery.length > 0}
-						<div class="gallery-section">
-							<div class="section-head">
-								<div>
-									<h3>Project Gallery</h3>
-									<p>Hover a photo to enlarge · Drag or scroll to explore</p>
-								</div>
-								<div class="gallery-nav">
-									<button class="gallery-nav-btn" onclick={() => scrollGallery(-1)} aria-label="Scroll left">
-										<i class="bi bi-chevron-left"></i>
-									</button>
-									<button class="gallery-nav-btn" onclick={() => scrollGallery(1)} aria-label="Scroll right">
-										<i class="bi bi-chevron-right"></i>
-									</button>
-								</div>
-							</div>
-
-							<div
-								class="gallery-track"
-								class:dragging={isDragging}
-								bind:this={galleryEl}
-								onmousedown={dragStart}
-								onmousemove={dragMove}
-								onmouseup={dragEnd}
-								onmouseleave={dragEnd}
-								role="region"
-								aria-label="Project photo gallery"
-							>
-								{#each selectedProject.gallery as photo}
-									<figure
-										class="gallery-item"
-										onmouseenter={() => showZoom(photo)}
-										onmouseleave={hideZoom}
-									>
-										<img src={photo.src} alt={photo.tag ?? 'Project photo'} draggable="false" />
-										{#if photo.tag}
-											<figcaption class="gallery-tag">{photo.tag}</figcaption>
-										{/if}
-									</figure>
-								{/each}
-							</div>
-						</div>
-					{/if}
 
 					<div class="process-section">
 						<div class="process-header">
@@ -301,20 +198,7 @@
 		</section>
 	</main>
 
-	<div class="zoom-overlay" class:visible={zoomVisible} aria-hidden={!zoomVisible}>
-		{#if hoveredPhoto}
-			{#key hoveredPhoto.src}
-				<div class="zoom-card">
-					<img src={hoveredPhoto.src} alt={hoveredPhoto.tag ?? 'Photo'} />
-					{#if hoveredPhoto.tag}
-						<span class="zoom-tag">{hoveredPhoto.tag}</span>
-					{/if}
-				</div>
-			{/key}
-		{/if}
-	</div>
-
-	<TestimonialsSection />
+	<!-- <TestimonialsSection /> -->
 	<CtaSection />
 
 </SiteShell>
@@ -559,129 +443,42 @@
 		color: #0c100b;
 	}
 
-	.project-video { padding: 8px 28px 28px; }
-
-	.project-video-stage {
-		width: 100%;
-		border-radius: 14px;
-		overflow: hidden;
-		background: #000;
-		box-shadow: 0 14px 34px rgba(20, 24, 18, 0.14);
-	}
-
-	.project-video-stage video,
-	.project-video-stage iframe {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		max-height: 540px;
-		display: block;
-		background: #000;
-		border: none;
-	}
-
-	.empty-state {
-		padding: 40px 20px;
+	/* COMING SOON */
+	.coming-soon {
+		margin: 8px 28px 32px;
+		padding: 48px 28px;
+		background: linear-gradient(135deg, #fbfaf2 0%, #f3f2e9 100%);
+		border: 1px dashed rgba(122, 133, 57, 0.35);
+		border-radius: 16px;
 		text-align: center;
-		color: #6b7363;
-		font-size: 13px;
-		background: #f7f6ee;
-		border-radius: 10px;
-	}
-
-	.gallery-section { padding: 0 28px 32px; }
-
-	.section-head {
 		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: 18px;
-		margin-bottom: 16px;
+		flex-direction: column;
+		align-items: center;
+		gap: 14px;
 	}
 
-	.section-head h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; color: #232820; }
-	.section-head p  { margin: 0; font-size: 13px; color: #5d6457; }
-
-	.gallery-nav { display: flex; gap: 8px; }
-
-	.gallery-nav-btn {
-		width: 40px; height: 40px;
+	.coming-soon-icon {
+		width: 64px; height: 64px;
 		border-radius: 50%;
-		background: #fff;
-		border: 1px solid rgba(36, 44, 31, 0.14);
-		display: grid; place-items: center;
-		font-size: 16px; color: #2b3128;
-		cursor: pointer;
-		box-shadow: 0 6px 14px rgba(20, 24, 18, 0.06);
-		transition: 0.2s ease;
-	}
-
-	.gallery-nav-btn:hover {
 		background: #7a8539;
 		color: #fff;
-		border-color: #7a8539;
-		transform: translateY(-1px);
+		display: grid; place-items: center;
+		font-size: 26px;
 	}
 
-	.gallery-track {
-		display: flex;
-		gap: 14px;
-		overflow-x: auto;
-		overflow-y: hidden;
-		padding: 14px 4px 22px;
-		cursor: grab;
-		user-select: none;
-		-webkit-overflow-scrolling: touch;
-		scroll-behavior: smooth;
-		scrollbar-width: thin;
-		scrollbar-color: rgba(122, 133, 57, 0.45) transparent;
-	}
-
-	.gallery-track.dragging { cursor: grabbing; scroll-behavior: auto; }
-
-	.gallery-track::-webkit-scrollbar       { height: 6px; }
-	.gallery-track::-webkit-scrollbar-track { background: transparent; }
-	.gallery-track::-webkit-scrollbar-thumb { background: rgba(122,133,57,.4); border-radius: 8px; }
-	.gallery-track::-webkit-scrollbar-thumb:hover { background: rgba(122,133,57,.7); }
-
-	.gallery-item {
-		flex: 0 0 auto;
-		position: relative;
-		width: 210px;
-		height: 380px;
+	.coming-soon h3 {
 		margin: 0;
-		border-radius: 22px;
-		overflow: hidden;
-		background: #eee;
-		box-shadow: 0 10px 24px rgba(20, 24, 18, 0.10);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-		cursor: pointer;
-	}
-
-	.gallery-track:not(.dragging) .gallery-item:hover {
-		transform: translateY(-4px) scale(1.03);
-		box-shadow: 0 18px 36px rgba(20, 24, 18, 0.18);
-	}
-
-	.gallery-item img {
-		width: 100%; height: 100%;
-		object-fit: cover;
-		display: block;
-		pointer-events: none;
-		-webkit-user-drag: none;
-	}
-
-	.gallery-tag {
-		position: absolute;
-		top: 12px; left: 12px;
-		padding: 5px 10px;
-		font-size: 10px;
+		font-size: 20px;
 		font-weight: 900;
-		letter-spacing: 0.06em;
-		color: #fff;
-		background: rgba(20, 24, 18, 0.82);
-		border-radius: 5px;
-		text-transform: uppercase;
-		backdrop-filter: blur(4px);
+		color: #232820;
+	}
+
+	.coming-soon p {
+		margin: 0;
+		max-width: 420px;
+		font-size: 14px;
+		line-height: 1.6;
+		color: #5d6457;
 	}
 
 	/* PROJECT DESCRIPTION */
@@ -753,81 +550,6 @@
 		font-weight: 900;
 	}
 
-	/* ZOOM OVERLAY */
-	.zoom-overlay {
-		position: fixed;
-		inset: 0;
-		z-index: 900;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: rgba(14, 18, 12, 0);
-		backdrop-filter: blur(0px);
-		-webkit-backdrop-filter: blur(0px);
-		pointer-events: none;
-		opacity: 0;
-		transition:
-			opacity 0.34s cubic-bezier(0.22, 1, 0.36, 1),
-			background 0.34s cubic-bezier(0.22, 1, 0.36, 1),
-			backdrop-filter 0.34s cubic-bezier(0.22, 1, 0.36, 1),
-			-webkit-backdrop-filter 0.34s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.zoom-overlay.visible {
-		opacity: 1;
-		background: rgba(14, 18, 12, 0.6);
-		backdrop-filter: blur(8px);
-		-webkit-backdrop-filter: blur(8px);
-	}
-
-	.zoom-card {
-		position: relative;
-		width: clamp(240px, 36vw, 520px);
-		border-radius: 22px;
-		overflow: hidden;
-		box-shadow: 0 40px 80px rgba(0, 0, 0, 0.38);
-		pointer-events: none;
-		transform: scale(0.94) translateY(18px);
-		opacity: 0;
-		transition:
-			transform 0.46s cubic-bezier(0.22, 1, 0.36, 1),
-			opacity 0.34s cubic-bezier(0.22, 1, 0.36, 1);
-		animation: cardSwapIn 0.42s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.zoom-overlay.visible .zoom-card {
-		transform: scale(1) translateY(0);
-		opacity: 1;
-	}
-
-	@keyframes cardSwapIn {
-		0%   { opacity: 0; transform: scale(0.97) translateY(0); filter: blur(6px); }
-		60%  { opacity: 1; filter: blur(0); }
-		100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
-	}
-
-	.zoom-card img {
-		width: 100%;
-		height: auto;
-		aspect-ratio: 9 / 16;
-		object-fit: cover;
-		display: block;
-	}
-
-	.zoom-tag {
-		position: absolute;
-		top: 14px; left: 14px;
-		padding: 5px 12px;
-		font-size: 11px;
-		font-weight: 900;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: #fff;
-		background: rgba(20, 24, 18, 0.82);
-		border-radius: 6px;
-		backdrop-filter: blur(4px);
-	}
-
 	/* RESPONSIVE */
 	@media (max-width: 1200px) {
 		.project-layout      { grid-template-columns: 1fr; }
@@ -847,11 +569,9 @@
 		.work-wrap       { padding: 20px 18px 36px; }
 		.project-list    { grid-template-columns: 1fr; }
 		.project-card    { flex-direction: row; }
-		.gallery-item    { width: 170px; height: 310px; }
 		.detail-title    { padding: 24px 22px 16px; }
 		.detail-title h2 { font-size: 22px; }
-		.project-video   { padding: 8px 22px 22px; }
-		.gallery-section { padding: 0 22px 22px; }
+		.coming-soon     { margin: 8px 22px 22px; padding: 36px 20px; }
 		.process-section { padding: 24px 22px; }
 		.cta-box         { grid-template-columns: 1fr; text-align: center; justify-items: center; }
 	}

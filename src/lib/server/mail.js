@@ -98,6 +98,66 @@ export async function sendContactEmail(data) {
 	});
 }
 
+export async function sendCustomerConfirmationEmail(data) {
+	const smtpHost = env.SMTP_HOST || 'smtp.gmail.com';
+	const smtpPort = Number(env.SMTP_PORT || 465);
+	const smtpUser = requiredEnv('SMTP_USER');
+	const smtpPass = requiredEnv('SMTP_PASS');
+
+	const transporter = nodemailer.createTransport({
+		host: smtpHost,
+		port: smtpPort,
+		secure: smtpPort === 465,
+		auth: {
+			user: smtpUser,
+			pass: smtpPass
+		}
+	});
+
+	const fullName = `${data.first_name} ${data.last_name}`.trim();
+	const service = data.service_needed || 'your request';
+
+	const html = `
+		<div style="font-family:Arial,sans-serif;background:#f6f6f0;padding:24px;color:#1f2933;">
+			<div style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:18px;overflow:hidden;border:1px solid #e8e5d6;box-shadow:0 10px 32px rgba(0,0,0,.08);">
+				<div style="background:linear-gradient(135deg,#6b6b28 0%,#4a4a1c 100%);padding:26px 30px;color:#ffffff;">
+					<p style="margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fffcd9;">Cordova Property Services</p>
+					<h1 style="margin:0;font-size:24px;line-height:1.2;">We received your request</h1>
+				</div>
+
+				<div style="padding:26px 30px;">
+					<p style="margin:0 0 14px;">Hi ${escapeHtml(fullName || 'there')},</p>
+					<p style="margin:0 0 14px;line-height:1.6;">
+						Thanks for reaching out about <strong>${escapeHtml(service)}</strong>. We received your request and
+						someone from our team will follow up with you shortly.
+					</p>
+
+					<div style="background:#f7f7f2;border:1px solid #ebe8da;border-radius:14px;padding:16px;color:#333;line-height:1.7;font-size:14px;">
+						${escapeHtml(data.message).replaceAll('\n', '<br>')}
+					</div>
+
+					<p style="margin:20px 0 0;font-size:13px;color:#555;">If anything above isn't quite right, just reply to this email.</p>
+				</div>
+			</div>
+		</div>
+	`;
+
+	await transporter.sendMail({
+		from: env.MAIL_FROM || `Cordova Property Services <${smtpUser}>`,
+		to: data.email,
+		subject: 'We received your request - Cordova Property Services',
+		html,
+		text: [
+			`Hi ${fullName || 'there'},`,
+			'',
+			`Thanks for reaching out about ${service}. We received your request and someone from our team will follow up with you shortly.`,
+			'',
+			'Your message:',
+			data.message
+		].join('\n')
+	});
+}
+
 function row(label, value) {
 	return `
 		<tr>
