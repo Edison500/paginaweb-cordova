@@ -119,6 +119,7 @@
 
 		<section class="work-wrap">
 
+			<!--
 			<div class="filter-row">
 				{#each filters as filter}
 					<button
@@ -131,6 +132,7 @@
 					</button>
 				{/each}
 			</div>
+			-->
 
 			<div class="project-layout">
 
@@ -145,10 +147,7 @@
 								<span class="num">{String(project.id).padStart(2, '0')}</span>
 								<h3>{project.title}</h3>
 								<div class="tags">
-									{#if project.category !== 'renovation'}
-										<span><i class="bi bi-flower1"></i> {project.category}</span>
-									{/if}
-									<span><i class="bi bi-diagram-3"></i> {project.area}</span>
+									<span><i class="bi bi-flower1"></i> Renovation</span>
 								</div>
 							</div>
 							<i class="bi bi-chevron-right arrow"></i>

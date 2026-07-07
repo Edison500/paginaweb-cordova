@@ -97,10 +97,6 @@ const platforms = [
 						serving the Gulf Coast one unit turn at a time.
 					</p>
 
-					<div class="about-hero-tagline">
-						<i class="bi bi-quote"></i>
-						<span>We say yes. We deliver solutions.</span>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -125,10 +121,6 @@ const platforms = [
 					<div class="col-lg-6 story-media-col" data-aos="fade-right">
 						<div class="story-img-wrap">
 							<img src="/assets/img/about.png" alt="Our team at work" class="img-fluid" />
-							<div class="story-badge">
-								<i class="bi bi-quote"></i>
-								<p>“We say yes.<br />We deliver solutions.”</p>
-							</div>
 						</div>
 					</div>
 
@@ -350,33 +342,6 @@ const platforms = [
 		text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 	}
 
-	.about-hero-tagline {
-		display: inline-flex;
-		align-items: center;
-		gap: 10px;
-		background: rgba(255, 252, 217, 0.11);
-		border: 1px solid rgba(255, 252, 217, 0.28);
-		border-radius: 999px;
-		padding: 11px 22px;
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-	}
-
-	.about-hero-tagline i {
-		font-size: 18px;
-		color: #fffcd9;
-		opacity: 0.85;
-	}
-
-	.about-hero-tagline span {
-		font-size: 14px;
-		font-weight: 700;
-		color: #fffcd9;
-		font-style: italic;
-		letter-spacing: 0.01em;
-	}
-
 	.impact-stats {
 		background: linear-gradient(135deg, #1a2018 0%, #0d120c 100%);
 		padding: 14px 0;
@@ -502,35 +467,6 @@ const platforms = [
 		object-position: center;
 		border-radius: 18px;
 		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-	}
-
-	.story-badge {
-		position: absolute;
-		bottom: 28px;
-		left: -24px;
-		background: linear-gradient(135deg, #6b6b28 0%, #4a4a1c 100%);
-		padding: 18px 22px;
-		border-radius: 14px;
-		box-shadow: 0 12px 32px rgba(107, 107, 40, 0.4);
-		max-width: 210px;
-	}
-
-	.story-badge i {
-		font-size: 20px;
-		color: #fffcd9;
-		opacity: 0.75;
-		display: block;
-		margin-bottom: 8px;
-	}
-
-	.story-badge p {
-		font-size: 13.5px;
-		color: #fff;
-		margin: 0;
-		font-weight: 600;
-		font-style: italic;
-		line-height: 1.45;
-		letter-spacing: -0.005em;
 	}
 
 	.story-promise {
@@ -855,10 +791,6 @@ const platforms = [
 			height: auto;
 		}
 
-		.story-badge {
-			left: 0;
-			bottom: -14px;
-		}
 	}
 
 	@media (max-width: 640px) {
@@ -897,14 +829,6 @@ const platforms = [
 		.about-hero-text p {
 			font-size: 0.98rem;
 			max-width: 92%;
-		}
-
-		.about-hero-tagline {
-			padding: 10px 18px;
-		}
-
-		.about-hero-tagline span {
-			font-size: 13px;
 		}
 
 		.impact-stats {
