@@ -121,6 +121,10 @@ const platforms = [
 					<div class="col-lg-6 story-media-col" data-aos="fade-right">
 						<div class="story-img-wrap">
 							<img src="/assets/img/about.png" alt="Our team at work" class="img-fluid" />
+							<div class="story-badge">
+								<i class="bi bi-quote"></i>
+								<p>“Your Property,<br />Our Priority.”</p>
+							</div>
 						</div>
 					</div>
 
@@ -469,6 +473,35 @@ const platforms = [
 		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 	}
 
+	.story-badge {
+		position: absolute;
+		bottom: 28px;
+		left: -24px;
+		background: linear-gradient(135deg, #6b6b28 0%, #4a4a1c 100%);
+		padding: 18px 22px;
+		border-radius: 14px;
+		box-shadow: 0 12px 32px rgba(107, 107, 40, 0.4);
+		max-width: 210px;
+	}
+
+	.story-badge i {
+		font-size: 20px;
+		color: #fffcd9;
+		opacity: 0.75;
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	.story-badge p {
+		font-size: 13.5px;
+		color: #fff;
+		margin: 0;
+		font-weight: 600;
+		font-style: italic;
+		line-height: 1.45;
+		letter-spacing: -0.005em;
+	}
+
 	.story-promise {
 		background: #fafaf7;
 		border: 1px solid rgba(107, 107, 40, 0.15);
@@ -791,6 +824,10 @@ const platforms = [
 			height: auto;
 		}
 
+		.story-badge {
+			left: 0;
+			bottom: -14px;
+		}
 	}
 
 	@media (max-width: 640px) {
