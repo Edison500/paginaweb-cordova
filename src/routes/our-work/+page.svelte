@@ -12,7 +12,6 @@
 
 	const filters = [
 		{ id: 'all',          label: 'ALL PROJECTS', icon: 'bi-grid-3x3-gap'     },
-		{ id: 'renovation',   label: 'RENOVATIONS',  icon: 'bi-house-door'        },
 		{ id: 'maintenance',  label: 'MAINTENANCE',  icon: 'bi-tools'             },
 		{ id: 'construction', label: 'CONSTRUCTION', icon: 'bi-wrench-adjustable' },
 		{ id: 'finishes',     label: 'FINISHES',     icon: 'bi-paint-bucket'      }
