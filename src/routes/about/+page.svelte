@@ -766,9 +766,15 @@ const platforms = [
 		object-fit: contain;
 	}
 
+	.plat-logo-card:has(img[alt="VendorCafe"]) {
+		width: 210px;
+		min-width: 210px;
+		padding: 4px 20px;
+	}
+
 	.plat-logo-card img[alt="VendorCafe"] {
-		max-width: 80px;
-		max-height: 80px;
+		max-width: 200px;
+		max-height: 82px;
 	}
 
 	.btn-about-cta:hover {
@@ -847,16 +853,6 @@ const platforms = [
 			transform: none;
 		}
 
-		.plat-logo-card:has(img[alt="VendorCafe"]) {
-			padding: 4px 20px;
-			width: 210px;
-			min-width: 210px;
-		}
-
-		.plat-logo-card img[alt="VendorCafe"] {
-			max-width: 200px;
-			max-height: 82px;
-		}
 
 		.about-hero-content {
 			padding: 46px 0 34px;
