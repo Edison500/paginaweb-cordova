@@ -364,17 +364,31 @@
 			padding: 0;
 		}
 		#hero :global(.hero-bg) {
-			object-position: center center;
+			object-position: 68% center;
+		}
+		#hero :global(.hero-content) {
+			padding: 22px 0;
+		}
+		#hero :global(.eyebrow) {
+			margin-bottom: 12px;
+		}
+		#hero :global(.hero-copy h2) {
+			margin-bottom: 12px;
+		}
+		#hero :global(.hero-copy p) {
+			margin-bottom: 18px;
 		}
 		#hero :global(.hero-stats) {
 			gap: 16px;
+			padding-top: 14px;
 		}
 		#hero :global(.stat-num) {
-			font-size: 1.9rem;
+			font-size: 1.7rem;
 		}
 		#hero :global(.stat-label) {
 			font-size: 10.5px;
 			letter-spacing: 1.4px;
+			margin-top: 4px;
 		}
 		#hero :global(.stat-divider) {
 			display: none;
@@ -396,7 +410,7 @@
 			min-height: 390px;
 		}
 		#hero :global(.hero-content) {
-			padding: 32px 0;
+			padding: 20px 0;
 		}
 	}
 

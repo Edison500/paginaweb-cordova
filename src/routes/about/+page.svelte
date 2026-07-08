@@ -837,7 +837,7 @@ const platforms = [
 		}
 
 		.about-hero-bg {
-			object-position: center center;
+			object-position: 80% center;
 			transform: none;
 		}
 

@@ -677,7 +677,7 @@ const services = [
 	margin-top: 10px;
 	padding: 14px;
 	text-align: center;
-	background: var(--red);
+	background: #C9A84C;
 	color: #fff;
 	border-radius: 8px;
 	font-size: 15px;
@@ -687,7 +687,7 @@ const services = [
 }
 
 .cps-mob-cta:hover {
-	background: var(--red-dk);
+	background: #a8893a;
 }
 
 @media (max-width: 1199px) {
