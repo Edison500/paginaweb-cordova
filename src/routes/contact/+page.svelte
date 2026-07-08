@@ -384,10 +384,10 @@
 @media(max-width:768px){
 	.ct-hero{height:390px;min-height:390px;}
 	.ct-hero-content{padding:46px 0 34px;}
-	.ct-quick-strip{overflow-x:auto;}
-	.ct-quick-inner{justify-content:flex-start;min-width:max-content;}
-	.ct-quick-item{padding:8px 16px;}
-	.ct-quick-div{display:block;}
+	.ct-quick-inner{flex-direction:column;align-items:center;gap:10px;}
+	.ct-quick-item{padding:4px 12px;justify-content:center;}
+	.ct-quick-value{font-size:12.5px;}
+	.ct-quick-div{display:none;}
 	.ct-form-row{grid-template-columns:1fr;}
 	.ct-form-card{padding:28px 22px;}
 }
