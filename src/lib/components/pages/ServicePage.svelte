@@ -169,7 +169,7 @@
 					<div class="sp-sidebar-areas">
 						<p class="sp-areas-title">Service Areas</p>
 						<div class="sp-areas-tags">
-							{#each ['Pensacola','Gulf Breeze','Navarre','Fort Walton','Crestview','Milton','Daphne','Mobile','Gulf Shores','Orange Beach','Foley'] as city}
+							{#each ['Pensacola','Gulf Breeze','Navarre','Fort Walton','Crestview','Milton','Orange Beach','Gulf Shores','Foley','Daphne','Mobile'] as city}
 								<span>{city}</span>
 							{/each}
 						</div>

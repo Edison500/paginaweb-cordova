@@ -57,8 +57,8 @@ const platforms = [
 
 	const areas = [
 		'Pensacola', 'Gulf Breeze', 'Navarre', 'Fort Walton',
-		'Crestview', 'Milton', 'Daphne', 'Mobile',
-		'Gulf Shores', 'Orange Beach', 'Foley'
+		'Crestview', 'Milton',
+		'Orange Beach', 'Gulf Shores', 'Foley', 'Daphne', 'Mobile'
 	];
 </script>
 
@@ -267,6 +267,7 @@ const platforms = [
 		transform: none;
 		transition: transform 6s ease;
 	}
+
 
 
 
@@ -801,15 +802,6 @@ const platforms = [
 			padding: 58px 0 44px;
 		}
 
-		.about-hero-overlay {
-			background: linear-gradient(
-				90deg,
-				rgba(0, 0, 0, 0.72) 0%,
-				rgba(0, 0, 0, 0.48) 50%,
-				rgba(0, 0, 0, 0.2) 100%
-			);
-		}
-
 		.story-media-col,
 		.story-copy-col {
 			display: block;
@@ -851,8 +843,19 @@ const platforms = [
 		}
 
 		.about-hero-bg {
-			object-position: 80% center;
+			object-position: 32% center;
 			transform: none;
+		}
+
+		.plat-logo-card:has(img[alt="VendorCafe"]) {
+			padding: 4px 20px;
+			width: 210px;
+			min-width: 210px;
+		}
+
+		.plat-logo-card img[alt="VendorCafe"] {
+			max-width: 200px;
+			max-height: 82px;
 		}
 
 		.about-hero-content {
@@ -883,36 +886,34 @@ const platforms = [
 		}
 
 		.impact-stats {
-			overflow-x: auto;
 			padding: 12px 0;
 		}
 
 		.impact-grid {
-			justify-content: flex-start;
-			flex-wrap: nowrap;
-			min-width: max-content;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 
 		.impact-item {
-			padding: 6px 16px;
-			border-right: 1px solid rgba(255, 255, 255, 0.15);
-			border-bottom: none;
-		}
-
-		.impact-item:nth-child(2n),
-		.impact-item:nth-child(3),
-		.impact-item:nth-child(n+4),
-		.impact-item:nth-last-child(-n+2) {
+			flex: 0 1 47%;
+			justify-content: center;
+			gap: 6px;
+			padding: 4px 4px;
+			border-right: none;
 			border-top: none;
 			border-bottom: none;
 		}
 
-		.impact-item:last-child {
-			border-right: none;
+		.impact-item i {
+			font-size: 13px;
 		}
 
 		.impact-num {
-			font-size: 13px;
+			font-size: 10px;
+		}
+
+		.impact-label {
+			font-size: 10px;
 		}
 
 		.diff-card {

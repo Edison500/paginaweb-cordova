@@ -61,7 +61,8 @@
 	.trust-item{padding:5px 12px;font-size:12px;}
 }
 @media(max-width:576px){
-	.trust-inner{justify-content:flex-start;}
-	.trust-bar{overflow-x:auto;}
+	.trust-inner{justify-content:center;}
+	.trust-item{padding:4px 4px;font-size:10px;gap:6px;}
+	.trust-item i{font-size:13px;}
 }
 </style>

@@ -132,6 +132,7 @@
 
 
 
+
 	#hero :global(.hero-content) {
 		position: relative;
 		z-index: 4;
@@ -364,7 +365,7 @@
 			padding: 0;
 		}
 		#hero :global(.hero-bg) {
-			object-position: 68% center;
+			object-position: 25% center;
 		}
 		#hero :global(.hero-content) {
 			padding: 22px 0;
@@ -379,16 +380,23 @@
 			margin-bottom: 18px;
 		}
 		#hero :global(.hero-stats) {
-			gap: 16px;
+			gap: 8px;
 			padding-top: 14px;
+			flex-wrap: nowrap;
+		}
+		#hero :global(.stat) {
+			flex: 1 1 0;
+			min-width: 0;
 		}
 		#hero :global(.stat-num) {
-			font-size: 1.7rem;
+			font-size: 1.3rem;
 		}
 		#hero :global(.stat-label) {
-			font-size: 10.5px;
-			letter-spacing: 1.4px;
-			margin-top: 4px;
+			font-size: 8.5px;
+			letter-spacing: 0.8px;
+			margin-top: 3px;
+			white-space: normal;
+			line-height: 1.25;
 		}
 		#hero :global(.stat-divider) {
 			display: none;

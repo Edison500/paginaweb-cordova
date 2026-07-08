@@ -20,8 +20,8 @@
 
 	const areas = [
 		'Pensacola','Gulf Breeze','Navarre','Fort Walton',
-		'Crestview','Milton','Daphne','Mobile',
-		'Gulf Shores','Orange Beach','Foley'
+		'Crestview','Milton',
+		'Orange Beach','Gulf Shores','Foley','Daphne','Mobile'
 	];
 </script>
 
