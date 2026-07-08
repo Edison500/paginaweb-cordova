@@ -825,8 +825,22 @@ const platforms = [
 		}
 
 		.story-badge {
-			left: 0;
-			bottom: -14px;
+			left: 12px;
+			bottom: 12px;
+			max-width: 108px;
+			padding: 8px 10px;
+			border-radius: 8px;
+			box-shadow: 0 6px 16px rgba(107, 107, 40, 0.35);
+		}
+
+		.story-badge i {
+			font-size: 12px;
+			margin-bottom: 3px;
+		}
+
+		.story-badge p {
+			font-size: 9.5px;
+			line-height: 1.3;
 		}
 	}
 
