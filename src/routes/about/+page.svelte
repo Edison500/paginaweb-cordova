@@ -65,6 +65,14 @@ const platforms = [
 <svelte:head>
 	<title>About Us | Cordova Property Services — Pensacola & Gulf Coast</title>
 	<meta name="description" content="Learn about Cordova Property Services — our story, mission, values, and the team behind every successful unit turn across Pensacola and the Gulf Coast." />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.cordovapropertyservices.com/' },
+			{ '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.cordovapropertyservices.com/about' }
+		]
+	})}<\/script>`}
 </svelte:head>
 
 <SiteShell>

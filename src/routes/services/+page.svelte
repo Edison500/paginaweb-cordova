@@ -41,6 +41,14 @@
 <svelte:head>
 	<title>Apartment Maintenance Services | Cordova Property Services — Pensacola FL</title>
 	<meta name="description" content="12 specialized maintenance services for rental properties — painting, cleaning, repairs, resurfacing, turnkey turns and more." />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.cordovapropertyservices.com/' },
+			{ '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.cordovapropertyservices.com/services' }
+		]
+	})}<\/script>`}
 </svelte:head>
 
 <SiteShell>

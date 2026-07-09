@@ -88,6 +88,14 @@
 <svelte:head>
 	<title>Contact Us | Cordova Property Services — Pensacola & Gulf Coast</title>
 	<meta name="description" content="Contact Cordova Property Services for apartment maintenance, unit turns, and property services across Pensacola and the Gulf Coast. Free estimates, 24h response." />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.cordovapropertyservices.com/' },
+			{ '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.cordovapropertyservices.com/contact' }
+		]
+	})}<\/script>`}
 </svelte:head>
 
 <SiteShell>

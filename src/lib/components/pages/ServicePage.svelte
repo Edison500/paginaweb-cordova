@@ -1,6 +1,7 @@
 <script>
 	import SiteShell from '$lib/components/layout/SiteShell.svelte';
 	import ContactSection from '$lib/components/sections/ContactSection.svelte';
+	import { page } from '$app/state';
 
 	import { slide } from 'svelte/transition';
 
@@ -25,6 +26,15 @@
 <svelte:head>
 	<title>{title} | Cordova Property Services</title>
 	<meta name="description" content="{tagline} — Cordova Property Services. Serving Pensacola, Gulf Breeze, Navarre, Fort Walton and the Gulf Coast." />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.cordovapropertyservices.com/' },
+			{ '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.cordovapropertyservices.com/services' },
+			{ '@type': 'ListItem', position: 3, name: title, item: `https://www.cordovapropertyservices.com${page.url.pathname}` }
+		]
+	})}<\/script>`}
 </svelte:head>
 
 <SiteShell>

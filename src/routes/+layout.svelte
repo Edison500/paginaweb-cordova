@@ -71,6 +71,38 @@
 	<link rel="stylesheet" href="/assets/vendor/glightbox/css/glightbox.min.css" />
 	<link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="/assets/css/main.css" />
+
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'Organization',
+				'@id': 'https://www.cordovapropertyservices.com/#organization',
+				name: 'Cordova Property Services',
+				url: 'https://www.cordovapropertyservices.com/',
+				logo: 'https://www.cordovapropertyservices.com/assets/img/logo.png',
+				telephone: '+14482196669',
+				email: 'customer@cordovaps.com',
+				sameAs: [
+					'https://www.facebook.com/profile.php?id=61575846174811',
+					'https://www.instagram.com/cordovapropertyservices/',
+					'https://www.linkedin.com/in/cordova-property-services-472b4836b/'
+				],
+				areaServed: [
+					'Pensacola, FL', 'Gulf Breeze, FL', 'Navarre, FL', 'Fort Walton Beach, FL',
+					'Crestview, FL', 'Milton, FL', 'Orange Beach, AL', 'Gulf Shores, AL',
+					'Foley, AL', 'Daphne, AL', 'Mobile, AL'
+				]
+			},
+			{
+				'@type': 'WebSite',
+				'@id': 'https://www.cordovapropertyservices.com/#website',
+				name: 'Cordova Property Services',
+				url: 'https://www.cordovapropertyservices.com/',
+				publisher: { '@id': 'https://www.cordovapropertyservices.com/#organization' }
+			}
+		]
+	})}<\/script>`}
 </svelte:head>
 
 

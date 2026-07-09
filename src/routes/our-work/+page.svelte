@@ -102,6 +102,14 @@
 
 <svelte:head>
 	<title>Our Work | Cordova Property Services</title>
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.cordovapropertyservices.com/' },
+			{ '@type': 'ListItem', position: 2, name: 'Our Work', item: 'https://www.cordovapropertyservices.com/our-work' }
+		]
+	})}<\/script>`}
 </svelte:head>
 
 <SiteShell>
