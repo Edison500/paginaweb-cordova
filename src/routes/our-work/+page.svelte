@@ -102,6 +102,7 @@
 
 <svelte:head>
 	<title>Our Work | Cordova Property Services</title>
+	<meta name="description" content="See real before-and-after apartment maintenance projects by Cordova Property Services — renovations, repairs, painting and more across Pensacola and the Gulf Coast." />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
