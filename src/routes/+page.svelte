@@ -15,6 +15,16 @@
 <svelte:head>
 	<title>Cordova Property Services | Apartment Maintenance Pensacola FL</title>
 	<meta name="description" content="One-stop maintenance for rental properties — painting, repairs, cleaning, turnkey unit turns and more. Fast, reliable, built for property managers." />
+	<link rel="canonical" href="https://www.cordovapropertyservices.com/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Cordova Property Services | Apartment Maintenance Pensacola FL" />
+	<meta property="og:description" content="One-stop maintenance for rental properties — painting, repairs, cleaning, turnkey unit turns and more. Fast, reliable, built for property managers." />
+	<meta property="og:url" content="https://www.cordovapropertyservices.com/" />
+	<meta property="og:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Cordova Property Services | Apartment Maintenance Pensacola FL" />
+	<meta name="twitter:description" content="One-stop maintenance for rental properties — painting, repairs, cleaning, turnkey unit turns and more. Fast, reliable, built for property managers." />
+	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
 </svelte:head>
 
 <SiteShell pageClass="index-page">

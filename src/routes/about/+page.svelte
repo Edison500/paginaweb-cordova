@@ -65,6 +65,16 @@ const platforms = [
 <svelte:head>
 	<title>About Us | Cordova Property Services — Pensacola & Gulf Coast</title>
 	<meta name="description" content="Learn about Cordova Property Services — our story, mission, values, and the team behind every successful unit turn across Pensacola and the Gulf Coast." />
+	<link rel="canonical" href="https://www.cordovapropertyservices.com/about" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="About Us | Cordova Property Services — Pensacola & Gulf Coast" />
+	<meta property="og:description" content="Learn about Cordova Property Services — our story, mission, values, and the team behind every successful unit turn across Pensacola and the Gulf Coast." />
+	<meta property="og:url" content="https://www.cordovapropertyservices.com/about" />
+	<meta property="og:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="About Us | Cordova Property Services — Pensacola & Gulf Coast" />
+	<meta name="twitter:description" content="Learn about Cordova Property Services — our story, mission, values, and the team behind every successful unit turn across Pensacola and the Gulf Coast." />
+	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',

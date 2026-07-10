@@ -103,6 +103,16 @@
 <svelte:head>
 	<title>Our Work | Cordova Property Services</title>
 	<meta name="description" content="See real before-and-after apartment maintenance projects by Cordova Property Services — renovations, repairs, painting and more across Pensacola and the Gulf Coast." />
+	<link rel="canonical" href="https://www.cordovapropertyservices.com/our-work" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Our Work | Cordova Property Services" />
+	<meta property="og:description" content="See real before-and-after apartment maintenance projects by Cordova Property Services — renovations, repairs, painting and more across Pensacola and the Gulf Coast." />
+	<meta property="og:url" content="https://www.cordovapropertyservices.com/our-work" />
+	<meta property="og:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Our Work | Cordova Property Services" />
+	<meta name="twitter:description" content="See real before-and-after apartment maintenance projects by Cordova Property Services — renovations, repairs, painting and more across Pensacola and the Gulf Coast." />
+	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',

@@ -26,6 +26,16 @@
 <svelte:head>
 	<title>{title} | Cordova Property Services</title>
 	<meta name="description" content="{tagline} — Cordova Property Services. Serving Pensacola, Gulf Breeze, Navarre, Fort Walton and the Gulf Coast." />
+	<link rel="canonical" href="https://www.cordovapropertyservices.com{page.url.pathname}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{title} | Cordova Property Services" />
+	<meta property="og:description" content="{tagline} — Cordova Property Services. Serving Pensacola, Gulf Breeze, Navarre, Fort Walton and the Gulf Coast." />
+	<meta property="og:url" content="https://www.cordovapropertyservices.com{page.url.pathname}" />
+	<meta property="og:image" content="https://www.cordovapropertyservices.com{heroImg}" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="{title} | Cordova Property Services" />
+	<meta name="twitter:description" content="{tagline} — Cordova Property Services. Serving Pensacola, Gulf Breeze, Navarre, Fort Walton and the Gulf Coast." />
+	<meta name="twitter:image" content="https://www.cordovapropertyservices.com{heroImg}" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
