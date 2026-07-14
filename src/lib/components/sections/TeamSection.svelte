@@ -32,6 +32,21 @@
             compactText: true
         },
         {
+            id: 5,
+            img: '/assets/img/team/team-2.jpeg',
+            name: 'Gabriela Galarza',
+            role: 'Finance Specialist',
+            icon: 'bi-cash-coin',
+            desc: 'Responsible for billing, payroll processing, and reporting, ensuring accurate financial records, timely payments, and organized documentation.',
+            tags: [
+                { label: 'Billing Management', icon: 'bi-receipt-cutoff' },
+                { label: 'Payroll Administration', icon: 'bi-wallet2' },
+                { label: 'Financial Reporting', icon: 'bi-file-earmark-bar-graph' }
+            ],
+            boss: false,
+            compactText: true
+        },
+        {
             id: 3,
             img: '/assets/img/team/team-7.png',
             name: 'Gustavo A. Chirinos',
@@ -47,8 +62,8 @@
         },
         {
             id: 4,
-            img: '/assets/img/team/team-2.jpeg',
-            name: 'Gabriela Galarza',
+            img: '/assets/img/team/team3.jpeg',
+            name: 'Itzel Duran',
             role: 'Administrative Assistant',
             icon: 'bi-person-workspace',
             desc: 'Coordinates scheduling, customer communications, and project documentation, helping ensure every service is organized, efficient, and completed on time.',
@@ -631,6 +646,7 @@
     }
 
     .tag {
+        min-width: 0;
         min-height: 104px;
         padding: 12px 8px 11px;
         border-radius: 8px;
