@@ -47,7 +47,7 @@
 					<span class="eyebrow-line"></span>
 					<h3>Welcome to Cordova Property Services</h3>
 				</div>
-				<h2>Professional Apartment Turnover & Property Maintenance Solutions</h2>
+				<h1>Professional Apartment Turnover & Property Maintenance Solutions</h1>
 				<p>
 					Delivering Reliable, High-Quality Services That Keep Your Units Move-In Ready and Your Residents Satisfied.
 				</p>
@@ -163,7 +163,7 @@
 	}
 
 	/* === HEADLINE H2 === */
-	#hero :global(.hero-copy h2) {
+	#hero :global(.hero-copy h1) {
 		color: #fff;
 		font-family: 'Fraunces', 'Times New Roman', Georgia, serif;
 		font-size: clamp(2.1rem, 4.2vw, 3.8rem);
@@ -373,7 +373,7 @@
 		#hero :global(.eyebrow) {
 			margin-bottom: 12px;
 		}
-		#hero :global(.hero-copy h2) {
+		#hero :global(.hero-copy h1) {
 			margin-bottom: 12px;
 		}
 		#hero :global(.hero-copy p) {
