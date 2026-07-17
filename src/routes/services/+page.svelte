@@ -39,16 +39,16 @@
 </script>
 
 <svelte:head>
-	<title>Apartment Maintenance Services | Cordova Property Services — Pensacola FL</title>
+	<title>Maintenance Services | Cordova Property — Pensacola FL</title>
 	<meta name="description" content="12 specialized maintenance services for rental properties — painting, cleaning, repairs, resurfacing, turnkey turns and more." />
 	<link rel="canonical" href="https://www.cordovapropertyservices.com/services" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Apartment Maintenance Services | Cordova Property Services — Pensacola FL" />
+	<meta property="og:title" content="Maintenance Services | Cordova Property — Pensacola FL" />
 	<meta property="og:description" content="12 specialized maintenance services for rental properties — painting, cleaning, repairs, resurfacing, turnkey turns and more." />
 	<meta property="og:url" content="https://www.cordovapropertyservices.com/services" />
 	<meta property="og:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Apartment Maintenance Services | Cordova Property Services — Pensacola FL" />
+	<meta name="twitter:title" content="Maintenance Services | Cordova Property — Pensacola FL" />
 	<meta name="twitter:description" content="12 specialized maintenance services for rental properties — painting, cleaning, repairs, resurfacing, turnkey turns and more." />
 	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
@@ -128,7 +128,7 @@
 
 	<!-- Bottom CTA -->
 	<section class="services-cta section dark-background">
-		<img src="/assets/img/cta-bg.jpg" alt="" class="page-hero-bg" />
+		<img src="/assets/img/cta-bg.jpg" alt="Property maintenance services" class="page-hero-bg" />
 		<div class="page-hero-overlay" style="background:rgba(0,0,0,0.6)"></div>
 		<div class="container" style="position:relative;z-index:3;text-align:center;">
 			<h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:14px;">Not Sure Which Service You Need?</h2>
