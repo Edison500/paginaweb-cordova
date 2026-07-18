@@ -93,11 +93,13 @@
 	<meta property="og:title" content="Contact Us | Cordova Property Services — Pensacola & Gulf Coast" />
 	<meta property="og:description" content="Contact Cordova Property Services for apartment maintenance, unit turns, and property services across Pensacola and the Gulf Coast. Free estimates, 24h response." />
 	<meta property="og:url" content="https://www.cordovapropertyservices.com/contact" />
-	<meta property="og:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
+	<meta property="og:image" content="https://www.cordovapropertyservices.com/assets/img/services/Contact/previewlink.jpg" />
+	<meta property="og:image:width" content="1731" />
+	<meta property="og:image:height" content="909" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Contact Us | Cordova Property Services — Pensacola & Gulf Coast" />
 	<meta name="twitter:description" content="Contact Cordova Property Services for apartment maintenance, unit turns, and property services across Pensacola and the Gulf Coast. Free estimates, 24h response." />
-	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/about.png" />
+	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/services/Contact/previewlink.jpg" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
