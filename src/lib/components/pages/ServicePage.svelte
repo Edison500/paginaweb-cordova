@@ -31,11 +31,13 @@
 	<meta property="og:title" content="{title} | Cordova Property Services" />
 	<meta property="og:description" content="{tagline} — Cordova Property Services. Serving Pensacola, Gulf Breeze, Navarre, Fort Walton and the Gulf Coast." />
 	<meta property="og:url" content="https://www.cordovapropertyservices.com{page.url.pathname}" />
-	<meta property="og:image" content="https://www.cordovapropertyservices.com{heroImg}" />
+	<meta property="og:image" content="https://www.cordovapropertyservices.com/assets/img/services/Contact/previewlink.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="{title} | Cordova Property Services" />
 	<meta name="twitter:description" content="{tagline} — Cordova Property Services. Serving Pensacola, Gulf Breeze, Navarre, Fort Walton and the Gulf Coast." />
-	<meta name="twitter:image" content="https://www.cordovapropertyservices.com{heroImg}" />
+	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/services/Contact/previewlink.jpg" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
