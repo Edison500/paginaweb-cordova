@@ -309,9 +309,9 @@
 
 	<section class="ct-areas-final">
 		<div class="container">
-			<p class="ct-areas-label"><i class="bi bi-geo-alt-fill"></i> Serving 11 cities across Florida &amp; Alabama</p>
+			<p class="ct-areas-label"><i class="bi bi-geo-alt-fill"></i> Serving 12 cities across Florida, Alabama &amp; Mississippi</p>
 			<div class="ct-areas-list">
-				{#each ['Pensacola','Gulf Breeze','Navarre','Fort Walton','Crestview','Milton','Orange Beach','Gulf Shores','Foley','Daphne','Mobile'] as city}
+				{#each ['Pensacola','Gulf Breeze','Navarre','Fort Walton','Crestview','Milton','Orange Beach','Gulf Shores','Foley','Daphne','Mobile','Biloxi'] as city}
 					<span>{city}</span>
 				{/each}
 			</div>

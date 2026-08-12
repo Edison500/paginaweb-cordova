@@ -152,7 +152,7 @@
 						<div class="sp-mid-cta-inner">
 							<div>
 								<h4>Ready to schedule {title}?</h4>
-								<p>We respond within 24 hours and serve 11 cities across the Gulf Coast.</p>
+								<p>We respond within 24 hours and serve 12 cities across the Gulf Coast.</p>
 							</div>
 							<a href="/contact" class="sp-btn-primary">Get a Free Quote</a>
 						</div>

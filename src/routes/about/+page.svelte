@@ -58,7 +58,8 @@ const platforms = [
 	const areas = [
 		'Pensacola', 'Gulf Breeze', 'Navarre', 'Fort Walton',
 		'Crestview', 'Milton',
-		'Orange Beach', 'Gulf Shores', 'Foley', 'Daphne', 'Mobile'
+		'Orange Beach', 'Gulf Shores', 'Foley', 'Daphne', 'Mobile',
+		'Biloxi'
 	];
 </script>
 
@@ -159,7 +160,7 @@ const platforms = [
 						<p>
 							Cordova Property Services is a full-service maintenance company specializing in apartment communities,
 							proudly serving properties across Pensacola, Gulf Breeze, Navarre, Fort Walton, Crestview, Milton,
-							Daphne, Mobile, Gulf Shores, Orange Beach, and Foley.
+							Daphne, Mobile, Gulf Shores, Orange Beach, Foley, and Biloxi, Mississippi.
 						</p>
 
 						<p>
@@ -229,7 +230,7 @@ const platforms = [
 						<span class="section-eyebrow">Where We Work</span>
 						<h2>Serving the Gulf Coast Region</h2>
 						<p>
-							We operate across 11 cities in Florida and Alabama — built to serve the multifamily communities
+							We operate across 12 cities in Florida, Alabama, and Mississippi — built to serve the multifamily communities
 							where property managers need us most.
 						</p>
 						<a href="/contact" class="btn-about-cta mt-4">Check Your Area</a>

@@ -91,7 +91,7 @@
 				areaServed: [
 					'Pensacola, FL', 'Gulf Breeze, FL', 'Navarre, FL', 'Fort Walton Beach, FL',
 					'Crestview, FL', 'Milton, FL', 'Orange Beach, AL', 'Gulf Shores, AL',
-					'Foley, AL', 'Daphne, AL', 'Mobile, AL'
+					'Foley, AL', 'Daphne, AL', 'Mobile, AL', 'Biloxi, MS'
 				]
 			},
 			{

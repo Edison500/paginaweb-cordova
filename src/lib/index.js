@@ -17,3 +17,6 @@ export { default as TeamSection }        from './components/sections/TeamSection
 export { default as TestimonialsSection } from './components/sections/TestimonialsSection.svelte';
 export { default as RecentPostsSection } from './components/sections/RecentPostsSection.svelte';
 export { default as ContactSection }     from './components/sections/ContactSection.svelte';
+
+// UI
+export { default as AnnouncementPopup }  from './components/ui/AnnouncementPopup.svelte';

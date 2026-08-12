@@ -10,6 +10,7 @@
 	import FaqSection         from '$lib/components/sections/FaqSection.svelte';
 	import CtaSection         from '$lib/components/sections/CtaSection.svelte';
 	import ContactSection     from '$lib/components/sections/ContactSection.svelte';
+	import AnnouncementPopup  from '$lib/components/ui/AnnouncementPopup.svelte';
 </script>
 
 <svelte:head>
@@ -28,6 +29,8 @@
 	<meta name="twitter:description" content="One-stop maintenance for rental properties — painting, repairs, cleaning, turnkey unit turns and more. Fast, reliable, built for property managers." />
 	<meta name="twitter:image" content="https://www.cordovapropertyservices.com/assets/img/services/Contact/previewlink.jpg" />
 </svelte:head>
+
+<AnnouncementPopup />
 
 <SiteShell pageClass="index-page">
 	<main class="main">
