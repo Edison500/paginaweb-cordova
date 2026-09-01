@@ -1,13 +1,19 @@
 <script>
+	import { tick } from 'svelte';
 	import SiteShell from '$lib/components/layout/SiteShell.svelte';
 	// import TestimonialsSection from '$lib/components/sections/TestimonialsSection.svelte';
 	import CtaSection from '$lib/components/sections/CtaSection.svelte';
 
 	let activeFilter = $state('all');
 	let selectedId   = $state(1);
+	let detailEl;
 
-	function selectProject(id) {
+	async function selectProject(id) {
 		selectedId = id;
+		if (typeof window !== 'undefined' && window.innerWidth < 1200) {
+			await tick();
+			detailEl?.scrollIntoView({ behavior: 'instant', block: 'start' });
+		}
 	}
 
 	const filters = [
@@ -43,6 +49,7 @@
 			area: 'Bathroom',
 			youtubeId: '0DGU5MQpO7Y',
 			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_02.mp4',
+			videoAspect: '16 / 9',
 			gallery: [
 				{ src: '/assets/img/projects/project2/1.jpg' },
 				{ src: '/assets/img/projects/project2/2.jpg' },
@@ -62,6 +69,7 @@
 			area: 'Exterior',
 			youtubeId: 'ayvL0zxbN8M',
 			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_03.mp4',
+			videoAspect: '9 / 16',
 			gallery: [],
 			description: [
 				'A concrete pad was built from the ground up: area layout and preparation, light excavation, gravel base compaction, form setting, and a broom-finish concrete pour with proper curing time.',
@@ -75,6 +83,7 @@
 			area: 'Exterior',
 			youtubeId: 'syDvF8HyUKE',
 			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_04.mp4',
+			videoAspect: '9 / 16',
 			gallery: [],
 			description: [
 				'All door surfaces were deep-cleaned with an exterior-grade cleaner to remove dirt, mildew, and contaminants. Full sanding followed — covering the louvers, frames, and all panels — with detailed hand sanding in the louvered areas to ensure proper adhesion. Minor wood repairs were made using exterior-grade filler where needed.',
@@ -181,7 +190,7 @@
 					{/each}
 				</aside>
 
-				<section class="project-detail">
+				<section class="project-detail" bind:this={detailEl}>
 
 					<div class="detail-title">
 						<span>{String(selectedProject.id).padStart(2, '00')}</span>
@@ -189,7 +198,7 @@
 					</div>
 
 					{#if selectedProject.video}
-						<div class="video-wrap">
+						<div class="video-wrap" class:portrait={selectedProject.videoAspect === '9 / 16'}>
 							<video controls preload="metadata" src={selectedProject.video}></video>
 						</div>
 					{:else}
@@ -454,6 +463,7 @@
 		border-radius: 18px;
 		box-shadow: 0 18px 45px rgba(27, 31, 24, 0.08);
 		overflow: hidden;
+		scroll-margin-top: 116px;
 	}
 
 	.detail-title {
@@ -488,6 +498,17 @@
 		aspect-ratio: 16 / 9;
 		max-height: 560px;
 		background: #0c100b;
+	}
+
+	.video-wrap.portrait {
+		max-width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.video-wrap.portrait video {
+		aspect-ratio: 9 / 16;
+		max-height: 640px;
 	}
 
 	/* COMING SOON */
@@ -614,12 +635,33 @@
 				url('/assets/img/projects.png') center / cover no-repeat;
 		}
 		.work-wrap       { padding: 20px 18px 36px; }
-		.project-list    { grid-template-columns: 1fr; }
-		.project-card    { flex-direction: row; }
+		.project-list {
+			display: flex;
+			flex-direction: row;
+			overflow-x: auto;
+			gap: 10px;
+			padding: 2px 2px 10px;
+			scroll-snap-type: x proximity;
+			-webkit-overflow-scrolling: touch;
+		}
+		.project-card {
+			flex: 0 0 auto;
+			width: 150px;
+			padding: 12px 14px;
+			scroll-snap-align: start;
+		}
+		.card-info h3 {
+			margin: 8px 0 0;
+			font-size: 12.5px;
+			-webkit-line-clamp: 2;
+		}
+		.project-card .tags { display: none; }
 		.detail-title    { padding: 24px 22px 16px; }
 		.detail-title h2 { font-size: 22px; }
 		.coming-soon     { margin: 8px 22px 22px; padding: 36px 20px; }
 		.video-wrap      { margin: 8px 22px 22px; }
+		.video-wrap.portrait { max-width: 320px; margin: 8px auto 22px; }
+		.video-wrap.portrait video { aspect-ratio: 9 / 16; max-height: 640px; }
 		.process-section { padding: 24px 22px; }
 		.cta-box         { grid-template-columns: 1fr; text-align: center; justify-items: center; }
 	}
