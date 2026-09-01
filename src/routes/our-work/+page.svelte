@@ -24,6 +24,7 @@
 			category: 'renovation',
 			area: 'Restroom',
 			youtubeId: 'c-tEfUunsHo',
+			video: '',
 			gallery: [
 				{ src: '/assets/img/projects/project1/img1.png'  },
 				{ src: '/assets/img/projects/project1/img-2.png' },
@@ -41,6 +42,7 @@
 			category: 'renovation',
 			area: 'Bathroom',
 			youtubeId: '0DGU5MQpO7Y',
+			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_02.mp4',
 			gallery: [
 				{ src: '/assets/img/projects/project2/1.jpg' },
 				{ src: '/assets/img/projects/project2/2.jpg' },
@@ -59,6 +61,7 @@
 			category: 'construction',
 			area: 'Exterior',
 			youtubeId: 'ayvL0zxbN8M',
+			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_03.mp4',
 			gallery: [],
 			description: [
 				'A concrete pad was built from the ground up: area layout and preparation, light excavation, gravel base compaction, form setting, and a broom-finish concrete pour with proper curing time.',
@@ -71,6 +74,7 @@
 			category: 'finishes',
 			area: 'Exterior',
 			youtubeId: 'syDvF8HyUKE',
+			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_04.mp4',
 			gallery: [],
 			description: [
 				'All door surfaces were deep-cleaned with an exterior-grade cleaner to remove dirt, mildew, and contaminants. Full sanding followed — covering the louvers, frames, and all panels — with detailed hand sanding in the louvered areas to ensure proper adhesion. Minor wood repairs were made using exterior-grade filler where needed.',
@@ -83,6 +87,7 @@
 			category: 'maintenance',
 			area: 'Staircase',
 			youtubeId: 'Fvkffi1AI74',
+			video: '',
 			gallery: [],
 			description: [
 				'All staircase surfaces were pressure washed before any metal work began. Mechanical sanding was then applied to every component showing rust or deterioration — handrails, guardrails, stair edges, and metal sections at the base of each staircase — removing loose paint, rust, and oxidation down to a clean surface.',
@@ -183,11 +188,17 @@
 						<h2>{selectedProject.title}</h2>
 					</div>
 
-					<div class="coming-soon">
-						<div class="coming-soon-icon"><i class="bi bi-camera-reels"></i></div>
-						<h3>Photos &amp; Video Coming Soon</h3>
-						<p>We're updating this project's media. Check back soon to see the full before-and-after gallery.</p>
-					</div>
+					{#if selectedProject.video}
+						<div class="video-wrap">
+							<video controls preload="metadata" src={selectedProject.video}></video>
+						</div>
+					{:else}
+						<div class="coming-soon">
+							<div class="coming-soon-icon"><i class="bi bi-camera-reels"></i></div>
+							<h3>Photos &amp; Video Coming Soon</h3>
+							<p>We're updating this project's media. Check back soon to see the full before-and-after gallery.</p>
+						</div>
+					{/if}
 
 					<div class="process-section">
 						<div class="process-header">
@@ -462,6 +473,23 @@
 		color: #0c100b;
 	}
 
+	/* VIDEO */
+	.video-wrap {
+		margin: 8px 28px 32px;
+		border-radius: 16px;
+		overflow: hidden;
+		background: #0c100b;
+		box-shadow: 0 18px 40px rgba(20, 24, 18, 0.14);
+	}
+
+	.video-wrap video {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		max-height: 560px;
+		background: #0c100b;
+	}
+
 	/* COMING SOON */
 	.coming-soon {
 		margin: 8px 28px 32px;
@@ -591,6 +619,7 @@
 		.detail-title    { padding: 24px 22px 16px; }
 		.detail-title h2 { font-size: 22px; }
 		.coming-soon     { margin: 8px 22px 22px; padding: 36px 20px; }
+		.video-wrap      { margin: 8px 22px 22px; }
 		.process-section { padding: 24px 22px; }
 		.cta-box         { grid-template-columns: 1fr; text-align: center; justify-items: center; }
 	}
