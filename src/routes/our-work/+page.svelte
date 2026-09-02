@@ -96,7 +96,8 @@
 			category: 'maintenance',
 			area: 'Staircase',
 			youtubeId: 'Fvkffi1AI74',
-			video: '',
+			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_05.mp4',
+			videoAspect: '9 / 16',
 			gallery: [],
 			description: [
 				'All staircase surfaces were pressure washed before any metal work began. Mechanical sanding was then applied to every component showing rust or deterioration — handrails, guardrails, stair edges, and metal sections at the base of each staircase — removing loose paint, rust, and oxidation down to a clean surface.',
