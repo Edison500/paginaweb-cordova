@@ -30,7 +30,8 @@
 			category: 'renovation',
 			area: 'Restroom',
 			youtubeId: 'c-tEfUunsHo',
-			video: '',
+			video: 'https://mvirzipjjjllvisteslq.supabase.co/storage/v1/object/public/VideosCordova/Video_01.mp4',
+			videoAspect: '9 / 16',
 			gallery: [
 				{ src: '/assets/img/projects/project1/img1.png'  },
 				{ src: '/assets/img/projects/project1/img-2.png' },
