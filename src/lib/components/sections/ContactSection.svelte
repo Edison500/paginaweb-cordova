@@ -1,4 +1,6 @@
 <script>
+	import FormAlertModal from '$lib/components/ui/FormAlertModal.svelte';
+
 	let firstName = $state('');
 	let lastName = $state('');
 	let email = $state('');
@@ -8,6 +10,11 @@
 	let message = $state('');
 	let status = $state('');
 	let errorMessage = $state('');
+	let modalOpen = $state(false);
+
+	function closeModal() {
+		modalOpen = false;
+	}
 
 	const services = [
 		'Turnkey Services','Painting','General Repairs','Cleaning',
@@ -38,6 +45,7 @@
 		if (validationError) {
 			errorMessage = validationError;
 			status = 'error';
+			modalOpen = true;
 			return;
 		}
 
@@ -78,6 +86,7 @@
 			console.error(err);
 			errorMessage = err?.message || 'Something went wrong. Please try again or call us directly.';
 			status = 'error';
+			modalOpen = true;
 		}
 	}
 </script>
@@ -144,7 +153,7 @@
 						<p>Thank you! We'll get back to you within 24 hours.</p>
 					</div>
 				{:else}
-					<form onsubmit={handleSubmit} class="contact-form-premium" data-aos="fade-up" data-aos-delay="200">
+					<form onsubmit={handleSubmit} class="contact-form-premium" novalidate data-aos="fade-up" data-aos-delay="200">
 						<div class="row gy-3">
 							<div class="col-12">
 								<div class="field-wrap select-wrap">
@@ -197,9 +206,6 @@
 							</div>
 
 							<div class="col-12 text-center">
-								{#if status === 'error'}
-									<div class="error-message mb-2">{errorMessage || 'Something went wrong. Please try again or call us directly.'}</div>
-								{/if}
 								<button type="submit" class="btn-submit-premium" disabled={status === 'sending'}>
 									<span>{status === 'sending' ? 'Sending...' : 'Request Free Quote'}</span>
 									{#if status !== 'sending'}<i class="bi bi-arrow-right"></i>{/if}
@@ -213,6 +219,14 @@
 		</div>
 	</div>
 </section>
+
+<FormAlertModal
+	open={modalOpen}
+	kind="error"
+	title="Please check the form"
+	message={errorMessage || 'Something went wrong. Please try again or call us directly.'}
+	onClose={closeModal}
+/>
 
 <style>
 .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;}
@@ -286,5 +300,4 @@
 .sent-icon-wrap i{font-size:40px;color:#059669;}
 .sent-success h4{font-size:22px;font-weight:700;margin-bottom:8px;color:#1a1a1a;}
 .sent-success p{color:#666;margin:0;}
-.error-message{color:#dc2626;font-size:14px;margin-bottom:10px;}
 </style>

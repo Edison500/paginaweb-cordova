@@ -1,6 +1,7 @@
 <script>
 	import SiteShell from '$lib/components/layout/SiteShell.svelte';
 	import FaqSection from '$lib/components/sections/FaqSection.svelte';
+	import FormAlertModal from '$lib/components/ui/FormAlertModal.svelte';
 
 	let firstName = $state('');
 	let lastName = $state('');
@@ -11,6 +12,11 @@
 	let message = $state('');
 	let status = $state('');
 	let errorMessage = $state('');
+	let modalOpen = $state(false);
+
+	function closeModal() {
+		modalOpen = false;
+	}
 
 	const services = [
 		'Turnkey Services','Painting','General Repairs','Cleaning',
@@ -41,6 +47,7 @@
 		if (validationError) {
 			errorMessage = validationError;
 			status = 'error';
+			modalOpen = true;
 			return;
 		}
 
@@ -81,6 +88,7 @@
 			console.error(err);
 			errorMessage = err?.message || 'Something went wrong. Please try again or call us directly.';
 			status = 'error';
+			modalOpen = true;
 		}
 	}
 </script>
@@ -188,7 +196,7 @@
 						</div>
 					{:else}
 						<div class="ct-form-card">
-							<form onsubmit={handleSubmit}>
+							<form onsubmit={handleSubmit} novalidate>
 								<div class="ct-field ct-field-full">
 									<label>Service Needed</label>
 									<div class="ct-select-wrap">
@@ -227,13 +235,6 @@
 									<label>Tell Us About Your Property</label>
 									<textarea bind:value={message} rows="5" placeholder="Describe your property, the services you need, urgency, number of units, and anything else helpful." minlength="10" maxlength="4000" required></textarea>
 								</div>
-
-								{#if status === 'error'}
-									<div class="ct-error-msg">
-										<i class="bi bi-exclamation-circle-fill"></i>
-										{errorMessage || 'Something went wrong. Please try again or call us directly.'}
-									</div>
-								{/if}
 
 								<button type="submit" class="ct-submit" disabled={status === 'sending'}>
 									{#if status === 'sending'}
@@ -321,6 +322,14 @@
 </main>
 </SiteShell>
 
+<FormAlertModal
+	open={modalOpen}
+	kind="error"
+	title="Please check the form"
+	message={errorMessage || 'Something went wrong. Please try again or call us directly.'}
+	onClose={closeModal}
+/>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..800&display=swap');
 .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;}
@@ -370,7 +379,6 @@
 .ct-form-note-quote{display:block;font-size:15px;color:#7a7f87;margin-top:16px;}
 .ct-form-note-quote a{color:#6b6b28;font-weight:800;text-decoration:none;}
 .ct-form-note-quote a:hover{text-decoration:underline;}
-.ct-error-msg{background:#fef2f2;border:1px solid #fecaca;color:#dc2626;padding:12px 16px;border-radius:10px;font-size:13px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .ct-success{background:#fff;border:1px solid rgba(107,107,40,.1);border-radius:20px;padding:60px 40px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.07);}
 .ct-success-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#6b6b28,#4a4a1c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px;}
 .ct-success h3{font-size:1.5rem;font-weight:800;margin-bottom:10px;}
