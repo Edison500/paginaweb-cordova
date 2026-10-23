@@ -16,22 +16,21 @@
             ],
             boss: true
         },
-        // TEMPORARILY HIDDEN: client asked not to show this card until Saturday. Uncomment to restore.
-        // {
-        //     id: 2,
-        //     img: '/assets/img/team/team-1.jpeg',
-        //     name: 'Victoria Cordova',
-        //     role: 'Operations Manager',
-        //     icon: 'bi-person-gear',
-        //     desc: 'Ensures every project is properly planned, staffed, and executed, maintaining operational excellence while delivering reliable, high-quality service to every client.',
-        //     tags: [
-        //         { label: 'Problem Solving', icon: 'bi-puzzle' },
-        //         { label: 'Strategic Planning', icon: 'bi-signpost-split' },
-        //         { label: 'Quality Control', icon: 'bi-patch-check' }
-        //     ],
-        //     boss: false,
-        //     compactText: true
-        // },
+        {
+            id: 2,
+            img: '/assets/img/team/team-1.jpeg',
+            name: 'Victoria Cordova',
+            role: 'Operations Manager',
+            icon: 'bi-person-gear',
+            desc: 'Ensures every project is properly planned, staffed, and executed, maintaining operational excellence while delivering reliable, high-quality service to every client.',
+            tags: [
+                { label: 'Problem Solving', icon: 'bi-puzzle' },
+                { label: 'Strategic Planning', icon: 'bi-signpost-split' },
+                { label: 'Quality Control', icon: 'bi-patch-check' }
+            ],
+            boss: false,
+            compactText: true
+        },
         {
             id: 5,
             img: '/assets/img/team/team-2.jpeg',
